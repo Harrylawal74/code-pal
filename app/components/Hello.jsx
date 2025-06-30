@@ -1,5 +1,4 @@
 function Hello(){
-    return <h1>Hello, World!</h1>;
-}
-
+    return <div className="text-2xl text-center text-blue-500">hello world</div>;
+    }
 export default Hello;
