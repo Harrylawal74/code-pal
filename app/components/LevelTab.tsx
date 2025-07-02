@@ -32,7 +32,7 @@ export default function LevelTabTemplate({status, title, description, lessons}: 
 
 export function LevelTab() {
  return(
-  <span className="inline-grid grid-cols-1 gap-8">
+  <span className="inline-grid grid-cols-1 gap-8 mx-5 mt-10">
   <LevelTabTemplate 
     status="Completed"
     title="Foundations"
