@@ -29,16 +29,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased grid grid-cols-2 grid-rows-1 gap-4`} 
+    
+      <div
+        className="flex"
       >
         
         <SideBar/>
-            
         {children}
         
-      </body>
-    </html>
+      </div>
   );
 }
