@@ -3,6 +3,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link"
 import SideBar from "../components/SideBar";
 
+/* * This is the main layout of the application.
+ *It has the side bar component imported and rendered inside the body.
+ *Any page rendered inside this layout (with-sidebar) folder will have the side bar component.
+*/
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -26,13 +31,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased grid grid-cols-2 grid-rows-1 gap-4`} 
       >
-        <div className="flex">
+        
         <SideBar/>
             
         {children}
-        </div>
+        
       </body>
     </html>
   );

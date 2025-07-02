@@ -1,7 +1,8 @@
 import React from "react";
 
+// This is the LevelTab component
 
-
+//props for the LevelTab component
 type TabProps = { 
   status: string; 
   title: string;
@@ -9,6 +10,12 @@ type TabProps = {
   lessons: number;
 }
 
+
+
+/** This is the LevelTab template
+ * * It is used to display a level of learning content.
+ * * Each level uses this as a template to display the level information.
+ */
 export default function LevelTabTemplate({status, title, description, lessons}: TabProps) {
   return (
     <div className="w-125 h-65 bg-white rounded-xl shadow-lg text-black text-xl relative">
@@ -29,6 +36,11 @@ export default function LevelTabTemplate({status, title, description, lessons}: 
   );
 }
 
+
+/** These are all of the level tabs
+ * *Each use the LevelTabTemplate to display the level information.
+ * * The status, title, description and lessons are passed as props to the template.
+ */
 
 export function LevelTab() {
  return(

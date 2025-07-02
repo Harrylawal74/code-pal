@@ -7,8 +7,8 @@ const RobotSVG: FC = () => (
         viewBox="0 0 16 16" 
         xmlns="http://www.w3.org/2000/svg" 
         version="1.1" fill="none" stroke="#FFFF" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
         strokeWidth="1.5">
 
     <rect height="7.5" width="12.5" y="5.75" x="1.75"/>

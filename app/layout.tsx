@@ -3,6 +3,12 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link"
 
+/** This is the default layout of the  application
+  * Anything rendered inside this layout (without-sidebar) folder will not have the side bar component.
+  * The aim of having multiple layouts is to have different pages with and without the side bar component.
+  * For example, the learn page has the side bar component, but exercise pages will not.
+*/
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -26,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}
       >
    {children}
       </body>
