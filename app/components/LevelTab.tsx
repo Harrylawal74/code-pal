@@ -7,7 +7,7 @@ type TabProps = {
   status: string; 
   title: string;
   description: string;
-  lessons: number;
+  lessons: string;
 }
 
 
@@ -28,7 +28,7 @@ export default function LevelTabTemplate({status, title, description, lessons}: 
         <h2 className="font-bold mt-4">{title}</h2>
         <p className="text-[16px] text-gray-500">{description}</p>
         <div className="flex justify-between items-center mt-6 text-[14px] mt-10">
-            <div>{lessons}</div>
+            <div className="text-gray-600">{lessons}</div>
             <h3 className="text-blue-500 text-[16px]">Review</h3>
         </div>
       </div>
@@ -49,42 +49,42 @@ export function LevelTab() {
     status="Completed"
     title="Foundations"
     description="Some description about the foundations of programming."
-    lessons={5}
+    lessons="5 lessons"
   />
 
   <LevelTabTemplate 
     status="Completed"
     title="Control flow"
     description=""
-    lessons={5}
+    lessons="5 lessons"
   />
 
   <LevelTabTemplate 
     status="Completed"
     title="Data structures"
     description=""
-    lessons={5}
+    lessons="5 lessons"
   />
 
   <LevelTabTemplate 
     status="Completed"
     title="Functions "
     description=""
-    lessons={5}
+    lessons="5 lessons"
   />
 
   <LevelTabTemplate 
     status="Completed"
     title="OOP"
     description=""
-    lessons={5}
+    lessons="5 lessons"
   />
 
   <LevelTabTemplate 
     status="Completed"
     title="Debugging"
     description=""
-    lessons={5}
+    lessons="5 lessons"
   />
 
   
