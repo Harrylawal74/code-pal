@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link"
+import SideBar from "../components/SideBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,13 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/*This creates a learn Link on the page that is perssistent accross all pages */}
-        <Link href="/learn">
-          Learn
-        </Link>
-        <br />
-        
-        <Link  href="/again" className="bg-green-900 rounded-xl px-3 py-1 " >again</Link>
+        <SideBar/>
             
         {children}
       </body>
