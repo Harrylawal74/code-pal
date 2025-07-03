@@ -30,12 +30,13 @@ export default function RootLayout({
 }>) {
   return (
     
-      <div
-        className="flex"
-      >
+    /*This flexes the entire page and allows for the webpage to be responsive. */
+      <div className="flex min-h-screen">
         
         <SideBar/>
-        {children}
+        <main className="w-screen flex-1 overflow-auto flex justify-center items-start">
+          {children}
+        </main>
         
       </div>
   );

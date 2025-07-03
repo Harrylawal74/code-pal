@@ -1,35 +1,133 @@
 
 export function ExerciseBox(){
     return(
-        <div className=" w-21 h-21 rounded-xl bg-red-900 "></div>
+        <div className=" w-15 h-15 rounded-xl bg-[#4b5563] transition-all duration-300 hover:scale-110 active "></div>
     )
 }
 
-export function ExerciseSectionTab(){
+
+/** This is the ExerciseSectionTab Template
+ * * It is used to display a section of exercieses within a level.
+ */
+export function ExerciseSectionTabTemplate(){
     return(
-        <div className="h-20 w-full rounded-xl bg-blue-300"></div>
+        <div className="h-20 rounded-xl bg-[#2a6aee] flex justify-center items-center text-white text-sm md:text-xl sm:text-lg font-bold">
+            Syntax Basics
+        </div>
     )
 }
+
+/** To-do
+ * *Need to create differenct exercise section tabs
+ * *Copy the method used in the LevelTabTemplate to pass props to the template. above^^^
+ */
+
 
 
 export default function FoundationsPage() {
-    return(
-        <div className="name-foundationsPage w-150 pt-20 px-15">
-            <ExerciseSectionTab/>
-                <div className="w-full inline-grid md:grid-cols-5 sm:grid-cols-2 gap-4 sm:mt-10">
-        
-                    <ExerciseBox/>
-                    <ExerciseBox/>
-                    <ExerciseBox/>
-                    <ExerciseBox/>
-                    <ExerciseBox/>
-                    <ExerciseBox/>
-                    <ExerciseBox/>
-                    <ExerciseBox/>
-                    <ExerciseBox/>
-                    <ExerciseBox/>
+  return (
+    <main className="flex-1 flex justify-center overflow-auto">
+        <div className="w-full max-w-5xl mx-4 my-8 flex flex-row gap-12">
+            <div className="max-w">
+                <section className="mb-8">
+                <ExerciseSectionTabTemplate />
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                    </div>
+                </section>
 
+                <section className="mb-8">
+                <ExerciseSectionTabTemplate />
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                    </div>
+                </section>
+
+                <section className="mb-8">
+                <ExerciseSectionTabTemplate />
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                    </div>
+                </section>
+
+                <section className="mb-8">
+                <ExerciseSectionTabTemplate />
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                    </div>
+                </section>
+
+                <section className="mb-8">
+                <ExerciseSectionTabTemplate />
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                    </div>
+                </section>
+            </div>
+
+            
+
+            <section className="max-w">
+                <ExerciseSectionTabTemplate />
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+                    <ExerciseBox />
+                    <ExerciseBox />
+                    <ExerciseBox />
+                    <ExerciseBox />
+                    <ExerciseBox />
+                    <ExerciseBox />
+                    <ExerciseBox />
+                    <ExerciseBox />
+                    <ExerciseBox />
+                    <ExerciseBox />
                 </div>
+            </section>
         </div>
-    )
+    </main>
+  );
 }

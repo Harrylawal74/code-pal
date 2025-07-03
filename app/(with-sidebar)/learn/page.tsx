@@ -10,8 +10,9 @@ import SideBar from "@/app/components/SideBar";
   */
 export default function Learn() {
   return (
-   <div >
+   <div className="flex min-h-screen">
     <LevelTab />
+    
    </div>
   );
 }
