@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 // This is the LevelTab component
 
@@ -45,12 +46,14 @@ export default function LevelTabTemplate({status, title, description, lessons}: 
 export function LevelTab() {
  return(
   <span className="inline-grid grid-cols-1 gap-8 mx-5 mt-10">
+  <Link href="/levels/foundations">
   <LevelTabTemplate 
     status="Completed"
     title="Foundations"
     description="Some description about the foundations of programming."
     lessons="5 lessons"
   />
+  </Link>
 
   <LevelTabTemplate 
     status="Completed"
