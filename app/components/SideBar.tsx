@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default function SideBar() {
     return(
-        <div className="w-60 h-full min-w-60 border-r border-gray-100 px-10 pt-10 flex flex-col items-center gap-4">
+        <div className="w-60 min-h-screen min-w-60 border-r border-gray-100 px-10 pt-10 flex flex-col items-center gap-4">
         <Link href="/learn" className="bg-green-900 h-9 w-40 rounded-xl flex justify-center items-center">Learn</Link>
         <br />
         <Link href="/again" className="bg-green-900 h-9 w-40 rounded-xl flex justify-center items-center">Again</Link>
