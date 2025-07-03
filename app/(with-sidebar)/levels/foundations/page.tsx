@@ -28,6 +28,7 @@ export default function FoundationsPage() {
   return (
     <main className="flex-1 flex justify-center overflow-auto">
         <div className="w-full max-w-5xl mx-4 my-8 flex flex-row gap-12">
+            {/* main exercises column. e.g. syntax basics followed by exercise squares */}
             <div className="max-w">
                 <section className="mb-8">
                 <ExerciseSectionTabTemplate />
