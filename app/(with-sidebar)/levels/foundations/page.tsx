@@ -26,9 +26,9 @@ export function ExerciseSectionTabTemplate(){
 
 export default function FoundationsPage() {
   return (
-    <main className="flex-col flex justify-center overflow-auto gap-15 w-full">
-        <div>hello</div>
-        <div className="flex-1 flex justify-center overflow-auto gap-15 mt-10">
+    <main className="flex-col flex-start justify-center overflow-auto gap-15 w-full">
+        <div className="flex justify-center">Top bar. This will contain hearts, streak etc</div>
+        <div className=" flex justify-center overflow-auto gap-15 mt-10">
         
             {/* main exercises column. e.g. syntax basics followed by exercise squares */}
             <div className=" ">
