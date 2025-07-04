@@ -26,7 +26,10 @@ export function ExerciseSectionTabTemplate(){
 
 export default function FoundationsPage() {
   return (
-    <main className="flex-1 flex justify-center overflow-auto gap-15">
+    <main className="flex-col flex justify-center overflow-auto gap-15 w-full">
+        <div>hello</div>
+        <div className="flex-1 flex justify-center overflow-auto gap-15 mt-10">
+        
             {/* main exercises column. e.g. syntax basics followed by exercise squares */}
             <div className=" ">
                 <section className="mb-8">
@@ -62,6 +65,7 @@ export default function FoundationsPage() {
                         <ExerciseBox />
                     </div>
                 </section>
+            </div>
             </div>
     </main>
   );
