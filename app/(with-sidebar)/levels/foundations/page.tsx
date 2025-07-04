@@ -26,74 +26,9 @@ export function ExerciseSectionTabTemplate(){
 
 export default function FoundationsPage() {
   return (
-    <main className="flex-1 flex justify-center overflow-auto">
-        <div className="w-full max-w-5xl mx-4 my-8 flex flex-row gap-12">
+    <main className="flex-1 flex justify-center overflow-auto gap-15">
             {/* main exercises column. e.g. syntax basics followed by exercise squares */}
-            <div className="max-w">
-                <section className="mb-8">
-                <ExerciseSectionTabTemplate />
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                    </div>
-                </section>
-
-                <section className="mb-8">
-                <ExerciseSectionTabTemplate />
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                    </div>
-                </section>
-
-                <section className="mb-8">
-                <ExerciseSectionTabTemplate />
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                    </div>
-                </section>
-
-                <section className="mb-8">
-                <ExerciseSectionTabTemplate />
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                        <ExerciseBox />
-                    </div>
-                </section>
-
+            <div className=" ">
                 <section className="mb-8">
                 <ExerciseSectionTabTemplate />
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
@@ -111,24 +46,23 @@ export default function FoundationsPage() {
                 </section>
             </div>
 
-            
-
-            <section className="max-w">
+            <div className="">
+                <section className="mb-8">
                 <ExerciseSectionTabTemplate />
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
-                    <ExerciseBox />
-                    <ExerciseBox />
-                    <ExerciseBox />
-                    <ExerciseBox />
-                    <ExerciseBox />
-                    <ExerciseBox />
-                    <ExerciseBox />
-                    <ExerciseBox />
-                    <ExerciseBox />
-                    <ExerciseBox />
-                </div>
-            </section>
-        </div>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                        <ExerciseBox />
+                    </div>
+                </section>
+            </div>
     </main>
   );
 }

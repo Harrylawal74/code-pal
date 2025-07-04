@@ -34,9 +34,9 @@ export default function RootLayout({
       <div className="flex min-h-screen">
         
         <SideBar/>
-        <main className="w-screen flex-1 overflow-auto flex justify-center items-start">
+        
           {children}
-        </main>
+        
         
       </div>
   );
