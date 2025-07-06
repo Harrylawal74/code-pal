@@ -26,12 +26,22 @@ export function ExerciseSectionTabTemplate(){
 
 export default function FoundationsPage() {
   return (
+    /** The main tag is the whole area minus the sidebar (when visible) items are stacked on top of each other
+     * Items are centered 
+     */
     <main className="flex-col flex-start justify-center overflow-hidden w-full">
+        {/**This will be the top bar of the page */}
         <div className="flex justify-center">Top bar. This will contain hearts, streak etc</div>
+
+        {/**This container holds the two columns in the center of the page, items inside are centered 
+         * This container will grow wide enough to fit its contents without wrapping
+         * This container will shrink down but not below the minimum width of its contents 
+        */}
         <div className=" flex justify-center overflow-auto gap-15 mt-10 min-w-max px-4">
         
             {/* main exercises column. e.g. syntax basics followed by exercise squares */}
-            <div className="flex justify-center min-w-[212px] flex-none">
+            {/*This column (left) shrinks down to a fixed with and is always in page view */}
+            <div className="flex justify-center min-w-[212px] ">
                 <section className="mb-8">
                 <ExerciseSectionTabTemplate />
                     <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
@@ -49,6 +59,8 @@ export default function FoundationsPage() {
                 </section>
             </div>
 
+            {/* This column does not shrink or grow when the page is resized. it has a fixed width and overflows off the the
+            right when the page is too small*/}
             <div className="flex justify-center flex-shrink-0 w-[364px]">
                 <section className="mb-8">
                 <ExerciseSectionTabTemplate />
