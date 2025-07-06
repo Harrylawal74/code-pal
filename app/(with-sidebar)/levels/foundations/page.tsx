@@ -26,15 +26,15 @@ export function ExerciseSectionTabTemplate(){
 
 export default function FoundationsPage() {
   return (
-    <main className="flex-col flex-start justify-center overflow-auto gap-15 w-full">
+    <main className="flex-col flex-start justify-center overflow-hidden w-full">
         <div className="flex justify-center">Top bar. This will contain hearts, streak etc</div>
-        <div className=" flex justify-center overflow-auto gap-15 mt-10">
+        <div className=" flex justify-center overflow-auto gap-15 mt-10 min-w-max px-4">
         
             {/* main exercises column. e.g. syntax basics followed by exercise squares */}
-            <div className=" ">
+            <div className="flex justify-center min-w-[212px] flex-none">
                 <section className="mb-8">
                 <ExerciseSectionTabTemplate />
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+                    <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
                         <ExerciseBox />
                         <ExerciseBox />
                         <ExerciseBox />
@@ -49,10 +49,10 @@ export default function FoundationsPage() {
                 </section>
             </div>
 
-            <div className="">
+            <div className="flex justify-center flex-shrink-0 w-[364px]">
                 <section className="mb-8">
                 <ExerciseSectionTabTemplate />
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+                    <div className="grid grid-cols-5 gap-4 mt-4">
                         <ExerciseBox />
                         <ExerciseBox />
                         <ExerciseBox />
