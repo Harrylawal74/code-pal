@@ -34,8 +34,8 @@ export default function FoundationsPage() {
         <div className="flex justify-center">Top bar. This will contain hearts, streak etc</div>
 
         {/**This container holds the two columns in the center of the page, items inside are centered 
-         * This container will grow wide enough to fit its contents without wrapping
-         * This container will shrink down but not below the minimum width of its contents 
+         * This container will grow wide enough to fit its contents without wrapping (min-w-max)
+         * This container will shrink down but not below the minimum width of its contents (min-w-max)
         */}
         <div className=" flex justify-center overflow-auto gap-15 mt-10 min-w-max px-4">
         
