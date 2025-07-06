@@ -1,4 +1,5 @@
-
+import Link
+ from "next/link";
 export function ExerciseBox(){
     return(
         <div className=" w-15 h-15 rounded-xl bg-[#4b5563] transition-all duration-300 hover:scale-110 active "></div>
@@ -45,7 +46,9 @@ export default function FoundationsPage() {
                 <section className="mb-8">
                 <ExerciseSectionTabTemplate />
                     <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+                        <Link href="/exercises/exercise1">
                         <ExerciseBox />
+                        </Link>
                         <ExerciseBox />
                         <ExerciseBox />
                         <ExerciseBox />
