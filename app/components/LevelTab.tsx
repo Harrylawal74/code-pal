@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import level1 from "../data/leveldata/level1";
 
 // This is the LevelTab component
 
@@ -49,7 +50,7 @@ export function LevelTab() {
   <Link href="/levels/foundations">
   <LevelTabTemplate 
     status="Completed"
-    title="Foundations"
+    title={level1.level}
     description="Some description about the foundations of programming."
     lessons="5 lessons"
   />

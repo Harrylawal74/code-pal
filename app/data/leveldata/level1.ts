@@ -1,7 +1,7 @@
 import {Level} from "@/app/types/Questions";
 
 const level1: Level = {
-    level: "foundations",
+    level: "Foundations",
     sections: [
         {
             section: 1,
