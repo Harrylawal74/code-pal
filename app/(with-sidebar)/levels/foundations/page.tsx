@@ -1,6 +1,8 @@
 import Link from "next/link";
 import ExerciseBox from "../../../components/ExerciseBox";
 import {level1} from "../../../data/leveldata/level1";
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
+import { Level } from "../../../types/Questions";
 
 
 

@@ -1,11 +1,9 @@
-import Link from "next/link"
+import React from "react";
 
+type Props = {
+  title: string;
+};
 
-export default function test(){
-    return(
-        <div>
-        <div>Test Page</div>
-        <Link href="/learn">Learn</Link>
-        </div>
-    )
+export default function LevelTitle({ title }: Props) {
+  return <h2>{title}</h2>;
 }
