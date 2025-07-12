@@ -1,10 +1,7 @@
-import Link
- from "next/link";
-export function ExerciseBox(){
-    return(
-        <div className=" w-15 h-15 rounded-xl bg-[#4b5563] transition-all duration-300 hover:scale-110 active "></div>
-    )
-}
+import Link from "next/link";
+import ExerciseBox from "../../../components/ExerciseBox";
+
+
 
 
 /** This is the ExerciseSectionTab Template

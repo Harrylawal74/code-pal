@@ -32,7 +32,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
+
+      /*This flexes the entire webapp to allow for responsive throughout the application. */
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  flex h-screen`}
       >
    {children}
       </body>
