@@ -1,7 +1,16 @@
 import {Level} from "@/app/types/Questions";
 
+
+/*this is all of the data for level 1
+* it includes...
+* aT the moment level 1 is foundations, but I will continue to use numbers incase I want to change the name later
+*/
 const level1: Level = {
-    level: "Foundations",
+    name: "Foundations",
+    description:"Some description",
+    numberOfLessons: "5 lessons",
+    /*needs to be undefined until the user completes the level*/
+    status: "In Progress",
     sections: [
         {
             section: 1,

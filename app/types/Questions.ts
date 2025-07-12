@@ -18,6 +18,9 @@ export type Section = {
 };
 
 export type Level = {
-    level: string;
+    name: string;
+    description: string;
+    numberOfLessons: string;
+    status: string; 
     sections: Section[];
 };

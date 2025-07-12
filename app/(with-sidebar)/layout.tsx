@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     
     /*This flexes the entire page and allows for the webpage to be responsive. */
-      <div className="flex min-h-screen">
+      <div className="flex min-h-screen w-full">
         
         <SideBar/>
         

@@ -6,10 +6,10 @@ import level1 from "../data/leveldata/level1";
 
 //props for the LevelTab component
 type TabProps = { 
-  status: string; 
   title: string;
   description: string;
   lessons: string;
+  status: string; 
 }
 
 
@@ -49,10 +49,10 @@ export function LevelTab() {
   <span className="inline-grid grid-cols-1 gap-8 mx-5 mt-10">
   <Link href="/levels/foundations">
   <LevelTabTemplate 
-    status="Completed"
-    title={level1.level}
-    description="Some description about the foundations of programming."
-    lessons="5 lessons"
+    title={level1.name}
+    description={level1.description}
+    lessons={level1.numberOfLessons}
+    status={level1.status}
   />
   </Link>
 
