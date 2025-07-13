@@ -1,5 +1,6 @@
 export type Question = {
     id: string;
+    type: string; 
     question: string;
     options: string[];
     correctAnswer: string;
@@ -7,7 +8,6 @@ export type Question = {
 
 export type Exercise = {
     exercise: number;
-    title: string;
     questions: Question[];
 };
 
