@@ -1,5 +1,4 @@
-import FourMCQs from "@/app/components/MCQs"   
-import { FiveMCQs } from "@/app/components/MCQs"; 
+import MCQs from "@/app/components/MCQs"   
 import level1 from "@/app/data/leveldata/level1"
 import { Question } from "@/app/types/Questions";
 import {notFound} from "next/navigation";
@@ -28,15 +27,11 @@ export default function ExercisePage({ params }: Props){
 
     return(
         <main className="flex items-center rounded-2xl mx-4 my-10 px-5 py-5 w-full overflow-hidden ">
-            {question.type === "MCQ4" ? (
+            {question.type === "MCQ" ? (
             <div className="flex w-full justify-center">
-                <FourMCQs question={question}/>
+                <MCQs question={question}/>
                 </div>
-            ) : question.type ==="MCQ5" ? (
-                <div className="flex w-full justify-center">
-                <FiveMCQs question={question}/>
-                </div>
-                ):(
+            ):(
                 <p className="text-red-500">Unsupported question type</p>
             )}
 

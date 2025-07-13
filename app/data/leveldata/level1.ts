@@ -27,7 +27,7 @@ const level1: Level = {
                         {
                             /* Level 1 Section 1 Exercise 1 Question 1*/ 
                             id: "1-1-1-1",
-                            type: "MCQ4",
+                            type: "MCQ",
                             question: "What is code?",
                             options: [
                                 "A set of instructions for a computer",
@@ -41,7 +41,7 @@ const level1: Level = {
                         {
                             /* Level 1 Section 1 Exercise 1 Question 2*/ 
                             id: "1-1-1-2",
-                            type: "MCQ5",
+                            type: "MCQ",
                             question: "What is a variable?",
                             options: [
                                 "A value that can change",
@@ -55,7 +55,7 @@ const level1: Level = {
                         {
                             /* Level 1 Section 1 Exercise 1 Question 3*/ 
                             id: "1-1-1-3",
-                            type: "MCQ4",
+                            type: "MCQ",
                             question: "What is a function?",
                             options: [
                                 "A reusable block of code",
@@ -68,7 +68,7 @@ const level1: Level = {
                         {
                             /* Level 1 Section 1 Exercise 1 Question 4*/ 
                             id: "1-1-1-4",
-                            type: "MCQ4",
+                            type: "MCQ",
                             question: "What is a loop?",
                             options: [
                                 "A way to repeat code",
