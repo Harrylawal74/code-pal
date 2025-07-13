@@ -41,12 +41,13 @@ const level1: Level = {
                         {
                             /* Level 1 Section 1 Exercise 1 Question 2*/ 
                             id: "1-1-1-2",
-                            type: "MCQ4",
+                            type: "MCQ5",
                             question: "What is a variable?",
                             options: [
                                 "A value that can change",
                                 "A fixed value",
                                 "A type of function",
+                                "A programming language",
                                 "A programming language",
                             ],
                             correctAnswer: "A value that can change"
