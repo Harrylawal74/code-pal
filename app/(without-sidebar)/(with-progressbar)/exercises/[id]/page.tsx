@@ -14,10 +14,10 @@ interface Props {
 
 
 /** When the ExercisePage is called the id is passes as a prop "params" */
-export default function ExercisePage({ params }: Props){
+export default async function ExercisePage({ params }: Props){
 
     /**Extracts the id from params*/
-    const {id} = params;
+    const {id} = await params;
 
     /** Uses the id to find the corresponding question in level1.ts */
     const question: Question | undefined = level1.sections

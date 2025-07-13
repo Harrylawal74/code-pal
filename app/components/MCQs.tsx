@@ -21,6 +21,7 @@ export default function MCQs({question}: {question: Question}) {
             ))}
             
             
+            <button type="submit" className="bg-primary px-5 py-2 rounded-3xl flex justify-center items-center">Hello</button>
         </form>
     )
 }
