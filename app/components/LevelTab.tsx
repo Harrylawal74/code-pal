@@ -31,7 +31,7 @@ export default function LevelTabTemplate({status, title, description, lessons}: 
         <p className="text-[16px] text-gray-500">{description}</p>
         <div className="flex justify-between items-center mt-6 text-[14px] mt-10">
             <div className="text-gray-600">{lessons}</div>
-            <h3 className="text-blue-500 text-[16px]">Review</h3>
+            <h3 className="text-blue-600 hover:text-blue-900 text-[16px] hover:bg-blue-200 rounded-3xl px-3">Review</h3>
         </div>
       </div>
     </div>

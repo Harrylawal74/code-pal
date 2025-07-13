@@ -7,8 +7,10 @@ import {Level} from "@/app/types/Questions";
 
 
 * All of the data for level 1
-* it includes...
 * at the moment level 1 is foundations, but I will continue to use numbers incase I want to change the name later
+* this data can be used to fill in compnents with props from here 
+* this means that to change component data this file can be edited and the changes will trickle through
+* FOLLOW CLASS STRUCTURE!
 */
 const level1: Level = {
     name: "Foundations",
@@ -80,9 +82,50 @@ const level1: Level = {
                         }
                     ]
                 }
+            ],
+            
+        },
+
+        {
+            section: 2,
+            title: "Control Flow",
+            exercises: [
+                {
+                    exercise: 1,
+                    questions: [
+                        {
+                            /* Level 1 Section 2 Exercise 1 Question 1*/ 
+                            id: "1-2-1-1",
+                            type: "MCQ",
+                            question: "What is an if statement?",
+                            options: [
+                                "A way to make decisions in code",
+                                "A type of variable",
+                                "A programming language",
+                                "A type of software",
+                            ],
+                            correctAnswer: "A way to make decisions in code"
+                        },
+                        {
+                            /* Level 1 Section 2 Exercise 1 Question 2*/ 
+                            id: "1-2-1-2",
+                            type: "MCQ",
+                            question: "What is a switch statement?",
+                            options: [
+                                "A way to handle multiple conditions",
+                                "A type of variable",
+                                "A programming language",
+                                "A type of software",
+                            ],
+                            correctAnswer: "A way to handle multiple conditions"
+                        }
+                    ]
+                }
             ]
         }
-    ]
+    ],
+
+    
 };
 
 export default level1;

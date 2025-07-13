@@ -3,6 +3,9 @@ import level1 from "@/app/data/leveldata/level1"
 import { Question } from "@/app/types/Questions";
 import {notFound} from "next/navigation";
 
+
+
+
 interface Props {
     params: {
         id: string;
@@ -10,12 +13,32 @@ interface Props {
 }
 
 
+/** When the ExercisePage is called the id is passes as a prop "params" */
 export default function ExercisePage({ params }: Props){
+
+    /**Extracts the id from params*/
     const {id} = params;
 
+    /** Uses the id to find the corresponding question in level1.ts */
     const question: Question | undefined = level1.sections
+
+
+        /** for each section take the exercises array
+         * flattens all exercises into a single array
+        */
         .flatMap((section) => section.exercises)
+
+
+        /** for each exercise take its questions array
+         * flattents all the questions into a single array
+         */
         .flatMap((exercise) => exercise.questions)
+
+
+        /** searches the array of questions generated above 
+         * returns the Question with the matching id 
+         * or undefined if not found
+         */
         .find((question) => question.id === id);
 
 

@@ -1,3 +1,6 @@
+/**List of types predefined for the levels, sections, exercises, and questions*/
+
+
 export type Question = {
     id: string;
     type: string; 
