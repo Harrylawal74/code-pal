@@ -19,6 +19,9 @@ export default async function ExercisePage({ params }: Props){
     /**Extracts the id from params*/
     const {id} = await params;
 
+    /** Need to create a condition that identifies which level to look for e.g. if ID is 2-1-1-1 then look
+     in level 2 or 4-1-1-1-1 then look in level 4 */
+    
     /** Uses the id to find the corresponding question in level1.ts */
     const question: Question | undefined = level1.sections
 
