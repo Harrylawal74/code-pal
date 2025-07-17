@@ -20,7 +20,8 @@ export default async function ExercisePage({ params }: Props){
     const {id} = await params;
 
     /** Need to create a condition that identifies which level to look for e.g. if ID is 2-1-1-1 then look
-     in level 2 or 4-1-1-1-1 then look in level 4 */
+     in level 2 or 4-1-1-1-1 then look in level 4. This could also dictate the imports e.g. if level
+     4 is being loaded then import level 4 and if an MCQ is being called then import the MCQ component*/
     
     /** Uses the id to find the corresponding question in level1.ts */
     const question: Question | undefined = level1.sections
