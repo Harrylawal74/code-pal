@@ -14,9 +14,14 @@ interface Props {
 
 
 // Map string types to components
+// Each component accepts a question prip of type Question
+// e.g when question.type === "MCQ" then the MCQs component is rendered
+// Note: I was going to use a series of if statements to check the type of question but
+// that had an O(n) time complexity, whereas this has an O(1) time complexity
 const componentMap: Record<QuestionType, React.FC<{ question: Question }>> = {
   MCQ: MCQs,
-  RQ: RQs, // Add other types as needed
+  RQ: RQs, 
+  // If I add more question types then they need to be added here!!!!
 };
 
 
@@ -62,6 +67,9 @@ export default async function ExercisePage({ params }: Props){
     // Get the component based on question.type
     const Component = componentMap[question.type as QuestionType];
 
+    /** Renders the correct component and passes the question object so that the question
+     * information can be displayed
+     */
     return (
         <main className="flex items-center rounded-2xl mx-4 my-10 px-5 py-5 w-full overflow-hidden ">
         {Component ? (

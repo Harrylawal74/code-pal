@@ -1,5 +1,11 @@
-export default function RQs(){
+import { Question } from "../types/Questions"   
+
+export default function RQs({question}: {question: Question}){
     return(
-        <div>hello world</div>
+        <main>
+            <div>hello world</div>
+        <div>{question.question}</div>
+        </main>
+        
     )
 }
