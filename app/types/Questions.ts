@@ -1,9 +1,10 @@
 /**List of types predefined for the levels, sections, exercises, and questions*/
 
+export type QuestionType = "MCQ" | "RQ"; // Add more as neededc 
 
 export type Question = {
     id: string;
-    type: string; 
+    type: QuestionType; 
     question: string;
     options: string[];
     correctAnswer: string;

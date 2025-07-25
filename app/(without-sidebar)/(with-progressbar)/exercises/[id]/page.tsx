@@ -1,8 +1,8 @@
 import MCQs from "@/app/components/MCQs"   
 import level1 from "@/app/data/leveldata/level1"
-import { Question } from "@/app/types/Questions";
+import { Question, QuestionType } from "@/app/types/Questions";
 import {notFound} from "next/navigation";
-
+import RQs from "@/app/components/RQs"; // Assuming you have a component for RQ type questions
 
 
 
@@ -11,6 +11,13 @@ interface Props {
         id: string;
     }
 }
+
+
+// Map string types to components
+const componentMap: Record<QuestionType, React.FC<{ question: Question }>> = {
+  MCQ: MCQs,
+  RQ: RQs, // Add other types as needed
+};
 
 
 /** When the ExercisePage is called the id is passes as a prop "params" */
@@ -51,7 +58,23 @@ export default async function ExercisePage({ params }: Props){
         return notFound();
     }
 
+    
+    // Get the component based on question.type
+    const Component = componentMap[question.type as QuestionType];
 
+    return (
+        <main className="flex items-center rounded-2xl mx-4 my-10 px-5 py-5 w-full overflow-hidden ">
+        {Component ? (
+            <div className="flex w-full justify-center">
+            <Component question={question} />
+            </div>
+        ) : (
+            <p className="text-red-500">Unsupported question type: {question.type}</p>
+        )}
+        </main>
+    );
+
+/** 
     return(
         <main className="flex items-center rounded-2xl mx-4 my-10 px-5 py-5 w-full overflow-hidden ">
             {question.type === "MCQ" ? (
@@ -65,5 +88,5 @@ export default async function ExercisePage({ params }: Props){
             
             
         </main>
-    );
+    );*/
 }
