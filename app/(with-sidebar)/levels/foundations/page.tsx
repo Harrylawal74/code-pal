@@ -68,7 +68,7 @@ export default function FoundationsPage() {
             {/* This column does not shrink or grow when the page is resized. it has a fixed width and overflows off the the
             right when the page is too small*/}
             <div className="flex justify-center flex-shrink-0 w-[364px] bg-gray-500 rounded-3xl h-200 pt-10">
-                Some stuff i havent thout about yet
+                Some stuff i havent thought about yet
             </div>
             </div>
     </main>
