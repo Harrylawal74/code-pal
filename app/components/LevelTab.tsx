@@ -47,6 +47,7 @@ export default function LevelTabTemplate({status, title, description, lessons}: 
 export function LevelTab() {
  return(
   <span className="inline-grid grid-cols-1 gap-8 mx-5 mt-10">
+    {/**Level 1 tab, displayed on the learn page */}
   <Link href="/levels/foundations">
   <LevelTabTemplate 
     title={level1.name}
