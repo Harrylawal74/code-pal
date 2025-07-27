@@ -13,6 +13,7 @@ export default function SideBar() {
         <Link href="/learn" className="bg-green-900 h-9 w-40 rounded-xl flex justify-center items-center">Learn</Link>
         <br />
         <Link href="/again" className="bg-green-900 h-9 w-40 rounded-xl flex justify-center items-center">Again</Link>
+        <br />
         <Link href="/levels/level2" className="bg-green-900 h-9 w-40 rounded-xl flex justify-center items-center">Level 2</Link>
 
         </div>

@@ -49,7 +49,7 @@ export default function FoundationsPage() {
                 <section className="mb-8">
                 <ExerciseSectionTabTemplate title={level1.sections[0].title}/>
                     <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
-                        <Link href="/exercises/exercise1">
+                        <Link href="/exercises/1-1-1-3">
                         <ExerciseBox />
                         </Link>
                         <ExerciseBox />

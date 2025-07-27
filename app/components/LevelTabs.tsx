@@ -44,7 +44,7 @@ export default function LevelTabTemplate({status, title, description, lessons}: 
  * * The status, title, description and lessons are passed as props to the template.
  */
 
-export function LevelTab() {
+export function LevelTabs() {
  return(
   <span className="inline-grid grid-cols-1 gap-8 mx-5 mt-10">
     {/**Level 1 tab, displayed on the learn page */}

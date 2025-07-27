@@ -1,4 +1,4 @@
-import {LevelTab} from "./components/LevelTab";
+import {LevelTab} from "./components/LevelTabs";
 import RobotSVG from "./components/icons/LevelIcons/RobotSVG";
 import Link from "next/link"
 import Learn from "./(with-sidebar)/learn/page";

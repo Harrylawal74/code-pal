@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { Level } from "../../types/Questions";
-import { LevelTab } from "../../components/LevelTab";
+import { LevelTabs } from "../../components/LevelTabs";
 import level1 from "../../data/leveldata/level1";
 
 
@@ -30,7 +30,7 @@ export default function Learn() {
   return (
    <div className="flex min-h-screen">
     
-    <LevelTab />
+    <LevelTabs />
  
 
     
