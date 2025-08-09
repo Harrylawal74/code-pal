@@ -79,7 +79,33 @@ const level1: Level = {
                                 "A type of software",
                             ],
                             correctAnswer: "A way to repeat code"
+                        },
+                        {
+                            /* Level 1 Section 1 Exercise 1 Question 5 */
+                            id: "1-1-1-5",
+                            type: "FIB",
+                            question: "Complete the sentence:",
+                            options: [], // not used for FIB
+                            correctAnswer: "", // not used for FIB
+                            fibData: {
+                                sentenceParts: [
+                                { id: 1, text: "Python is a", isBlank: false },
+                                { id: 2, text: "", isBlank: true },
+                                { id: 3, text: "that is used to make", isBlank: false },
+                                { id: 4, text: "", isBlank: true },
+                                { id: 5, text: ".", isBlank: false }
+                                ],
+                                options: [
+                                { id: 1, text: "programming language" },
+                                { id: 2, text: "algorithms" },
+                                ],
+                                correctBlanks: [
+                                { id: 2, correctOptionId: 1 },
+                                { id: 4, correctOptionId: 2 }
+                                ]
+                            }
                         }
+
                     ]
                 }
             ],

@@ -1,9 +1,11 @@
-import MCQs from "@/app/components/MCQs"   
-import level1 from "@/app/data/leveldata/level1"
+import MCQs from "@/app/components/MCQs";   
+import level1 from "@/app/data/leveldata/level1";
 import { Question, QuestionType } from "@/app/types/Questions";
-import {notFound} from "next/navigation";
+import { notFound } from "next/navigation";
 import RQs from "@/app/components/RQs"; // Assuming you have a component for RQ type questions
 
+// Import the FillInTheBlanks component for FIB questions
+import FillInTheBlanks from "@/app/components/FillInTheBlanks"; // <-- Added import for FIB component
 
 
 interface Props {
@@ -21,7 +23,15 @@ interface Props {
 const componentMap: Record<QuestionType, React.FC<{ question: Question }>> = {
   MCQ: MCQs,
   RQ: RQs, 
-  // If I add more question types then they need to be added here!!!!
+  FIB: (props) => {
+    // Wrap the FIB component to pass only fibData props to match the expected props shape
+    const fibData = props.question.fibData!;
+    return <FillInTheBlanks
+      sentenceParts={fibData.sentenceParts}
+      options={fibData.options}
+      correctBlanks={fibData.correctBlanks}
+    />;
+  }, // <-- Added support for FIB question type here
 };
 
 
@@ -63,7 +73,7 @@ export default async function ExercisePage({ params }: Props){
         return notFound();
     }
 
-    
+
     // Get the component based on question.type
     const Component = componentMap[question.type as QuestionType];
 
@@ -82,6 +92,8 @@ export default async function ExercisePage({ params }: Props){
         </main>
     );
 
+
+
 /** 
     return(
         <main className="flex items-center rounded-2xl mx-4 my-10 px-5 py-5 w-full overflow-hidden ">
@@ -89,12 +101,13 @@ export default async function ExercisePage({ params }: Props){
             <div className="flex w-full justify-center">
                 <MCQs question={question}/>
                 </div>
-            ):(
+            ) : (
                 <p className="text-red-500">Unsupported question type</p>
             )}
 
             
             
         </main>
-    );*/
+    );
+*/
 }
