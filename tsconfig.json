@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/SectionTab.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".app/types/**/*.ts", "app/components/SectionTab.tsx", "app/components/PythonBlocktesmp"],
   "exclude": ["node_modules"]
 }

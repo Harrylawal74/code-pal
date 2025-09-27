@@ -6,6 +6,7 @@ import RQs from "@/app/components/RQs"; // Assuming you have a component for RQ 
 
 // Import the FillInTheBlanks component for FIB questions
 import FillInTheBlanks from "@/app/components/FillInTheBlanks"; // <-- Added import for FIB component
+import FIBCode from "@/app/components/FIBCode";
 
 
 interface Props {
@@ -32,6 +33,15 @@ const componentMap: Record<QuestionType, React.FC<{ question: Question }>> = {
       correctBlanks={fibData.correctBlanks}
     />;
   }, // <-- Added support for FIB question type here
+  FIBCode: (props) => {
+    // Wrap the FIB component to pass only fibData props to match the expected props shape
+    const fibData = props.question.fibData!;
+    return <FIBCode
+      sentenceParts={fibData.sentenceParts}
+      options={fibData.options}
+      correctBlanks={fibData.correctBlanks}
+    />;
+  },
 };
 
 
