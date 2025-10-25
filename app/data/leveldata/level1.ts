@@ -106,11 +106,11 @@ const level1: Level = {
                             }
                         },
                         {
-                            /* Level 1 Section 1 Exercise 1 Question 5 */
+                            /* Level 1 Section 1 Exercise 1 Question 6 */
                             id: "1-1-1-6",
                             type: "FIBTyping",
                             question: "Complete the sentence:",
-                            options: [], // not used for FIB
+                            options: [], // not used for FIB typing
                             correctAnswer: "", // not used for FIB
                             fibData: {
                                 sentenceParts: [

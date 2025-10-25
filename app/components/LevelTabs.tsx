@@ -1,42 +1,62 @@
 import React from "react";
 import Link from "next/link";
-import level1 from "../data/leveldata/level1";
+import level1 from "../data/leveldata/level1"; 
 
-// This is the LevelTab component
-
-//props for the LevelTab component
-type TabProps = { 
+interface CardProps {
   title: string;
   description: string;
   lessons: string;
-  status: string; 
+  status: "In Progress" | "Completed" | "Not Started";
 }
 
+const LevelTabTemplate: React.FC<CardProps> = ({ status, title, description, lessons }) => {
+  const statusBg =
+    status === "In Progress"
+      ? "bg-orange-100 text-orange-800"
+      : status === "Not Started"
+      ? "bg-purple-100 text-purple-800"
+      : "bg-green-100 text-green-800"; // Completed
 
-
-/** This is the LevelTab template
- * * It is used to display a level of learning content.
- * * Each level uses this as a template to display the level information.
- */
-export default function LevelTabTemplate({status, title, description, lessons}: TabProps) {
   return (
-    <div className="w-125 h-65 bg-white rounded-xl shadow-lg text-black text-xl relative">
-      <div className="w-100% h-3 bg-[#0aa775] rounded-t-xl"></div>
-      <div className="pt-6 px-6 w-125 h-55 bg-white-900 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <div className="flex justify-between items-center">
-            <div>logo</div>
-            <h3 className="text-green-900 text-[15px] rounded-xl bg-green-100 px-1 py-0.5">{status}</h3>
+    <div className="w-[500px] h-[260px] perspective-1000">
+      <div className="w-full h-full bg-white rounded-3xl shadow-2xl relative overflow-hidden transform transition-transform duration-500 hover:rotate-y-3 hover:rotate-x-2 hover:scale-105 hover:shadow-3xl">
+        {/* Top gradient accent bar */}
+        <div className="w-full h-3 bg-gradient-to-r from-green-400 to-green-600 rounded-t-3xl"></div>
+
+        {/* Card content */}
+        <div className="p-6 flex flex-col justify-between h-[257px]">
+          {/* Header */}
+          <div className="flex justify-between items-center">
+            <div className="font-bold text-lg text-gray-800">Logo</div>
+            <span className={`text-sm rounded-full px-3 py-1 font-medium ${statusBg}`}>
+              {status}
+            </span>
+          </div>
+
+          {/* Title & Description */}
+          <div className="mt-4">
+            <h2 className="font-bold text-xl text-gray-900">{title}</h2>
+            <p className="text-gray-500 mt-2">{description}</p>
+          </div>
+
+          {/* Footer */}
+          <div className="flex justify-between items-center mt-6">
+            <div className="text-gray-600 text-sm">{lessons}</div>
+            <button className="text-blue-600 font-medium text-sm hover:text-blue-900 hover:bg-blue-100 rounded-3xl px-4 py-1 shadow-[0_6px_0_0_#1e40af] hover:translate-y-[1px] active:translate-y-[3px] transition-all duration-200">
+              Review
+            </button>
+          </div>
         </div>
-        <h2 className="font-bold mt-4">{title}</h2>
-        <p className="text-[16px] text-gray-500">{description}</p>
-        <div className="flex justify-between items-center mt-6 text-[14px] mt-10">
-            <div className="text-gray-600">{lessons}</div>
-            <h3 className="text-blue-600 hover:text-blue-900 text-[16px] hover:bg-blue-200 rounded-3xl px-3">Review</h3>
-        </div>
+
+        {/* Optional inner glow for depth */}
+        <div className="absolute inset-0 pointer-events-none rounded-3xl shadow-inner"></div>
       </div>
     </div>
   );
-}
+};
+
+export default LevelTabTemplate;
+
 
 
 /** These are all of the level tabs
