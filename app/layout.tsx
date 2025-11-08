@@ -4,6 +4,7 @@ import "./globals.css";
 import Link from "next/link";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
+import SignOutButton from "./components/SignOutButton";
 export const dynamic = 'force-dynamic';
 
 /**
@@ -52,9 +53,12 @@ export default async function RootLayout({
         {/* Optional global navigation */}
         <nav className="absolute top-0 left-0 w-full bg-gray-800 text-white p-4 flex justify-between items-center">
           <Link href="/">CodePal</Link>
-          <div>
+          <div className="mx-10 space-x-10">
             {user ? (
+              <>
               <span className="text-sm">Signed in as {user.email}</span>
+              <SignOutButton />
+            </>
             ) : (
               <Link href="/login" className="text-sm underline">
                 Sign In
