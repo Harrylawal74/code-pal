@@ -14,6 +14,7 @@ export default function SignOutButton() {
     } else {
       // Redirect to login page or home
       router.push('/login')
+      window.location.reload()
     }
   }
 

@@ -33,7 +33,7 @@ export default function FoundationsPage() {
     /** The main tag is the whole area minus the sidebar (when visible) items are stacked on top of each other
      * Items are centered 
      */
-    <main className="flex-col justify-center overflow-hidden w-full">
+    <main className="flex-col justify-center overflow-hidden w-full mt-10">
         {/**This will be the top bar of the page */}
         <div className="flex justify-center">Top bar. This will contain hearts, streak etc</div>
 
@@ -41,7 +41,7 @@ export default function FoundationsPage() {
          * This container will grow wide enough to fit its contents without wrapping (min-w-max)
          * This container will shrink down but not below the minimum width of its contents (min-w-max)
         */}
-        <div className=" flex justify-center overflow-auto gap-15 mt-10 min-w-max px-4">
+        <div className="flex justify-center overflow-auto gap-15 mt-10 min-w-max px-4">
         
             {/* main exercises column. e.g. syntax basics followed by exercise squares */}
             {/*This column (left) shrinks down to a fixed with and is always in page view */}

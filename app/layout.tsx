@@ -51,7 +51,7 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex h-screen bg-gray-300`}
       >
         {/* Optional global navigation */}
-        <nav className="absolute top-0 left-0 w-full bg-gray-800 text-white p-4 flex justify-between items-center">
+        <nav className="absolute top-0 left-0 w-full bg-gray-800 text-white p-4 flex justify-between items-center min-w-[600px] border-b border-gray-700 border-solid">
           <Link href="/">CodePal</Link>
           <div className="mx-10 space-x-10">
             {user ? (
