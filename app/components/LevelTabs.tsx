@@ -19,9 +19,9 @@ const LevelTabTemplate: React.FC<CardProps> = ({ status, title, description, les
 
   return (
     <div className="w-[500px] h-[260px] perspective-1000">
-      <div className="w-full h-full bg-white rounded-3xl shadow-2xl relative overflow-hidden transform transition-transform duration-500 hover:rotate-y-3 hover:rotate-x-2 hover:scale-105 hover:shadow-3xl">
+      <div className="w-full h-full bg-gray-700 rounded-3xl shadow-2xl relative overflow-hidden transform transition-transform duration-500 hover:rotate-y-3 hover:rotate-x-2 hover:scale-105 hover:shadow-3xl border-2 border-gray-900">
         {/* Top gradient accent bar */}
-        <div className="w-full h-3 bg-gradient-to-r from-green-400 to-green-600 rounded-t-3xl"></div>
+        <div className="w-full h-3 bg-gradient-to-r from-purple-700 to-purple-900 rounded-t-3xl"></div>
 
         {/* Card content */}
         <div className="p-6 flex flex-col justify-between h-[257px]">
@@ -36,12 +36,12 @@ const LevelTabTemplate: React.FC<CardProps> = ({ status, title, description, les
           {/* Title & Description */}
           <div className="mt-4">
             <h2 className="font-bold text-xl text-gray-900">{title}</h2>
-            <p className="text-gray-500 mt-2">{description}</p>
+            <p className="text-gray-400 mt-2">{description}</p>
           </div>
 
           {/* Footer */}
           <div className="flex justify-between items-center mt-6">
-            <div className="text-gray-600 text-sm">{lessons}</div>
+            <div className="text-gray-300 text-sm">{lessons}</div>
             <button className="text-blue-600 font-medium text-sm hover:text-blue-900 hover:bg-blue-100 rounded-3xl px-4 py-1 shadow-[0_6px_0_0_#1e40af] hover:translate-y-[1px] active:translate-y-[3px] transition-all duration-200">
               Review
             </button>
@@ -66,10 +66,10 @@ export default LevelTabTemplate;
 
 export function LevelTabs() {
  return(
-  <span className="inline-grid grid-cols-1 gap-8 mx-5 mt-10">
+  <div className="flex flex-wrap items-start justify-center w-full mx-10 gap-10 mt-25">
     {/**Level 1 tab, displayed on the learn page */}
   <Link href="/levels/foundations">
-  <LevelTabTemplate 
+  <LevelTabTemplate  
     title={level1.name}
     description={level1.description}
     lessons={level1.numberOfLessons}
@@ -116,6 +116,6 @@ export function LevelTabs() {
 
   
   
-  </span>
+  </div>
  );
 }

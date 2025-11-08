@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link"
 import SideBar from "../components/SideBar";
+export const dynamic = 'force-dynamic';
 
 /* * This is the main layout of the application.
  *It has the side bar component imported and rendered inside the body.
@@ -30,7 +31,7 @@ export default function RootLayout({
   return (
     
     /*This flexes the entire page and allows for the webpage to be responsive. */
-      <div className="flex min-h-screen w-full">
+      <div className="flex min-h-screen w-full bg-gray-800">
         
         <SideBar/>
         
