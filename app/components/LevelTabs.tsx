@@ -19,7 +19,7 @@ const LevelTabTemplate: React.FC<CardProps> = ({ status, title, description, les
 
   return (
     <div className="w-[500px] h-[260px] perspective-1000">
-      <div className="w-full h-full bg-gray-700 rounded-3xl shadow-2xl relative overflow-hidden transform transition-transform duration-500 hover:rotate-y-3 hover:rotate-x-2 hover:scale-105 hover:shadow-3xl border-2 border-gray-900">
+      <div className="w-full h-full bg-gray-600 rounded-3xl shadow-2xl relative overflow-hidden transform transition-transform duration-500 hover:rotate-y-3 hover:rotate-x-2 hover:scale-105 hover:shadow-3xl border-2 border-gray-900">
         {/* Top gradient accent bar */}
         <div className="w-full h-3 bg-gradient-to-r from-purple-700 to-purple-900 rounded-t-3xl"></div>
 
@@ -42,7 +42,7 @@ const LevelTabTemplate: React.FC<CardProps> = ({ status, title, description, les
           {/* Footer */}
           <div className="flex justify-between items-center mt-6">
             <div className="text-gray-300 text-sm">{lessons}</div>
-            <button className="text-blue-600 font-medium text-sm hover:text-blue-900 hover:bg-blue-100 rounded-3xl px-4 py-1 shadow-[0_6px_0_0_#1e40af] hover:translate-y-[1px] active:translate-y-[3px] transition-all duration-200">
+            <button className="text-blue-600 font-medium text-sm bg-gray-400 hover:text-blue-900 hover:bg-blue-100 rounded-3xl px-4 py-1 shadow-[0_6px_0_0_#1e40af] hover:translate-y-[1px] active:translate-y-[3px] transition-all duration-200 mb-2">
               Review
             </button>
           </div>

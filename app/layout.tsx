@@ -56,7 +56,7 @@ export default async function RootLayout({
           <div className="mx-10 space-x-10">
             {user ? (
               <>
-              <span className="text-sm">Signed in as {user.email}</span>
+              <span className="text-sm">Hello {user.email} !</span>
               <SignOutButton />
             </>
             ) : (
