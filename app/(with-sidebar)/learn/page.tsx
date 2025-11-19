@@ -28,7 +28,7 @@ import level1 from "../../data/leveldata/level1";
   */
 export default function Learn() {
   return (
-   <div className="flex min-h-screen">
+   <div className="flex min-h-screen bg-gray-700 rounded-3xl m-5">
     
     <LevelTabs />
  

@@ -47,28 +47,31 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex h-screen bg-gray-300`}
-      >
-        {/* Optional global navigation */}
-        <nav className="absolute top-0 left-0 w-full bg-gray-800 text-white p-4 flex justify-between items-center min-w-[600px] border-b border-gray-700 border-solid">
-          <Link href="/">CodePal</Link>
-          <div className="mx-10 space-x-10">
-            {user ? (
-              <>
-              <span className="text-sm">Hello {user.email} !</span>
-              <SignOutButton />
-            </>
-            ) : (
-              <Link href="/login" className="text-sm underline">
-                Sign In
-              </Link>
-            )}
-          </div>
-        </nav>
+<body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col bg-gray-800`}>
 
-        <main className="w-full pt-16">{children}</main>
-      </body>
+  {/* Navbar with outside margin */}
+  <div className="p-4 bg-gray-800">
+    <nav className="bg-gray-700 text-white px-6 py-4 flex justify-between items-center min-w-[600px] rounded-3xl border border-gray-700">
+      <Link href="/">CodePal</Link>
+      <div className="space-x-10">
+        {user ? (
+          <>
+            <span className="text-sm">Hello {user.email}!</span>
+            <SignOutButton />
+          </>
+        ) : (
+          <Link href="/login" className="text-sm underline">
+            Sign In
+          </Link>
+        )}
+      </div>
+    </nav>
+  </div>
+
+  <main className="flex-1">
+    {children}
+  </main>
+</body>
     </html>
   );
 }
