@@ -21,7 +21,7 @@ export default function SignOutButton() {
   return (
     <button
       onClick={handleSignOut}
-      className="bg-purple-600 text-white p-2 rounded-xl shadow-[0_4px_0_0_#4c1d95] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#4c1d95] active:translate-y-[4px] active:shadow-none duration-150"
+      className="bg-purple-800 text-white p-2 rounded-xl shadow-[0_4px_0_0_#4c1d95] hover:translate-y-[2px] hover:shadow-[0_2px_0_0_#4c1d95] active:translate-y-[4px] active:shadow-none duration-150"
     >
       Sign Out
     </button>

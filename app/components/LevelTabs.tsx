@@ -6,7 +6,7 @@ interface CardProps {
   title: string;
   description: string;
   lessons: string;
-  status: "In Progress" | "Completed" | "Not Started";
+  status: string;
 }
 
 const LevelTabTemplate: React.FC<CardProps> = ({ status, title, description, lessons }) => {
@@ -18,24 +18,27 @@ const LevelTabTemplate: React.FC<CardProps> = ({ status, title, description, les
       : "bg-green-100 text-green-800"; // Completed
 
   return (
-    <div className="w-[500px] h-[260px] perspective-1000">
-      <div className="w-full h-full bg-gray-600 rounded-3xl shadow-2xl relative overflow-hidden transform transition-transform duration-500 hover:rotate-y-3 hover:rotate-x-2 hover:scale-105 hover:shadow-3xl border-2 border-gray-900">
+    <div className="min-w-[400px] min-h-[300px] perspective-1000">
+      <div className="w-full h-full bg-gray-800 rounded-3xl shadow-2xl relative overflow-hidden shadow-xl hover:shadow-green-500/50 transition-all duration-500 hover:rotate-y-3 hover:rotate-x-2 hover:scale-105 hover:shadow-3xl border-2 border-gray-900">
         {/* Top gradient accent bar */}
         <div className="w-full h-3 bg-gradient-to-r from-purple-700 to-purple-900 rounded-t-3xl"></div>
 
         {/* Card content */}
         <div className="p-6 flex flex-col justify-between h-[257px]">
           {/* Header */}
-          <div className="flex justify-between items-center">
-            <div className="font-bold text-lg text-gray-800">Logo</div>
+          <div className="flex justify-between items-center bg-gray-400 p-3 rounded-2xl">
+            <div className="font-bold text-lg text-white">Logo</div>
+            <div className="flex justify-between gap-4">
+              <div>Logo</div>
             <span className={`text-sm rounded-full px-3 py-1 font-medium ${statusBg}`}>
               {status}
             </span>
+            </div>
           </div>
 
           {/* Title & Description */}
           <div className="mt-4">
-            <h2 className="font-bold text-xl text-gray-900">{title}</h2>
+            <h2 className="font-bold text-xl text-white">{title}</h2>
             <p className="text-gray-400 mt-2">{description}</p>
           </div>
 
@@ -66,7 +69,7 @@ export default LevelTabTemplate;
 
 export function LevelTabs() {
  return(
-  <div className="flex flex-wrap items-start justify-center w-full mx-10 gap-10 mt-25">
+  <div className="flex flex-wrap items-start justify-center w-full mx-2 gap-5 mt-25 my-100">
     {/**Level 1 tab, displayed on the learn page */}
   <Link href="/levels/foundations">
   <LevelTabTemplate  

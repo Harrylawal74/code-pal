@@ -52,15 +52,15 @@ export default async function RootLayout({
   {/* Navbar with outside margin */}
   <div className="p-4 bg-gray-800">
     <nav className="bg-gray-700 text-white px-6 py-4 flex justify-between items-center min-w-[600px] rounded-3xl border border-gray-700">
-      <Link href="/">CodePal</Link>
+      <Link className="bg-gray-300 p-4 rounded-xl text-gray-900 font-bold hover:bg-gray-500 transition-all duration-400 shadow-xl shadow-gray-900/100" href="/">CodePal</Link>
       <div className="space-x-10">
         {user ? (
           <>
-            <span className="text-sm">Hello {user.email}!</span>
+            <span className="">Hello {user.email}!</span>
             <SignOutButton />
           </>
         ) : (
-          <Link href="/login" className="text-sm underline">
+          <Link href="/login" className="underline bg-gray-300 p-4 rounded-xl text-gray-900 font-bold hover:bg-gray-500 transition-all duration-400 shadow-xl shadow-gray-900/100">
             Sign In
           </Link>
         )}
