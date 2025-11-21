@@ -36,6 +36,7 @@ export default function LoginPage() {
         <button type="submit" className="bg-blue-600 text-white rounded p-2 mt-10">
           Log In
         </button>
+        <a href="/signup" className='text-blue-400 text-sm hover:underline block mt-1'>Create an account !</a>
         <a href="/reset-password" className="text-blue-400 text-sm hover:underline block mt-2">
           Forgot password?
         </a>

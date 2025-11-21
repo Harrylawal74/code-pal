@@ -1,33 +1,19 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { supabase } from '@/lib/supabase/client'
-import { useRouter } from 'next/navigation'
 
 export default function UpdatePasswordPage() {
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState('')
-  const router = useRouter()
 
-  // 🔥 1. Restore session from URL token
-  useEffect(() => {
-    const exchangeSession = async () => {
-      const { data, error } = await supabase.auth.exchangeCodeForSession(window.location.href)
-      if (error) console.log('Session exchange error:', error.message)
-    }
-    exchangeSession()
-  }, [])
-
-  // 🔥 2. Update password USING the recovered session
   const handleUpdate = async (e: React.FormEvent) => {
     e.preventDefault()
 
     const { error } = await supabase.auth.updateUser({ password })
+
     if (error) setMessage(error.message)
-    else {
-      setMessage('Password updated successfully! Redirecting to login…')
-      setTimeout(() => router.push('/login'), 1500)
-    }
+    else setMessage('Password updated! You can now log in.')
   }
 
   return (
