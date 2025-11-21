@@ -34,7 +34,7 @@ export default function MCQs({question}: {question: Question}) {
 
 
     return(
-        <form onSubmit={handleSubmit} className="mx-5 my-5 bg-[#f5eee7] px-5 py-7 rounded-4xl space-y-10 max-w-150 w-full flex flex-col items-center " >
+        <form onSubmit={handleSubmit} className="mx-5 mt-20 bg-gradient-to-b from-[#121723] to-[#131623] px-5 py-7 rounded-4xl gap-3 max-w-150 w-full max-h-[700px] flex flex-col items-center border-2 border-[#2d2c47]" >
 
             
             <h2 className="flex items-center justify-center text-white text-2xl font-bold bg-gray-500 rounded-4xl px-10 h-17 mb-15 gap-6 w-full ">{question.question}</h2>
@@ -44,7 +44,7 @@ export default function MCQs({question}: {question: Question}) {
              */}
             {question.options.map((option, index) => (
             <label key={index}
-            className={" cursor-pointer bg-gray-500 rounded-4xl px-10 h-17 flex items-center gap-6 w-full mb-5 "}>
+            className={" cursor-pointer bg-gradient-to-r from-[#1b202d] to-[#171c29] rounded-2xl px-10 h-17 flex items-center gap-6 w-full mb-5 shadow-md shadow-black hover:bg-gray-400 hover:border-1 hover:border-[#2d2c47]"}>
                 
                 {/** Sets the state 'selectedAnswer to be the option that the user has selected
                  * and checks the option that the user has selected (option appears selected on form)

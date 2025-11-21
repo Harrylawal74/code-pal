@@ -91,7 +91,7 @@ export default async function ExercisePage({ params }: Props){
      * information can be displayed
      */
     return (
-        <main className="flex items-center rounded-2xl mx-4 my-10 px-5 py-5 w-full overflow-hidden ">
+        <main className="flex justify-center px-5 w-full overflow-hidden bg-gray-800 h-screen">
         {Component ? (
             <div className="flex w-full justify-center">
             <Component question={question} />
