@@ -18,10 +18,17 @@ export default async function DashboardPage() {
     .eq('id', user.id)
     .single()
 
+  const { data, error } = await supabase
+    .from('testtable')
+    .select('message')
+    .eq('user_id', user.id)
+    .single()
+
   return (
     <div className="p-4">
       <h1 className="text-2xl font-semibold">Welcome, {profile?.username || user.email}</h1>
       <p>Email: {user.email}</p>
+      <p>Email: {data?.message}</p>
     </div>
   )
 }
