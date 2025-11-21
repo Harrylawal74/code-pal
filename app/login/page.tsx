@@ -17,9 +17,21 @@ export default function LoginPage() {
     window.location.reload()
   }
 
+  
+  const handleSignOut = async () => {
+    const { error } = await supabase.auth.signOut()
+    if (error) {
+      console.error('Error signing out:', error.message)
+    } else {
+      // Redirect to reset password page
+      router.push('/reset-password')
+      window.location.reload()
+    }
+  }
+
   return (
     <div className='flex justify-center bg-gray-800 min-h-screen'>
-      <form onSubmit={handleLogin} className="space-y-4 mt-50 bg-gray-700 p-5 pt-15 rounded-xl h-[440px] w-[400px]">
+      <form onSubmit={handleLogin} className="space-y-4 mt-25 bg-gray-700 p-5 pt-15 rounded-xl h-[440px] w-[400px]">
         <h1 className='font-bold text-xl'>Login</h1>
         <input
           type="email"
@@ -37,7 +49,7 @@ export default function LoginPage() {
           Log In
         </button>
         <a href="/signup" className='text-blue-400 text-sm hover:underline block mt-1'>Create an account !</a>
-        <a href="/reset-password" className="text-blue-400 text-sm hover:underline block mt-2">
+        <a href="" className="text-blue-400 text-sm hover:underline block mt-2 pointer" onClick={handleSignOut}>
           Forgot password?
         </a>
       </form>
