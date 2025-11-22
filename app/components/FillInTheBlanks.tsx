@@ -1,6 +1,8 @@
 'use client';
 import React, { useState } from 'react';
 import { FIBQuestionData } from '../types/Questions';
+import MarkButton from "./MarkButton";
+
 /** 
  * Types for each option and sentence part 
  */
@@ -141,11 +143,11 @@ const FillInTheBlanks: React.FC<FillInTheBlanksProps> = ({ sentenceParts, option
   };
 
   return (
-    <div className="p-6 text-white bg-purple-500 rounded-3xl">
-      <h2 className="text-xl font-semibold mb-4 text-blue-900">Fill in the blanks:</h2>
+    <div className="self-start p-6 pb-15 text-white bg-gradient-to-b from-[#121723] to-[#131623] rounded-3xl">
+      <h2 className="text-xl font-semibold mb-4 text-white">Fill in the blanks:</h2>
 
       {/* Sentence rendering */}
-      <p className="text-lg mb-6 flex flex-wrap text-blue-900 items-center ">
+      <p className="text-lg mb-6 flex flex-wrap text-white items-center ">
         {sentence.map((part, i) =>
           // if the sentence part is blank then render it as a drop zone
           part.isBlank ? (
@@ -165,7 +167,7 @@ const FillInTheBlanks: React.FC<FillInTheBlanksProps> = ({ sentenceParts, option
                 <span
                   draggable
                   onDragStart={(e) => onDragStart(e, part.filled!, 'sentence', i)}
-                  className="absolute cursor-move bg-purple-600 py-1 px-2 rounded-xl hover:bg-purple-900 transition-transform hover:scale-110 duration-500"
+                  className="absolute cursor-move bg-gradient-to-r from-[#a283f9] to-[#8f63f7] py-1 px-2 rounded-xl hover:bg-purple-200 transition-transform hover:scale-110 duration-500"
                 >
                   {part.filled.text}
                 </span>
@@ -183,7 +185,7 @@ const FillInTheBlanks: React.FC<FillInTheBlanksProps> = ({ sentenceParts, option
 
       {/* Options area for unused draggable words */}
       <div
-        className="flex gap-4 flex-wrap mt-4 gap-10 justify-center items-center h-20 border-5 border-purple-700 rounded-3xl"
+        className="flex gap-4 flex-wrap mt-4 gap-10 justify-center items-center h-20 border-2 border-purple-900 rounded-3xl"
         onDrop={onDropToOptions}
         onDragOver={onDragOver}
       >
@@ -202,8 +204,7 @@ const FillInTheBlanks: React.FC<FillInTheBlanksProps> = ({ sentenceParts, option
       {/* Button to mark quiz */}
       <button
         onClick={markQuiz}
-        className="mt-6 px-4 py-2 bg-blue-700 rounded-xl hover:bg-blue-900 transition"
-      >
+        className="w-full h-[70px] mt-5 shadow-xl shadow-purple-900 hover:shadow-2xl bg-gradient-to-r from-[#a283f9] to-[#8f63f7] px-5 py-2 rounded-2xl flex justify-center items-center hover:translate-y-[-3px] transition-all duration-400">
         Mark Quiz
       </button>
     </div>

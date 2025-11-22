@@ -145,15 +145,14 @@ const level1: Level = {
                                 { id: 4, text: "\n#line 2|", isBlank: false },
                                 { id: 5, text: '    print("Hello world!")', isBlank: false },
                                 { id: 6, text: "\n#line 3|", isBlank: false },
-                                { id: 7, text: "for i in range", isBlank: false },
-                                { id: 8, text: "for i in range", isBlank: false },
+                                { id: 7, text: "", isBlank: true },
                                 ],
                                 options: [
                                 { id: 1, text: "(0, 4)" },
                                 { id: 2, text: "#end of code" },
                                 ],
                                 correctBlanks: [
-                                { id: 2, correctOptionId: 1 },
+                                { id: 3, correctOptionId: 1 },
                                 { id: 7, correctOptionId: 2 }
                                 ]
                             }

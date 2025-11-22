@@ -34,7 +34,7 @@ export default function MCQs({question}: {question: Question}) {
 
 
     return(
-        <form onSubmit={handleSubmit} className="mx-5 mt-20 bg-gradient-to-b from-[#121723] to-[#131623] px-10 py-15 rounded-4xl gap-3 max-w-200 w-full max-h-[700px] flex flex-col items-center border-2 border-[#2d2c47]" >
+        <form onSubmit={handleSubmit} className="mx-5 bg-gradient-to-b from-[#121723] to-[#131623] px-10 py-15 rounded-4xl gap-3 max-w-200 w-full max-h-[700px] flex flex-col items-center border-2 border-[#2d2c47]" >
 
             
             <h2 className="flex items-center justify-center text-white text-2xl font-bold rounded-4xl px-10 h-17 mb-15 gap-6 w-full ">{question.question}</h2>

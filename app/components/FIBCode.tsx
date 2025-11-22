@@ -131,7 +131,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({ sentenceParts, options, correctBlanks
 
 
   return (
-    <div className="p-4 bg-gray-900 text-white rounded-lg font-mono">
+    <div className="self-start p-4 bg-gray-900 text-white rounded-lg font-mono max-w-250">
       {/* Sentence area */}
       <pre className="whitespace-pre-wrap">
         {sentence.map((part, i) =>

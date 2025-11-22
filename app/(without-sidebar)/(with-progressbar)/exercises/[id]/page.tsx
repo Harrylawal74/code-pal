@@ -85,7 +85,7 @@ export default async function ExercisePage({
      * information can be displayed
      */
     return (
-        <main className="flex justify-center px-5 w-full overflow-hidden bg-gray-800 h-screen">
+        <main className="flex justify-center px-5 w-full overflow-hidden bg-gray-800 h-screen pt-30">
         {Component ? (
             <div className="flex w-full justify-center">
             <Component question={question} />
