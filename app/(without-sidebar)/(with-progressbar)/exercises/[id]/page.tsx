@@ -46,8 +46,11 @@ const componentMap: Record<QuestionType, React.FC<{ question: Question }>> = {
 
 
 /** When the ExercisePage is called the id is passes as a prop "params" */
-export default async function ExercisePage({ params }: Props){
-
+export default function ExercisePage({
+  params,
+}: {
+  params: { id: string };
+}) {
     /**Extracts the id from params*/
     const {id} = params;
 
