@@ -13,7 +13,7 @@ export default function LoginPage() {
     e.preventDefault()
     const { error } = await supabase.auth.signInWithPassword({ email, password })
     if (error) alert(error.message)
-    else router.push('/learn')
+    else window.location.href = '/learn'
   }
 
   
@@ -23,8 +23,7 @@ export default function LoginPage() {
       console.error('Error signing out:', error.message)
     } else {
       // Redirect to reset password page
-      router.push('/reset-password')
-      window.location.reload()
+      window.location.href = '/learn'
     }
   }
 
@@ -35,14 +34,18 @@ export default function LoginPage() {
         <input
           type="email"
           placeholder="Email"
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="border p-2 rounded w-full"
+          required
         />
         <input
           type="password"
           placeholder="Password"
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
           className="border p-2 rounded w-full"
+          required
         />
         <button type="submit" className="bg-blue-600 text-white rounded p-2 mt-10">
           Log In
