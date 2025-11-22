@@ -1,6 +1,6 @@
 /**List of types predefined for the levels, sections, exercises, and questions*/
 
-export type QuestionType = "MCQ" | "RQ" | "FIB" | "FIBCode" | "FIBTyping"; // Added Fill In the Blank
+export type QuestionType = "MCQ" | "RQ" | "FIB" | "FIBCode"; // Added Fill In the Blank
 
 export type FIBBlank = {
   id: number; // unique ID for the blank position
