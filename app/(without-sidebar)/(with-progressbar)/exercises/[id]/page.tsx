@@ -9,13 +9,6 @@ import FillInTheBlanks from "@/app/components/FillInTheBlanks"; // <-- Added imp
 import FIBCode from "@/app/components/FIBCode";
 
 
-interface Props {
-    params: {
-        id: string;
-    }
-}
-
-
 // Map string types to components
 // Each component accepts a question prip of type Question
 // e.g when question.type === "MCQ" then the MCQs component is rendered
