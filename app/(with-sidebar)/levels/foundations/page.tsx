@@ -13,7 +13,8 @@ type Props = {
 /** This is the ExerciseSectionTab Template
  * * It is used to display a section of exercieses within a level.
  */
-export function ExerciseSectionTabTemplate({title}: Props) {
+
+function ExerciseSectionTabTemplate({title}: Props) {
     return(
         <div className="h-20 rounded-xl bg-[#2a6aee] flex justify-center items-center text-white text-sm md:text-xl sm:text-lg font-bold">
             {title}
