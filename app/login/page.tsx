@@ -19,12 +19,9 @@ export default function LoginPage() {
   
   const handleSignOut = async () => {
     const { error } = await supabase.auth.signOut()
-    if (error) {
+    if (error) 
       console.error('Error signing out:', error.message)
-    } else {
-      // Redirect to reset password page
-      window.location.href = '/reset-password'
-    }
+    else window.location.href = '/reset-password'
   }
 
   return (
