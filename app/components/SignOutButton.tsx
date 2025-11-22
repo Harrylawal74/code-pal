@@ -13,8 +13,7 @@ export default function SignOutButton() {
       console.error('Error signing out:', error.message)
     } else {
       // Redirect to login page or home
-      router.push('/login')
-      window.location.reload()
+      window.location.href = '/login'
     }
   }
 

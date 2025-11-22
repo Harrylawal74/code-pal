@@ -23,7 +23,7 @@ export default function LoginPage() {
       console.error('Error signing out:', error.message)
     } else {
       // Redirect to reset password page
-      window.location.href = '/learn'
+      window.location.href = '/reset-password'
     }
   }
 
