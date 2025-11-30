@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { Level } from "../../types/Questions";
 import { LevelTabs } from "../../components/LevelTabs";
 import level1 from "../../data/leveldata/level1";
-
+import { getLevelStatus } from "@/lib/supabase/ServerFunctions/GetLevelStatus";
 
 
 
@@ -26,11 +26,14 @@ import level1 from "../../data/leveldata/level1";
   * Need to find a way to pass props to LevelTab component then through that to the next page.
   * e.g. pass level1 as a prop then LevelTab pases it to the next page.
   */
-export default function Learn() {
+export default async function Learn() {
+
+  const statuses = await getLevelStatus();
+
   return (
    <div className="flex h-[calc(100vh-96px)] w-full bg-gray-700 rounded-3xl m-5 no-scrollbar overflow-auto">
     
-    <LevelTabs />
+    <LevelTabs  statuses={[statuses?.foundations ?? 1, statuses?.control_flow ?? 1]}/>
     
    </div>
   );

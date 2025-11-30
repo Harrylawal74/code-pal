@@ -17,7 +17,7 @@ const level1: Level = {
     description:"Some description",
     numberOfLessons: "5 lessons",
     /*needs to be undefined until the user completes the level*/
-    status: "In Progress",
+    status: 2,
     sections: [
         {
             section: 1,

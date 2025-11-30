@@ -1,15 +1,23 @@
 import React from "react";
 import Link from "next/link";
 import level1 from "../data/leveldata/level1"; 
-
+import { getLevelStatus } from "../../lib/supabase/ServerFunctions/GetLevelStatus";
 interface CardProps {
   title: string;
   description: string;
   lessons: string;
-  status: string;
+  levelStatus: number;
 }
 
-const LevelTabTemplate: React.FC<CardProps> = ({ status, title, description, lessons }) => {
+interface LevelTabsProps {
+  statuses: number[]
+}
+
+
+const LevelTabTemplate: React.FC<CardProps> = ({ title, description, lessons, levelStatus }) => {
+
+  const status = levelStatus === 1 ? "Not Started" : levelStatus === 2 ? "In Progress" : "Completed";
+  
   const statusBg =
     status === "In Progress"
       ? "bg-orange-100 text-orange-800"
@@ -67,7 +75,7 @@ export default LevelTabTemplate;
  * * The status, title, description and lessons are passed as props to the template.
  */
 
-export function LevelTabs() {
+export function LevelTabs({ statuses}: LevelTabsProps) {
  return(
   <div className="flex flex-wrap items-start justify-center w-full mx-2 gap-5 mt-25 my-100">
     {/**Level 1 tab, displayed on the learn page */}
@@ -76,48 +84,44 @@ export function LevelTabs() {
     title={level1.name}
     description={level1.description}
     lessons={level1.numberOfLessons}
-    status={level1.status}
+    levelStatus={statuses[0]}
   />
   </Link>
 
   <LevelTabTemplate 
-    status="Completed"
     title="Control flow"
     description=""
     lessons="5 lessons"
+    levelStatus={3}
   />
 
   <LevelTabTemplate 
-    status="Completed"
     title="Data structures"
     description=""
     lessons="5 lessons"
+    levelStatus={2}
   />
 
   <LevelTabTemplate 
-    status="Completed"
     title="Functions "
     description=""
     lessons="5 lessons"
+    levelStatus={1}
   />
 
   <LevelTabTemplate 
-    status="Completed"
     title="OOP"
     description=""
     lessons="5 lessons"
+    levelStatus={3}  
   />
 
   <LevelTabTemplate 
-    status="Completed"
     title="Debugging"
     description=""
     lessons="5 lessons"
+    levelStatus={3}
   />
-
-  
-
-  
   
   </div>
  );

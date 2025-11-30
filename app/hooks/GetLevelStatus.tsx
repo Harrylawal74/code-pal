@@ -1,7 +1,7 @@
 import { cookies } from "next/headers"
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
 
-export default async function TestPage() {
+export default async function GetLevelStatus() {
   const supabase = createServerComponentClient({ cookies })
 
   // 1. Get the logged-in user
