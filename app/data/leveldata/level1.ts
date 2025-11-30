@@ -29,6 +29,7 @@ const level1: Level = {
                         {
                             /* Level 1 Section 1 Exercise 1 Question 1*/ 
                             id: "1-1-1-1",
+                            nextQuestionId: "1-1-1-2",
                             type: "MCQ",
                             question: "What is code?",
                             options: [
@@ -43,6 +44,7 @@ const level1: Level = {
                         {
                             /* Level 1 Section 1 Exercise 1 Question 2*/ 
                             id: "1-1-1-2",
+                            nextQuestionId: "1-1-1-3",
                             type: "MCQ",
                             question: "What is a variable?",
                             options: [
@@ -57,6 +59,7 @@ const level1: Level = {
                         {
                             /* Level 1 Section 1 Exercise 1 Question 3*/ 
                             id: "1-1-1-3",
+                            nextQuestionId: "1-1-1-4",
                             type: "MCQ",
                             question: "What is a function?",
                             options: [
@@ -70,6 +73,7 @@ const level1: Level = {
                         {
                             /* Level 1 Section 1 Exercise 1 Question 4*/ 
                             id: "1-1-1-4",
+                            nextQuestionId: "1-1-1-5",
                             type: "MCQ",
                             question: "What is a loop?",
                             options: [

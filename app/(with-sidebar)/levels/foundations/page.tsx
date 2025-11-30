@@ -6,15 +6,16 @@ import { Question } from "../../../types/Questions";
 
 type Props = {
   title: string;
+  bgcolor: string;
 };
 
 /** This is the ExerciseSectionTab Template
  * * It is used to display a section of exercieses within a level.
  */
 
-function ExerciseSectionTabTemplate({ title }: Props) {
+function ExerciseSectionTabTemplate({ title, bgcolor}: Props) {
   return (
-    <div className="h-20 rounded-xl bg-[#2a6aee] flex justify-center items-center text-white text-sm md:text-xl sm:text-lg font-bold">
+    <div className={`h-20 rounded-xl ${bgcolor} flex justify-center items-center text-white text-sm md:text-xl sm:text-lg font-bold`}>
       {title}
     </div>
   );
@@ -38,11 +39,24 @@ export default function FoundationsPage() {
       <div className="flex justify-center overflow-auto gap-15 min-w-max px-4 ">
         {/* main exercises column. e.g. syntax basics followed by exercise squares */}
         {/*This column (left) shrinks down to a fixed with and is always in page view */}
-        <div className="flex justify-center min-w-[212px] ">
+        <div className="flex-col justify-center min-w-[212px]">
           <section className="mb-8">
-            <ExerciseSectionTabTemplate title={level1.sections[0].title} />
+            <ExerciseSectionTabTemplate title={level1.sections[0].title} bgcolor={"bg-purple-500"} />
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
               {level1.sections[0].exercises[0].questions.map(
+                (question, index) => (
+                  <Link key={index} href={`/exercises/${question.id}`}>
+                    <ExerciseBox />
+                  </Link>
+                )
+              )}
+            </div>
+          </section>
+
+          <section className="mb-8 mt-20">
+            <ExerciseSectionTabTemplate title={level1.sections[1].title} bgcolor={"bg-purple-500"} />
+            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+              {level1.sections[1].exercises[0].questions.map(
                 (question, index) => (
                   <Link key={index} href={`/exercises/${question.id}`}>
                     <ExerciseBox />
