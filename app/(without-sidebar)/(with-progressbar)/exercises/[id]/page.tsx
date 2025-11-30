@@ -95,21 +95,4 @@ export default async function ExercisePage({
         )}
         </main>
     );
-
-/** 
-    return(
-        <main className="flex items-center rounded-2xl mx-4 my-10 px-5 py-5 w-full overflow-hidden ">
-            {question.type === "MCQ" ? (
-            <div className="flex w-full justify-center">
-                <MCQs question={question}/>
-                </div>
-            ) : (
-                <p className="text-red-500">Unsupported question type</p>
-            )}
-
-            
-            
-        </main>
-    );
-*/
 }
