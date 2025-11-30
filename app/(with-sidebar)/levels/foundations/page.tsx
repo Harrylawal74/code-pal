@@ -2,7 +2,6 @@ import Link from "next/link";
 import ExerciseBox from "../../../components/ExerciseBox";
 import level1 from "../../../data/leveldata/level1";
 import React from "react";
-import { Question } from "../../../types/Questions";
 
 type Props = {
   title: string;
