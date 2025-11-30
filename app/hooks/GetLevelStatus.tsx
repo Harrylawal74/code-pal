@@ -28,6 +28,7 @@ export default async function TestPage() {
   if(!data.foundations){
     return <div>
       <h1 className="text-xl font-bold">Message from TestTable:</h1>
-      No data found.</div>
+      No data found.
+      Is Beta branch working?</div>
   }
 }
