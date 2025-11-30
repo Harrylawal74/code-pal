@@ -12,9 +12,11 @@ type Props = {
  * * It is used to display a section of exercieses within a level.
  */
 
-function ExerciseSectionTabTemplate({ title, bgcolor}: Props) {
+function ExerciseSectionTabTemplate({ title, bgcolor }: Props) {
   return (
-    <div className={`h-20 rounded-xl ${bgcolor} flex justify-center items-center text-white text-sm md:text-xl sm:text-lg font-bold`}>
+    <div
+      className={`h-20 rounded-xl ${bgcolor} flex justify-center items-center text-white text-sm md:text-xl sm:text-lg font-bold`}
+    >
       {title}
     </div>
   );
@@ -40,28 +42,53 @@ export default function FoundationsPage() {
         {/*This column (left) shrinks down to a fixed with and is always in page view */}
         <div className="flex-col justify-center min-w-[212px]">
           <section className="mb-8">
-            <ExerciseSectionTabTemplate title={level1.sections[0].title} bgcolor={"bg-purple-500"} />
+            <ExerciseSectionTabTemplate
+              title={level1.sections[0].title}
+              bgcolor={"bg-purple-500"}
+            />
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
-              {level1.sections[0].exercises.map(
-                (exercise, index) => (
-                  <Link key={index} href={`/exercises/${exercise.questions[0].id}`}>
-                    <ExerciseBox />
-                  </Link>
-                )
-              )}
+              {level1.sections[0].exercises.map((exercise, index) => (
+                <Link
+                  key={index}
+                  href={`/exercises/${exercise.questions[0].id}`}
+                >
+                  <ExerciseBox />
+                </Link>
+              ))}
             </div>
           </section>
 
           <section className="mb-8 mt-20">
-            <ExerciseSectionTabTemplate title={level1.sections[1].title} bgcolor={"bg-purple-500"} />
+            <ExerciseSectionTabTemplate
+              title={level1.sections[1].title}
+              bgcolor={"bg-purple-500"}
+            />
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
-              {level1.sections[1].exercises.map(
-                (exercise, index) => (
-                  <Link key={index} href={`/exercises/${exercise.questions[0].id}`}>
-                    <ExerciseBox />
-                  </Link>
-                )
-              )}
+              {level1.sections[1].exercises.map((exercise, index) => (
+                <Link
+                  key={index}
+                  href={`/exercises/${exercise.questions[0].id}`}
+                >
+                  <ExerciseBox />
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          <section className="mb-8 mt-20">
+            <ExerciseSectionTabTemplate
+              title={level1.sections[2].title}
+              bgcolor={"bg-purple-500"}
+            />
+            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
+              {level1.sections[2].exercises.map((exercise, index) => (
+                <Link
+                  key={index}
+                  href={`/exercises/${exercise.questions[0].id}`}
+                >
+                  <ExerciseBox />
+                </Link>
+              ))}
             </div>
           </section>
         </div>

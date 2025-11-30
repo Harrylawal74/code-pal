@@ -382,6 +382,201 @@ const level1: Level = {
         },
       ],
     },
+
+    {
+      section: 3,
+      title: "Introduction to Programming",
+      exercises: [
+        {
+          exercise: 1,
+          questions: [
+            {
+              /* Level 1 Section 3 Exercise 1 Question 1*/
+              id: "1-3-1-1",
+              nextQuestionId: "1-3-1-2",
+              type: "MCQ",
+              question: "What is code?",
+              options: [
+                "A set of instructions for a computer",
+                "A type of software",
+                "A programming language",
+                "Hardware",
+              ],
+              correctAnswer: "A set of instructions for a computer",
+            },
+            {
+              /* Level 1 Section 3 Exercise 1 Question 2*/
+              id: "1-3-1-2",
+              nextQuestionId: "1-3-1-3",
+              type: "MCQ",
+              question: "What is a variable?",
+              options: [
+                "A value that can change",
+                "A fixed value",
+                "A type of function",
+                "A programming language",
+                "A programming language",
+              ],
+              correctAnswer: "A value that can change",
+            },
+            {
+              /* Level 1 Section 3 Exercise 1 Question 3*/
+              id: "1-3-1-3",
+              nextQuestionId: "1-3-1-4",
+              type: "MCQ",
+              question: "What is a function?",
+              options: [
+                "A reusable block of code",
+                "A type of variable",
+                "A programming language",
+                "A type of software",
+              ],
+              correctAnswer: "A reusable block of code",
+            },
+            {
+              /* Level 1 Section 3 Exercise 1 Question 4*/
+              id: "1-3-1-4",
+              nextQuestionId: "1-3-1-5",
+              type: "MCQ",
+              question: "What is a loop?",
+              options: [
+                "A way to repeat code",
+                "A type of variable",
+                "A programming language",
+                "A type of software",
+              ],
+              correctAnswer: "A way to repeat code",
+            },
+          ],
+        },
+
+        {
+          exercise: 2,
+          questions: [
+            {
+              /* Level 1 Section 3 Exercise 2 Question 1*/
+              id: "1-3-2-1",
+              nextQuestionId: "1-3-2-2",
+              type: "MCQ",
+              question: "What is code?",
+              options: [
+                "A set of instructions for a computer",
+                "A type of software",
+                "A programming language",
+                "Hardware",
+              ],
+              correctAnswer: "A set of instructions for a computer",
+            },
+            {
+              /* Level 1 Section 3 Exercise 2 Question 2*/
+              id: "1-3-2-2",
+              nextQuestionId: "1-3-2-3",
+              type: "MCQ",
+              question: "What is a variable?",
+              options: [
+                "A value that can change",
+                "A fixed value",
+                "A type of function",
+                "A programming language",
+                "A programming language",
+              ],
+              correctAnswer: "A value that can change",
+            },
+            {
+              /* Level 1 Section 3 Exercise 2 Question 3*/
+              id: "1-3-2-3",
+              nextQuestionId: "1-3-2-4",
+              type: "MCQ",
+              question: "What is a function?",
+              options: [
+                "A reusable block of code",
+                "A type of variable",
+                "A programming language",
+                "A type of software",
+              ],
+              correctAnswer: "A reusable block of code",
+            },
+            {
+              /* Level 1 Section 3 Exercise 2 Question 4*/
+              id: "1-3-2-4",
+              nextQuestionId: "1-3-2-5",
+              type: "MCQ",
+              question: "What is a loop?",
+              options: [
+                "A way to repeat code",
+                "A type of variable",
+                "A programming language",
+                "A type of software",
+              ],
+              correctAnswer: "A way to repeat code",
+            },
+          ],
+        },
+
+        {
+          exercise: 3,
+          questions: [
+            {
+              /* Level 1 Section 3 Exercise 3 Question 1*/
+              id: "1-3-3-1",
+              nextQuestionId: "1-3-3-2",
+              type: "MCQ",
+              question: "What is code?",
+              options: [
+                "A set of instructions for a computer",
+                "A type of software",
+                "A programming language",
+                "Hardware",
+              ],
+              correctAnswer: "A set of instructions for a computer",
+            },
+            {
+              /* Level 1 Section 3 Exercise 3 Question 2*/
+              id: "1-3-3-2",
+              nextQuestionId: "1-3-3-3",
+              type: "MCQ",
+              question: "What is a variable?",
+              options: [
+                "A value that can change",
+                "A fixed value",
+                "A type of function",
+                "A programming language",
+                "A programming language",
+              ],
+              correctAnswer: "A value that can change",
+            },
+            {
+              /* Level 1 Section 3 Exercise 3 Question 3*/
+              id: "1-3-3-3",
+              nextQuestionId: "1-3-3-4",
+              type: "MCQ",
+              question: "What is a function?",
+              options: [
+                "A reusable block of code",
+                "A type of variable",
+                "A programming language",
+                "A type of software",
+              ],
+              correctAnswer: "A reusable block of code",
+            },
+            {
+              /* Level 1 Section 3 Exercise 3 Question 4*/
+              id: "1-3-3-4",
+              nextQuestionId: "1-3-3-5",
+              type: "MCQ",
+              question: "What is a loop?",
+              options: [
+                "A way to repeat code",
+                "A type of variable",
+                "A programming language",
+                "A type of software",
+              ],
+              correctAnswer: "A way to repeat code",
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
 
