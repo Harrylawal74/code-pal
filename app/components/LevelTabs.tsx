@@ -88,12 +88,15 @@ export function LevelTabs({ statuses}: LevelTabsProps) {
   />
   </Link>
 
+<Link href="/levels/control_flow">
   <LevelTabTemplate 
     title="Control flow"
     description=""
     lessons="5 lessons"
     levelStatus={statuses[1]}
   />
+</Link>
+
 
   <LevelTabTemplate 
     title="Data structures"
