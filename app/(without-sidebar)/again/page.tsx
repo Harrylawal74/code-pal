@@ -1,20 +1,34 @@
-import level1 from "@/app/data/leveldata/level1";
-import FillInTheBlanks from "@/app/components/FillInTheBlanks"; 
-import FIBTyping from "@/app/components/FIBTyping";
+import { cookies } from "next/headers"
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
 
+export default async function TestPage() {
+  const supabase = createServerComponentClient({ cookies })
 
-export default function LessonPage() {
-  const fibQuestion = level1.sections[0].exercises[0].questions.find(q => q.type === "FIB");
+  // 1. Get the logged-in user
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
 
-  if (!fibQuestion?.fibData) return null;
+  if (!user) {
+    return <div>You must log in.</div>
+  }
+
+  // 2. Fetch string from TestTable
+  const { data, error } = await supabase
+    .from("testtable")
+    .select("message")
+    .eq("user_id", user.id)
+    .single()
+
+  if (error) {
+    console.error(error)
+    return <div>Error loading message.</div>
+  }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gray-800 min-w-screen">
-    <FIBTyping
-      sentenceParts={fibQuestion.fibData.sentenceParts}
-      options={fibQuestion.fibData.options}
-      correctBlanks={fibQuestion.fibData.correctBlanks}
-    />
-    </main>
-  );
+    <div className="p-6">
+      <h1 className="text-xl font-bold">Message from TestTable:</h1>
+      <p className="mt-4 text-lg">{data.message}</p>
+    </div>
+  )
 }

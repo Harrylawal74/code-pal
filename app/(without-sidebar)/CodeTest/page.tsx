@@ -4,7 +4,6 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
 export default async function TestPage() {
   const supabase = createServerComponentClient({ cookies })
 
-  // 1. Get the logged-in user
   const {
     data: { user },
   } = await supabase.auth.getUser()
@@ -13,22 +12,51 @@ export default async function TestPage() {
     return <div>You must log in.</div>
   }
 
-  // 2. Fetch string from TestTable
-  const { data, error } = await supabase
+  const userId = user.id
+
+  // ---------- SERVER ACTION ----------
+async function saveMessage(formData: FormData) {
+  "use server"
+
+  const message = formData.get("message") as string
+
+  const supabase = createServerComponentClient({ cookies })
+
+  const { error } = await supabase
     .from("testtable")
-    .select("message")
-    .eq("user_id", user.id)
-    .single()
+    .upsert(
+      { user_id: userId, message },
+      { onConflict: "user_id" }
+    )
 
   if (error) {
     console.error(error)
-    return <div>Error loading message.</div>
+    throw new Error("Failed to save message")
   }
+}
+
+  // -----------------------------------
 
   return (
     <div className="p-6">
-      <h1 className="text-xl font-bold">Message from TestTable:</h1>
-      <p className="mt-4 text-lg">{data.message}</p>
+      <h1 className="text-xl font-bold">Write Message to TestTable</h1>
+
+      <form action={saveMessage} className="mt-4 space-y-4">
+        <input
+          name="message"
+          placeholder="Type your message..."
+          className="border p-2 w-full"
+          required
+        />
+
+        <button
+          type="submit"
+          className="bg-blue-600 text-white px-4 py-2 rounded"
+        >
+          Save
+        </button>
+      </form>
     </div>
   )
 }
+
