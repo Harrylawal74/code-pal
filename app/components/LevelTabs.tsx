@@ -92,7 +92,7 @@ export function LevelTabs({ statuses}: LevelTabsProps) {
     title="Control flow"
     description=""
     lessons="5 lessons"
-    levelStatus={3}
+    levelStatus={statuses[1]}
   />
 
   <LevelTabTemplate 
