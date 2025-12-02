@@ -2,7 +2,7 @@ import Link from "next/link";
 import ExerciseBox from "../../../components/ExerciseBox";
 import level2 from "../../../data/leveldata/level1";
 import React from "react";
-import { getLevel1ExerciseProgress } from "@/lib/supabase/ServerFunctions/GetLevelStatus";
+import { getLevel1ExerciseProgress } from "@/lib/supabase/ServerFunctions/DatabaseLevelData";
 
 type Props = {
   title: string;
