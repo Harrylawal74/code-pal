@@ -1,7 +1,8 @@
 import Link from "next/link";
 import ExerciseBox from "../../../components/ExerciseBox";
-import level2 from "../../../data/leveldata/level2";
+import level2 from "../../../data/leveldata/level1";
 import React from "react";
+import { getLevel1ExerciseProgress } from "@/lib/supabase/ServerFunctions/GetLevelStatus";
 
 type Props = {
   title: string;
@@ -27,7 +28,40 @@ function ExerciseSectionTabTemplate({ title, bgcolor }: Props) {
  * *Copy the method used in the LevelTabTemplate to pass props to the template. above^^^
  */
 
-export default function FoundationsPage() {
+export default async function ControlFlowPage() {
+  async function isExerciseCompleted(
+    sectionIndex: number,
+    exerciseIndex: number
+  ): Promise<boolean> {
+    const progress = await getLevel1ExerciseProgress();
+    if (!progress) return false;
+
+    if (exerciseIndex <= Object.values(progress)[sectionIndex]) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  // Calculate completed for section 1
+  const section1Completed = await Promise.all(
+    level2.sections[0].exercises.map((_, index) =>
+      isExerciseCompleted(0, index)
+    )
+  );
+  // Calculate completed for section 2
+  const section2Completed = await Promise.all(
+    level2.sections[1].exercises.map((_, index) =>
+      isExerciseCompleted(1, index)
+    )
+  );
+  // Calculate completed for section 3
+  const section3Completed = await Promise.all(
+    level2.sections[2].exercises.map((_, index) =>
+      isExerciseCompleted(2, index)
+    )
+  );
+
   return (
     /** The main tag is the whole area minus the sidebar (when visible) items are stacked on top of each other
      * Items are centered
@@ -41,37 +75,50 @@ export default function FoundationsPage() {
         {/* main exercises column. e.g. syntax basics followed by exercise squares */}
         {/*This column (left) shrinks down to a fixed with and is always in page view */}
         <div className="flex-col justify-center min-w-[212px]">
+          {/*Syntax basics Section*/}
           <section className="mb-8">
             <ExerciseSectionTabTemplate
               title={level2.sections[0].title}
               bgcolor={"bg-purple-500"}
             />
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
-              {level2.sections[0].exercises.map((exercise, index) => (
-                <Link
-                  key={index}
-                  href={`/exercises/${exercise.questions[0].id}`}
-                >
-                  <ExerciseBox />
-                </Link>
-              ))}
+              {level2.sections[0].exercises.map((exercise, index) =>
+                section1Completed[index] ? (
+                  <Link
+                    key={index}
+                    href={`/exercises/${exercise.questions[0].id}`}
+                  >
+                    <ExerciseBox completed={section1Completed[index]} />
+                  </Link>
+                ) : (
+                  <span>
+                    <ExerciseBox completed={section1Completed[index]} />
+                  </span>
+                )
+              )}
             </div>
           </section>
-
+          {/*If Statements Section*/}
           <section className="mb-8 mt-20">
             <ExerciseSectionTabTemplate
               title={level2.sections[1].title}
               bgcolor={"bg-purple-500"}
             />
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
-              {level2.sections[1].exercises.map((exercise, index) => (
-                <Link
-                  key={index}
-                  href={`/exercises/${exercise.questions[0].id}`}
-                >
-                  <ExerciseBox />
-                </Link>
-              ))}
+              {level2.sections[1].exercises.map((exercise, index) =>
+                section2Completed[index] ? (
+                  <Link
+                    key={index}
+                    href={`/exercises/${exercise.questions[0].id}`}
+                  >
+                    <ExerciseBox completed={section2Completed[index]} />
+                  </Link>
+                ) : (
+                  <span>
+                    <ExerciseBox completed={section2Completed[index]} />
+                  </span>
+                )
+              )}
             </div>
           </section>
 
@@ -81,14 +128,20 @@ export default function FoundationsPage() {
               bgcolor={"bg-purple-500"}
             />
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
-              {level2.sections[2].exercises.map((exercise, index) => (
-                <Link
-                  key={index}
-                  href={`/exercises/${exercise.questions[0].id}`}
-                >
-                  <ExerciseBox />
-                </Link>
-              ))}
+              {level2.sections[2].exercises.map((exercise, index) =>
+                section3Completed[index] ? (
+                  <Link
+                    key={index}
+                    href={`/exercises/${exercise.questions[0].id}`}
+                  >
+                    <ExerciseBox completed={section3Completed[index]} />
+                  </Link>
+                ) : (
+                  <span>
+                    <ExerciseBox completed={section3Completed[index]} />
+                  </span>
+                )
+              )}
             </div>
           </section>
         </div>
