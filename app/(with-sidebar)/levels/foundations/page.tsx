@@ -82,14 +82,18 @@ export default async function FoundationsPage() {
               bgcolor={"bg-purple-500"}
             />
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
-              {level1.sections[0].exercises.map((exercise, index) => (
-                <Link
-                  key={index}
-                  href={`/exercises/${exercise.questions[0].id}`}
-                >
+              {level1.sections[0].exercises.map((exercise, index) =>
+                section1Completed[index] ? (
+                  <Link
+                    key={index}
+                    href={`/exercises/${exercise.questions[0].id}`}
+                  >
+                    <ExerciseBox completed={section1Completed[index]} />
+                  </Link>
+                ) : (
                   <ExerciseBox completed={section1Completed[index]} />
-                </Link>
-              ))}
+                )
+              )}
             </div>
           </section>
           {/*If Statements Section*/}
@@ -99,14 +103,18 @@ export default async function FoundationsPage() {
               bgcolor={"bg-purple-500"}
             />
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
-              {level1.sections[1].exercises.map((exercise, index) => (
-                <Link
-                  key={index}
-                  href={`/exercises/${exercise.questions[0].id}`}
-                >
-                  <ExerciseBox completed={section2Completed[index]}/>
-                </Link>
-              ))}
+              {level1.sections[1].exercises.map((exercise, index) =>
+                section2Completed[index] ? (
+                  <Link
+                    key={index}
+                    href={`/exercises/${exercise.questions[0].id}`}
+                  >
+                    <ExerciseBox completed={section2Completed[index]} />
+                  </Link>
+                ) : (
+                  <ExerciseBox completed={section2Completed[index]} />
+                )
+              )}
             </div>
           </section>
 
@@ -116,14 +124,18 @@ export default async function FoundationsPage() {
               bgcolor={"bg-purple-500"}
             />
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
-              {level1.sections[2].exercises.map((exercise, index) => (
-                <Link
-                  key={index}
-                  href={`/exercises/${exercise.questions[0].id}`}
-                >
+              {level1.sections[2].exercises.map((exercise, index) =>
+                section3Completed[index] ? (
+                  <Link
+                    key={index}
+                    href={`/exercises/${exercise.questions[0].id}`}
+                  >
+                    <ExerciseBox completed={section3Completed[index]} />
+                  </Link>
+                ) : (
                   <ExerciseBox completed={section3Completed[index]} />
-                </Link>
-              ))}
+                )
+              )}
             </div>
           </section>
         </div>
