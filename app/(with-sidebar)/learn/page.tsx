@@ -1,7 +1,6 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { Level } from "../../types/Questions";
 import { LevelTabs } from "../../components/LevelTabs";
-import level1 from "../../data/leveldata/level1";
 import { getLevelStatus } from "@/lib/supabase/ServerFunctions/DatabaseLevelData";
 
 

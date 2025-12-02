@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import level1 from "../data/leveldata/level1"; 
-import { getLevelStatus } from "../../lib/supabase/ServerFunctions/DatabaseLevelData";
 interface CardProps {
   title: string;
   description: string;

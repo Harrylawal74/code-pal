@@ -1,7 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import { FIBQuestionData } from '../types/Questions';
-import MarkButton from "./MarkButton";
 
 /** 
  * Types for each option and sentence part 

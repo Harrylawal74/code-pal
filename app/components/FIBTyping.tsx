@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import { FIBQuestionData } from '../types/Questions';
 /** 
  * Types for each option and sentence part 
  */
