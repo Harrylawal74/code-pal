@@ -32,3 +32,26 @@ export default async function TestPage() {
     </div>
   )
 }
+
+{/** 
+
+  
+const [correctCount, setCorrectCount] = useState(0);
+const [answeredCount, setAnsweredCount] = useState(0);
+
+const markQuestion = (isCorrect) => {
+  setAnsweredCount(prev => prev + 1);
+  if (isCorrect) {
+    setCorrectCount(prev => prev + 1);
+  }
+};
+
+const hasPassed = correctCount >= 7;
+
+const resetQuiz = () => {
+  setCorrectCount(0);
+  setAnsweredCount(0);
+};
+
+
+*/}

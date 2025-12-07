@@ -43,7 +43,7 @@ export default function MCQs({question}: {question: Question}) {
                 {/** Sets the state 'selectedAnswer to be the option that the user has selected
                  * and checks the option that the user has selected (option appears selected on form)
                  */}
-                <input type="radio" name="QuestionOption" value={option} checked={selectedAnswer === option}
+                <input className="text-white" type="radio" name="QuestionOption" value={option} checked={selectedAnswer === option}
                     onChange={() => setSelectedAnswer(option)}/> {option}</label>
             ))}
             
