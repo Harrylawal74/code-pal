@@ -238,7 +238,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
         ))}
       </div>
       <MarkButton
-        nextQuestionId={question.nextQuestionId}
+        question={question}
         outcome={markQuiz()}
       ></MarkButton>
     </div>

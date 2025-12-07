@@ -219,7 +219,7 @@ const FillInTheBlanks: React.FC<FillInTheBlanksProps> = ({
 
       {/* Button to mark quiz */}
       <MarkButton
-        nextQuestionId={question.nextQuestionId}
+        question={question}
         outcome={markQuiz()}
       ></MarkButton>
     </div>

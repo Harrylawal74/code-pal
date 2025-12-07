@@ -187,6 +187,89 @@ const level1: Level = {
                 ],
               },
             },
+            {
+              /* Level 1 Section 1 Exercise 1 Question 8 */
+              id: "1-1-1-8",
+              nextQuestionId: "1-1-1-9",
+              type: "FIBCode",
+              question: "Complete the sentence:",
+              options: [], // not used for FIB
+              correctAnswer: "", // not used for FIB
+              fibData: {
+                sentenceParts: [
+                  { id: 1, text: "#line 1|", isBlank: false },
+                  { id: 2, text: "for i in range", isBlank: false },
+                  { id: 3, text: "", isBlank: true },
+                  { id: 4, text: "\n#line 2|", isBlank: false },
+                  { id: 5, text: '    print("Hello world!")', isBlank: false },
+                  { id: 6, text: "\n#line 3|", isBlank: false },
+                  { id: 7, text: "", isBlank: true },
+                ],
+                options: [
+                  { id: 1, text: "(0, 4)" },
+                  { id: 2, text: "#end of code" },
+                ],
+                correctBlanks: [
+                  { id: 3, correctOptionId: 1 },
+                  { id: 7, correctOptionId: 2 },
+                ],
+              },
+            },
+            {
+              /* Level 1 Section 1 Exercise 1 Question 9 */
+              id: "1-1-1-9",
+              nextQuestionId: "1-1-1-10",
+              type: "FIBCode",
+              question: "Complete the sentence:",
+              options: [], // not used for FIB
+              correctAnswer: "", // not used for FIB
+              fibData: {
+                sentenceParts: [
+                  { id: 1, text: "#line 1|", isBlank: false },
+                  { id: 2, text: "for i in range", isBlank: false },
+                  { id: 3, text: "", isBlank: true },
+                  { id: 4, text: "\n#line 2|", isBlank: false },
+                  { id: 5, text: '    print("Hello world!")', isBlank: false },
+                  { id: 6, text: "\n#line 3|", isBlank: false },
+                  { id: 7, text: "", isBlank: true },
+                ],
+                options: [
+                  { id: 1, text: "(0, 4)" },
+                  { id: 2, text: "#end of code" },
+                ],
+                correctBlanks: [
+                  { id: 3, correctOptionId: 1 },
+                  { id: 7, correctOptionId: 2 },
+                ],
+              },
+            },
+            {
+              /* Level 1 Section 1 Exercise 1 Question 10 */
+              id: "1-1-1-10",
+              type: "FIBCode",
+              question: "Complete the sentence:",
+              options: [], // not used for FIB
+              correctAnswer: "", // not used for FIB
+              fibData: {
+                sentenceParts: [
+                  { id: 1, text: "#line 1|", isBlank: false },
+                  { id: 2, text: "for i in range", isBlank: false },
+                  { id: 3, text: "", isBlank: true },
+                  { id: 4, text: "\n#line 2|", isBlank: false },
+                  { id: 5, text: '    print("Hello world!")', isBlank: false },
+                  { id: 6, text: "\n#line 3|", isBlank: false },
+                  { id: 7, text: "", isBlank: true },
+                ],
+                options: [
+                  { id: 1, text: "(0, 4)" },
+                  { id: 2, text: "#end of code" },
+                ],
+                correctBlanks: [
+                  { id: 3, correctOptionId: 1 },
+                  { id: 7, correctOptionId: 2 },
+                ],
+              },
+            },
           ],
         },
 

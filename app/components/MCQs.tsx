@@ -48,7 +48,7 @@ export default function MCQs({question}: {question: Question}) {
             ))}
             
         {/** The MarkButton component is used to submit the users answer*/}
-            <MarkButton nextQuestionId={question.nextQuestionId} outcome={markQuiz()}></MarkButton> 
+            <MarkButton question={question} outcome={markQuiz()}></MarkButton> 
 
         {/** Conditional rendering 
          * if result is "" then nothing is displayed
