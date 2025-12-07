@@ -28,6 +28,7 @@ const componentMap: Record<QuestionType, React.FC<{ question: Question }>> = {
     const fibData = props.question.fibData!;
     return (
       <FillInTheBlanks
+        question={props.question}
         sentenceParts={fibData.sentenceParts}
         options={fibData.options}
         correctBlanks={fibData.correctBlanks}

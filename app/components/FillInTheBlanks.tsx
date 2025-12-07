@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
-
+import MarkButton from './MarkButton';
+import { Question } from '../types/Questions';
 /** 
  * Types for each option and sentence part 
  */
@@ -25,12 +26,13 @@ type CorrectBlank = {
  * Props passed from the question data file
  */
 type FillInTheBlanksProps = {
+  question: Question;
   sentenceParts: { id: number; text: string; isBlank: boolean }[];
   options: Option[];
   correctBlanks: CorrectBlank[];
 };
 
-const FillInTheBlanks: React.FC<FillInTheBlanksProps> = ({ sentenceParts, options, correctBlanks }) => {
+const FillInTheBlanks: React.FC<FillInTheBlanksProps> = ({ question, sentenceParts, options, correctBlanks }) => {
   // State for the sentence structure
   const [sentence, setSentence] = useState<SentencePart[]>(
     sentenceParts.map(part => ({ ...part, filled: null }))
@@ -200,6 +202,7 @@ const FillInTheBlanks: React.FC<FillInTheBlanksProps> = ({ sentenceParts, option
       </div>
 
       {/* Button to mark quiz */}
+      <MarkButton nextQuestionId={question.nextQuestionId}></MarkButton> 
       <button
         onClick={markQuiz}
         className="w-full h-[70px] mt-5 shadow-xl shadow-purple-900 hover:shadow-2xl bg-gradient-to-r from-[#a283f9] to-[#8f63f7] px-5 py-2 rounded-2xl flex justify-center items-center hover:translate-y-[-3px] transition-all duration-400">
