@@ -1,6 +1,8 @@
-import Link from "next/link";
+"use client";
+
 import { Question } from "../types/Questions";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 type Props = {
   question: Question;
@@ -8,62 +10,69 @@ type Props = {
 };
 
 export default function MarkButton({ question, outcome }: Props) {
+  const router = useRouter();
   const [correctCount, setCorrectCount] = useState(0);
   const [answeredCount, setAnsweredCount] = useState(0);
 
-  function isQuestionCorrect() {
-    setAnsweredCount((prev) => prev + 1);
+  // Load counts from localStorage on mount
+  useEffect(() => {
+    const storedCorrect = Number(localStorage.getItem("correctCount") || 0);
+    const storedAnswered = Number(localStorage.getItem("answeredCount") || 0);
+    setCorrectCount(storedCorrect);
+    setAnsweredCount(storedAnswered);
+  }, []);
 
-    if (outcome === true) {
-      setCorrectCount((prev) => prev + 1);
-      //window.location.href = "/again";
+  const handleNextQuestion = () => {
+    // Calculate new counts
+    const newAnswered = answeredCount + 1;
+    const newCorrect = outcome ? correctCount + 1 : correctCount;
+
+    // Update state
+    setAnsweredCount(newAnswered);
+    setCorrectCount(newCorrect);
+    // Update localStorage
+    localStorage.setItem("answeredCount", newAnswered.toString());
+    localStorage.setItem("correctCount", newCorrect.toString());
+
+    // Navigate
+    if (question.nextQuestionId) {
+      router.push(`/exercises/${question.nextQuestionId}`);
+    }
+  };
+
+  const handleEndQuiz = () => {
+    const newAnswered = answeredCount + 1;
+    const newCorrect = outcome ? correctCount + 1 : correctCount;
+
+    setAnsweredCount(newAnswered);
+    setCorrectCount(newCorrect);
+
+    localStorage.setItem("answeredCount", newAnswered.toString());
+    localStorage.setItem("correctCount", newCorrect.toString());
+
+    // Check if passed
+    if (newCorrect / newAnswered >= 0.7) {
+      console.log("Passed the quiz!");
+      // call API to mark as passed if needed
     } else {
-      //window.location.href = "/learn"; // redirect
+      console.log("Failed the quiz!");
     }
-  }
 
-  function hasPassed() {
-    setAnsweredCount((prev) => prev + 1);
+    // Reset counts for next quiz
+    localStorage.removeItem("answeredCount");
+    localStorage.removeItem("correctCount");
 
-    if (outcome === true) {
-      setCorrectCount((prev) => prev + 1);
-      //window.location.href = "/again";
-    } else {
-      //window.location.href = "/learn"; // redirect
-    }
-    
-    if (correctCount / answeredCount >= 0.7) {
-      //database funciton to mark quiz as passed
-      
-      //some visual feedback for passing
-    }else{
-        //no database update 
-      //some visual feedback for failing
-    }
-  }
+    // Navigate to learn page
+    router.push("/learn");
+  };
 
-  // Mark button / end quiz button comonents
-  if (question.nextQuestionId) {
-    return (
-      <Link
-        href={`/exercises/${question.nextQuestionId}`}
-        className="w-full h-[70px] shadow-xl shadow-purple-900 hover:shadow-2xl bg-gradient-to-r from-[#a283f9] to-[#8f63f7] px-5 py-2 rounded-2xl flex justify-center items-center hover:translate-y-[-3px] transition-all duration-400 mt-5"
-      >
-        <button type="button" onClick={isQuestionCorrect}>
-          Next Question
-        </button>
-      </Link>
-    );
-  } else {
-    return (
-      <Link
-        href={`/learn`}
-        className="w-full h-[70px] shadow-xl shadow-purple-900 hover:shadow-2xl bg-gradient-to-r from-[#a283f9] to-[#8f63f7] px-5 py-2 rounded-2xl flex justify-center items-center hover:translate-y-[-3px] transition-all duration-400 mt-5"
-      >
-        <button type="button" onClick={hasPassed}>
-          End Quiz
-        </button>
-      </Link>
-    );
-  }
+  return (
+    <button
+      type="button"
+      onClick={question.nextQuestionId ? handleNextQuestion : handleEndQuiz}
+      className="w-full h-[70px] shadow-xl shadow-purple-900 hover:shadow-2xl bg-gradient-to-r from-[#a283f9] to-[#8f63f7] px-5 py-2 rounded-2xl flex justify-center items-center hover:translate-y-[-3px] transition-all duration-400 mt-5"
+    >
+      {question.nextQuestionId ? "Next Question" : "End Quiz"}
+    </button>
+  );
 }
