@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import MarkButton from "./MarkButton";
+import { Question } from "../types/Questions";
 
 // Types
 type Option = { id: number; text: string };
@@ -11,6 +13,7 @@ interface FIBCodeProps {
   sentenceParts: SentencePart[];
   options: Option[];
   correctBlanks: CorrectBlank[];
+  question: Question;
 }
 
 // Keywords & builtins
@@ -21,7 +24,7 @@ const PYTHON_BUILTINS = ["print", "len", "range", "int", "str", "float", "list",
 const STRING_PATTERN = /^(['"]).*?\1$/;
 const NUMBER_PATTERN = /^[0-9]+(\.[0-9]+)?$/;
 
-const FIBCode: React.FC<FIBCodeProps> = ({ sentenceParts, options, correctBlanks }) => {
+const FIBCode: React.FC<FIBCodeProps> = ({ question, sentenceParts, options, correctBlanks }) => {
   const [sentence, setSentence] = useState<SentencePart[]>(
     sentenceParts.map(p => ({ ...p, filled: null }))
   );
@@ -178,7 +181,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({ sentenceParts, options, correctBlanks
     </div>
   ))}
 </div>
-
+<MarkButton nextQuestionId={question.nextQuestionId}></MarkButton> 
       <button
         onClick={markQuiz}
         className="w-full h-[70px] shadow-xl shadow-purple-900 hover:shadow-2xl bg-gradient-to-r from-[#a283f9] to-[#8f63f7] px-5 py-2 rounded-2xl flex justify-center items-center hover:translate-y-[-3px] transition-all duration-400"

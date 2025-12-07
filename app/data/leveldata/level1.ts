@@ -41,8 +41,8 @@ const level1: Level = {
             },
             {
               /* Level 1 Section 1 Exercise 1 Question 2 */
-              id: "1-1-1-7",
-              nextQuestionId: "1-1-1-8",
+              id: "1-1-1-2",
+              nextQuestionId: "1-1-1-3",
               type: "FIBCode",
               question: "Complete the sentence:",
               options: [], // not used for FIB
@@ -69,8 +69,8 @@ const level1: Level = {
             },
             {
               /* Level 1 Section 1 Exercise 1 Question 3 */
-              id: "1-1-1-5",
-              nextQuestionId: "1-1-1-6",
+              id: "1-1-1-3",
+              nextQuestionId: "1-1-1-4",
               type: "FIB",
               question: "Complete the sentence:",
               options: [], // not used for FIB
