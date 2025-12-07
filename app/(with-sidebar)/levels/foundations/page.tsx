@@ -91,7 +91,7 @@ export default async function FoundationsPage() {
                     <ExerciseBox completed={section1Completed[index]} />
                   </Link>
                 ) : (
-                  <span>
+                  <span key={index}>
                     <ExerciseBox completed={section1Completed[index]} />
                   </span>
                 )
@@ -114,7 +114,7 @@ export default async function FoundationsPage() {
                     <ExerciseBox completed={section2Completed[index]} />
                   </Link>
                 ) : (
-                  <span>
+                  <span key={index}>
                     <ExerciseBox completed={section2Completed[index]} />
                   </span>
                 )
@@ -137,7 +137,7 @@ export default async function FoundationsPage() {
                     <ExerciseBox completed={section3Completed[index]} />
                   </Link>
                 ) : (
-                  <span>
+                  <span key={index}>
                     <ExerciseBox completed={section3Completed[index]} />
                   </span>
                 )
