@@ -29,6 +29,7 @@ const level1: Level = {
               /* Level 1 Section 1 Exercise 1 Question 1*/
               id: "1-1-1-1",
               nextQuestionId: "1-1-1-2",
+              firstQuesiton: true,
               type: "MCQ",
               question: "What is code?",
               options: [
@@ -280,6 +281,7 @@ const level1: Level = {
               /* Level 1 Section 1 Exercise 2 Question 1*/
               id: "1-1-2-1",
               nextQuestionId: "1-1-2-2",
+              firstQuesiton: true,
               type: "MCQ",
               question: "What is code?",
               options: [
@@ -429,6 +431,7 @@ const level1: Level = {
               /* Level 1 Section 2 Exercise 1 Question 1*/
               id: "1-2-1-1",
               nextQuestionId: "1-2-1-2",
+              firstQuesiton: true,
               type: "MCQ",
               question: "What is an if statement?",
               options: [
@@ -462,6 +465,7 @@ const level1: Level = {
               /* Level 1 Section 2 Exercise 2 Question 1*/
               id: "1-2-2-1",
               nextQuestionId: "1-2-2-2",
+              firstQuesiton: true,
               type: "MCQ",
               question: "What is an if statement?",
               options: [
@@ -502,6 +506,7 @@ const level1: Level = {
               /* Level 1 Section 3 Exercise 1 Question 1*/
               id: "1-3-1-1",
               nextQuestionId: "1-3-1-2",
+              firstQuesiton: true,
               type: "MCQ",
               question: "What is code?",
               options: [
@@ -565,6 +570,7 @@ const level1: Level = {
               /* Level 1 Section 3 Exercise 2 Question 1*/
               id: "1-3-2-1",
               nextQuestionId: "1-3-2-2",
+              firstQuesiton: true,
               type: "MCQ",
               question: "What is code?",
               options: [
@@ -628,6 +634,7 @@ const level1: Level = {
               /* Level 1 Section 3 Exercise 3 Question 1*/
               id: "1-3-3-1",
               nextQuestionId: "1-3-3-2",
+              firstQuesiton: true,
               type: "MCQ",
               question: "What is code?",
               options: [

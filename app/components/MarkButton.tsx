@@ -1,5 +1,4 @@
 "use client";
-
 import { Question } from "../types/Questions";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -23,6 +22,10 @@ export default function MarkButton({ question, outcome }: Props) {
   }, []);
 
   const handleNextQuestion = () => {
+    if (question.firstQuesiton === true) {
+      localStorage.removeItem("answeredCount");
+      localStorage.removeItem("correctCount");
+    }
     // Calculate new counts
     const newAnswered = answeredCount + 1;
     const newCorrect = outcome ? correctCount + 1 : correctCount;
@@ -52,10 +55,11 @@ export default function MarkButton({ question, outcome }: Props) {
 
     // Check if passed
     if (newCorrect / newAnswered >= 0.7) {
-      console.log("Passed the quiz!");
-      // call API to mark as passed if needed
+      // call API to mark as passed
+      // include animation of somesort
     } else {
-      console.log("Failed the quiz!");
+      // call API to mark as failed
+      // animation of some sort
     }
 
     // Reset counts for next quiz
