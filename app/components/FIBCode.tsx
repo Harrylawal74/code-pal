@@ -239,7 +239,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
       </div>
       <MarkButton
         question={question}
-        outcome={markQuiz()}
+        positiveOutcome={markQuiz()}
       ></MarkButton>
     </div>
   );

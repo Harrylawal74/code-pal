@@ -5,10 +5,10 @@ import { useRouter } from "next/navigation";
 
 type Props = {
   question: Question;
-  outcome: boolean;
+  positiveOutcome: boolean;
 };
 
-export default function MarkButton({ question, outcome }: Props) {
+export default function MarkButton({ question, positiveOutcome }: Props) {
   const router = useRouter();
   const [correctCount, setCorrectCount] = useState(0);
   const [answeredCount, setAnsweredCount] = useState(0);
@@ -22,13 +22,17 @@ export default function MarkButton({ question, outcome }: Props) {
   }, []);
 
   const handleNextQuestion = () => {
-    if (question.firstQuesiton === true) {
+    let newAnswered = 0;
+    let newCorrect = 0;
+    if (question.firstQuestion) {
       localStorage.removeItem("answeredCount");
       localStorage.removeItem("correctCount");
+
+    } else {
+      //Calculate new counts
+      newAnswered = answeredCount + 1;
+      newCorrect = positiveOutcome ? correctCount + 1 : correctCount;
     }
-    // Calculate new counts
-    const newAnswered = answeredCount + 1;
-    const newCorrect = outcome ? correctCount + 1 : correctCount;
 
     // Update state
     setAnsweredCount(newAnswered);
@@ -45,7 +49,7 @@ export default function MarkButton({ question, outcome }: Props) {
 
   const handleEndQuiz = () => {
     const newAnswered = answeredCount + 1;
-    const newCorrect = outcome ? correctCount + 1 : correctCount;
+    const newCorrect = positiveOutcome ? correctCount + 1 : correctCount;
 
     setAnsweredCount(newAnswered);
     setCorrectCount(newCorrect);
@@ -57,9 +61,11 @@ export default function MarkButton({ question, outcome }: Props) {
     if (newCorrect / newAnswered >= 0.7) {
       // call API to mark as passed
       // include animation of somesort
+      console.log("You passed");
     } else {
       // call API to mark as failed
       // animation of some sort
+      console.log("You failed");
     }
 
     // Reset counts for next quiz

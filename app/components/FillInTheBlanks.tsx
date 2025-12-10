@@ -220,7 +220,7 @@ const FillInTheBlanks: React.FC<FillInTheBlanksProps> = ({
       {/* Button to mark quiz */}
       <MarkButton
         question={question}
-        outcome={markQuiz()}
+        positiveOutcome={markQuiz()}
       ></MarkButton>
     </div>
   );

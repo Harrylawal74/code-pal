@@ -29,7 +29,7 @@ const level1: Level = {
               /* Level 1 Section 1 Exercise 1 Question 1*/
               id: "1-1-1-1",
               nextQuestionId: "1-1-1-2",
-              firstQuesiton: true,
+              firstQuestion: true,
               type: "MCQ",
               question: "What is code?",
               options: [
@@ -281,7 +281,7 @@ const level1: Level = {
               /* Level 1 Section 1 Exercise 2 Question 1*/
               id: "1-1-2-1",
               nextQuestionId: "1-1-2-2",
-              firstQuesiton: true,
+              firstQuestion: true,
               type: "MCQ",
               question: "What is code?",
               options: [
@@ -417,6 +417,40 @@ const level1: Level = {
             },
           ],
         },
+        {
+          exercise: 3,
+          questions: [
+            {
+              /* Level 1 Section 1 Exercise 3 Question 1*/
+              id: "1-1-3-1",
+              nextQuestionId: "1-1-3-2",
+              firstQuestion: true,
+              type: "MCQ",
+              question: "What is code?",
+              options: [
+                "A set of instructions for a computer",
+                "A type of software",
+                "A programming language",
+                "Hardware",
+              ],
+              correctAnswer: "A set of instructions for a computer",
+            },
+            {
+              /* Level 1 Section 1 Exercise 3 Question 2*/
+              id: "1-1-3-2",
+              type: "MCQ",
+              question: "What is a variable?",
+              options: [
+                "A value that can change",
+                "A fixed value",
+                "A type of function",
+                "A programming language",
+                "A programming language",
+              ],
+              correctAnswer: "A value that can change",
+            },
+          ],
+        },
       ],
     },
 
@@ -431,7 +465,7 @@ const level1: Level = {
               /* Level 1 Section 2 Exercise 1 Question 1*/
               id: "1-2-1-1",
               nextQuestionId: "1-2-1-2",
-              firstQuesiton: true,
+              firstQuestion: true,
               type: "MCQ",
               question: "What is an if statement?",
               options: [
@@ -465,7 +499,7 @@ const level1: Level = {
               /* Level 1 Section 2 Exercise 2 Question 1*/
               id: "1-2-2-1",
               nextQuestionId: "1-2-2-2",
-              firstQuesiton: true,
+              firstQuestion: true,
               type: "MCQ",
               question: "What is an if statement?",
               options: [
@@ -478,8 +512,8 @@ const level1: Level = {
             },
             {
               /* Level 1 Section 2 Exercise 2 Question 2*/
-              id: "1-2-1-2",
-              nextQuestionId: "1-2-1-3",
+              id: "1-2-2-2",
+              nextQuestionId: "1-2-2-3",
               type: "MCQ",
               question: "What is a switch statement?",
               options: [
@@ -506,7 +540,7 @@ const level1: Level = {
               /* Level 1 Section 3 Exercise 1 Question 1*/
               id: "1-3-1-1",
               nextQuestionId: "1-3-1-2",
-              firstQuesiton: true,
+              firstQuestion: true,
               type: "MCQ",
               question: "What is code?",
               options: [
@@ -570,7 +604,7 @@ const level1: Level = {
               /* Level 1 Section 3 Exercise 2 Question 1*/
               id: "1-3-2-1",
               nextQuestionId: "1-3-2-2",
-              firstQuesiton: true,
+              firstQuestion: true,
               type: "MCQ",
               question: "What is code?",
               options: [
@@ -634,7 +668,7 @@ const level1: Level = {
               /* Level 1 Section 3 Exercise 3 Question 1*/
               id: "1-3-3-1",
               nextQuestionId: "1-3-3-2",
-              firstQuesiton: true,
+              firstQuestion: true,
               type: "MCQ",
               question: "What is code?",
               options: [

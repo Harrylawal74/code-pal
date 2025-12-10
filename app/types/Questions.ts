@@ -16,7 +16,7 @@ export type FIBQuestionData = {
 export type Question = {
   id: string;
   nextQuestionId?: string; // ID of the next question, optional seeing as there is a final quesiton
-  firstQuesiton?: boolean;
+  firstQuestion?: boolean;
   type: QuestionType;
   question: string;
   options: string[]; // still used for MCQ
