@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ExerciseBox from "../../../components/ExerciseBox";
-import level1 from "../../../data/leveldata/level1";
+import level2 from "../../../data/leveldata/level1";
 import React from "react";
 import { getLevel1ExerciseProgress } from "@/lib/supabase/ServerFunctions/DatabaseLevelData";
 
@@ -28,7 +28,7 @@ function ExerciseSectionTabTemplate({ title, bgcolor }: Props) {
  * *Copy the method used in the LevelTabTemplate to pass props to the template. above^^^
  */
 
-export default async function FoundationsPage() {
+export default async function ControlFlowPage() {
   async function isExerciseCompleted(
     sectionIndex: number,
     exerciseIndex: number
@@ -45,19 +45,19 @@ export default async function FoundationsPage() {
 
   // Calculate completed for section 1
   const section1Completed = await Promise.all(
-    level1.sections[0].exercises.map((_, index) =>
+    level2.sections[0].exercises.map((_, index) =>
       isExerciseCompleted(0, index)
     )
   );
   // Calculate completed for section 2
   const section2Completed = await Promise.all(
-    level1.sections[1].exercises.map((_, index) =>
+    level2.sections[1].exercises.map((_, index) =>
       isExerciseCompleted(1, index)
     )
   );
   // Calculate completed for section 3
   const section3Completed = await Promise.all(
-    level1.sections[2].exercises.map((_, index) =>
+    level2.sections[2].exercises.map((_, index) =>
       isExerciseCompleted(2, index)
     )
   );
@@ -78,11 +78,11 @@ export default async function FoundationsPage() {
           {/*Syntax basics Section*/}
           <section className="mb-8">
             <ExerciseSectionTabTemplate
-              title={level1.sections[0].title}
+              title={level2.sections[0].title}
               bgcolor={"bg-purple-500"}
             />
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
-              {level1.sections[0].exercises.map((exercise, index) =>
+              {level2.sections[0].exercises.map((exercise, index) =>
                 section1Completed[index] ? (
                   <Link
                     key={index}
@@ -91,7 +91,7 @@ export default async function FoundationsPage() {
                     <ExerciseBox completed={section1Completed[index]} />
                   </Link>
                 ) : (
-                  <span key={index}>
+                  <span>
                     <ExerciseBox completed={section1Completed[index]} />
                   </span>
                 )
@@ -101,11 +101,11 @@ export default async function FoundationsPage() {
           {/*If Statements Section*/}
           <section className="mb-8 mt-20">
             <ExerciseSectionTabTemplate
-              title={level1.sections[1].title}
+              title={level2.sections[1].title}
               bgcolor={"bg-purple-500"}
             />
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
-              {level1.sections[1].exercises.map((exercise, index) =>
+              {level2.sections[1].exercises.map((exercise, index) =>
                 section2Completed[index] ? (
                   <Link
                     key={index}
@@ -114,7 +114,7 @@ export default async function FoundationsPage() {
                     <ExerciseBox completed={section2Completed[index]} />
                   </Link>
                 ) : (
-                  <span key={index}>
+                  <span>
                     <ExerciseBox completed={section2Completed[index]} />
                   </span>
                 )
@@ -124,11 +124,11 @@ export default async function FoundationsPage() {
 
           <section className="mb-8 mt-20">
             <ExerciseSectionTabTemplate
-              title={level1.sections[2].title}
+              title={level2.sections[2].title}
               bgcolor={"bg-purple-500"}
             />
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
-              {level1.sections[2].exercises.map((exercise, index) =>
+              {level2.sections[2].exercises.map((exercise, index) =>
                 section3Completed[index] ? (
                   <Link
                     key={index}
@@ -137,7 +137,7 @@ export default async function FoundationsPage() {
                     <ExerciseBox completed={section3Completed[index]} />
                   </Link>
                 ) : (
-                  <span key={index}>
+                  <span>
                     <ExerciseBox completed={section3Completed[index]} />
                   </span>
                 )

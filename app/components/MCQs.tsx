@@ -22,19 +22,13 @@ export default function MCQs({question}: {question: Question}) {
 
     /* Function to handle form submission */
     /** This function is called when the user submits the form */
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-
-        if (selectedAnswer === correctAnswer) {
-        setResult("correct");
-        } else {
-        setResult("incorrect");
-        }
+    const markQuiz = () => {
+        return selectedAnswer === correctAnswer ? true : false;
     };
 
 
     return(
-        <form onSubmit={handleSubmit} className="mx-5 bg-gradient-to-b from-[#121723] to-[#131623] px-10 py-15 rounded-4xl gap-3 max-w-200 w-full max-h-[700px] flex flex-col items-center border-2 border-[#2d2c47]" >
+        <div className="mx-5 bg-gradient-to-b from-[#121723] to-[#131623] px-10 py-15 rounded-4xl gap-3 max-w-200 w-full max-h-[700px] flex flex-col items-center border-2 border-[#2d2c47]" >
 
             
             <h2 className="flex items-center justify-center text-white text-2xl font-bold rounded-4xl px-10 h-17 mb-15 gap-6 w-full ">{question.question}</h2>
@@ -49,12 +43,12 @@ export default function MCQs({question}: {question: Question}) {
                 {/** Sets the state 'selectedAnswer to be the option that the user has selected
                  * and checks the option that the user has selected (option appears selected on form)
                  */}
-                <input type="radio" name="QuestionOption" value={option} checked={selectedAnswer === option}
+                <input className="text-white" type="radio" name="QuestionOption" value={option} checked={selectedAnswer === option}
                     onChange={() => setSelectedAnswer(option)}/> {option}</label>
             ))}
             
         {/** The MarkButton component is used to submit the users answer*/}
-            <MarkButton nextQuestionId={question.nextQuestionId}></MarkButton> 
+            <MarkButton question={question} positiveOutcome={markQuiz()}></MarkButton> 
 
         {/** Conditional rendering 
          * if result is "" then nothing is displayed
@@ -70,7 +64,7 @@ export default function MCQs({question}: {question: Question}) {
             </p>
         )}
 
-        </form>
+        </div>
         
     )
 }

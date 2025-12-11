@@ -16,6 +16,7 @@ export type FIBQuestionData = {
 export type Question = {
   id: string;
   nextQuestionId?: string; // ID of the next question, optional seeing as there is a final quesiton
+  firstQuestion?: boolean;
   type: QuestionType;
   question: string;
   options: string[]; // still used for MCQ
@@ -39,6 +40,6 @@ export type Level = {
     name: string;
     description: string;
     numberOfLessons: string;
-    status: string; 
+    status: number; 
     sections: Section[];
 };
