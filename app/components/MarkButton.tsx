@@ -27,7 +27,6 @@ export default function MarkButton({ question, positiveOutcome }: Props) {
     if (question.firstQuestion) {
       localStorage.removeItem("answeredCount");
       localStorage.removeItem("correctCount");
-
     } else {
       //Calculate new counts
       newAnswered = answeredCount + 1;
@@ -45,6 +44,7 @@ export default function MarkButton({ question, positiveOutcome }: Props) {
     if (question.nextQuestionId) {
       router.push(`/exercises/${question.nextQuestionId}`);
     }
+    console.log(answeredCount, correctCount);
   };
 
   const handleEndQuiz = () => {
