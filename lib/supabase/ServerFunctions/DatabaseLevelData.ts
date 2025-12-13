@@ -1,3 +1,4 @@
+"use server";
 import { cookies } from "next/headers"
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
 
@@ -45,6 +46,30 @@ export async function getLevel1ExerciseProgress() {
   }
 
   return data as { syntax_basics: number; if_statements: number; introduction_to_programming: number }
+}
+
+//Updating the database to reflect level progress
+//Find where I'm using CharAt() and replace with this logic 
+export async function setLevel1CompletedExercise(questionID: string) {
+  console.log("Hello world");
+  const supabase = createServerComponentClient({ cookies });
+  const questionIdParts = questionID.split("-");
+  const value = Number(questionIdParts[3]);
+  console.log(value);
+
+  /*
+  const { error } = await supabase
+    .from("testtable")
+    .upsert(
+      { user_id: userId, message },
+      { onConflict: "user_id" }
+    )
+
+  if (error) {
+    console.error(error)
+    throw new Error("Failed to save message")
+  }
+    */
 }
 
 

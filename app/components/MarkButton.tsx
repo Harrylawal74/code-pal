@@ -2,7 +2,8 @@
 import { Question } from "../types/Questions";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-
+import { setLevel1CompletedExercise } from "@/lib/supabase/ServerFunctions/DatabaseLevelData";
+import { setLevel1CompletedExerciseAPI } from "../api/SetLevelExerciseProgress";
 type Props = {
   question: Question;
   positiveOutcome: boolean;
@@ -60,12 +61,15 @@ export default function MarkButton({ question, positiveOutcome }: Props) {
     // Check if passed
     if (newCorrect / newAnswered >= 0.7) {
       // call API to mark as passed
-      // include animation of somesort
+      // include animation of some sort
       console.log("You passed");
+      setLevel1CompletedExerciseAPI(question.id);
+
     } else {
       // call API to mark as failed
       // animation of some sort
       console.log("You failed");
+      setLevel1CompletedExerciseAPI(question.id);
     }
 
     // Reset counts for next quiz
