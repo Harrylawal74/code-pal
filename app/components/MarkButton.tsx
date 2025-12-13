@@ -63,13 +63,13 @@ export default function MarkButton({ question, positiveOutcome }: Props) {
       // call API to mark as passed
       // include animation of some sort
       console.log("You passed");
-      setLevel1CompletedExerciseAPI(question.id);
+      setLevel1CompletedExercise(question.id);
 
     } else {
       // call API to mark as failed
       // animation of some sort
       console.log("You failed");
-      setLevel1CompletedExerciseAPI(question.id);
+      setLevel1CompletedExercise(question.id);
     }
 
     // Reset counts for next quiz
