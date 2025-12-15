@@ -55,12 +55,13 @@ export async function getLevel1ExerciseProgress() {
 //Updating the database to reflect level progress
 //Find where I'm using CharAt() and replace with this logic
 export async function setHighestCompletedLevel1Exercise(questionID: string) {
-  console.log("Hello world");
   const supabase = createServerComponentClient({ cookies });
+
   const questionIdParts = questionID.split("-");
   const section = Number(questionIdParts[1]);
   const exercise = Number(questionIdParts[2]);
-  console.log(questionIdParts);
+
+  const sections = ["", "syntax_basics", "if_statements", "introduction_to_programming"]
 
   const {
     data: { user },
@@ -70,7 +71,10 @@ export async function setHighestCompletedLevel1Exercise(questionID: string) {
 
   const { error } = await supabase
     .from("level1exerciseprogress")
-    .upsert({ user_id: user.id, syntax_basics: exercise }, { onConflict: "user_id" });
+    .upsert(
+      { user_id: user.id, [sections[section]]: exercise },
+      { onConflict: "user_id" }
+    );
 
   if (error) {
     console.error(error);
