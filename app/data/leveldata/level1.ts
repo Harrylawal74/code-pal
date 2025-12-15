@@ -479,7 +479,6 @@ const level1: Level = {
             {
               /* Level 1 Section 2 Exercise 1 Question 2*/
               id: "1-2-1-2",
-              nextQuestionId: "1-2-1-3",
               type: "MCQ",
               question: "What is a switch statement?",
               options: [
@@ -583,7 +582,6 @@ const level1: Level = {
             {
               /* Level 1 Section 3 Exercise 1 Question 4*/
               id: "1-3-1-4",
-              nextQuestionId: "1-3-1-5",
               type: "MCQ",
               question: "What is a loop?",
               options: [
@@ -647,7 +645,6 @@ const level1: Level = {
             {
               /* Level 1 Section 3 Exercise 2 Question 4*/
               id: "1-3-2-4",
-              nextQuestionId: "1-3-2-5",
               type: "MCQ",
               question: "What is a loop?",
               options: [
@@ -711,7 +708,6 @@ const level1: Level = {
             {
               /* Level 1 Section 3 Exercise 3 Question 4*/
               id: "1-3-3-4",
-              nextQuestionId: "1-3-3-5",
               type: "MCQ",
               question: "What is a loop?",
               options: [

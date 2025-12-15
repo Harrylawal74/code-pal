@@ -2,6 +2,7 @@
 import { Question } from "../types/Questions";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { setHighestCompletedLevel1Exercise } from "@/lib/supabase/ServerFunctions/DatabaseLevelData";
 
 type Props = {
   question: Question;
@@ -60,12 +61,15 @@ export default function MarkButton({ question, positiveOutcome }: Props) {
     // Check if passed
     if (newCorrect / newAnswered >= 0.7) {
       // call API to mark as passed
-      // include animation of somesort
+      // include animation of some sort
       console.log("You passed");
+      setHighestCompletedLevel1Exercise(question.id);
+
     } else {
       // call API to mark as failed
       // animation of some sort
       console.log("You failed");
+      setHighestCompletedLevel1Exercise(question.id);
     }
 
     // Reset counts for next quiz

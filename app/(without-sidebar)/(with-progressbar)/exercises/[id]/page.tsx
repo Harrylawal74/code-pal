@@ -34,7 +34,7 @@ const componentMap: Record<QuestionType, React.FC<{ question: Question }>> = {
         correctBlanks={fibData.correctBlanks}
       />
     );
-  }, // <-- Added support for FIB question type here
+  },
   FIBCode: (props) => {
     // Wrap the FIB component to pass only fibData props to match the expected props shape
     const fibData = props.question.fibData!;
