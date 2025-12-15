@@ -2,7 +2,7 @@
 import { cookies } from "next/headers";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 
-export async function getLevelStatus() {
+export async function getLevel1Status() {
   const supabase = createServerComponentClient({ cookies });
 
   const {
@@ -58,8 +58,8 @@ export async function setHighestCompletedLevel1Exercise(questionID: string) {
   const supabase = createServerComponentClient({ cookies });
 
   const questionIdParts = questionID.split("-");
-  const section = Number(questionIdParts[1]);
-  const exercise = Number(questionIdParts[2]);
+  const sectionNumber = Number(questionIdParts[1]);
+  const exerciseNumber = Number(questionIdParts[2]);
 
   const sections = ["", "syntax_basics", "if_statements", "introduction_to_programming"]
 
@@ -72,7 +72,7 @@ export async function setHighestCompletedLevel1Exercise(questionID: string) {
   const { error } = await supabase
     .from("level1exerciseprogress")
     .upsert(
-      { user_id: user.id, [sections[section]]: exercise },
+      { user_id: user.id, [sections[sectionNumber]]: exerciseNumber },
       { onConflict: "user_id" }
     );
 

@@ -2,7 +2,7 @@
 import { Question } from "../types/Questions";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { setHighestCompletedLevel1Exercise } from "@/lib/supabase/ServerFunctions/DatabaseLevelData";
+import { setHighestCompletedLevel1Exercise } from "@/lib/supabase/ServerFunctions/DatabaseLevel1Data";
 
 type Props = {
   question: Question;
@@ -14,38 +14,46 @@ export default function MarkButton({ question, positiveOutcome }: Props) {
   const [correctCount, setCorrectCount] = useState(0);
   const [answeredCount, setAnsweredCount] = useState(0);
 
-  // Load counts from localStorage on mount
+  // Load counts from localStorage on mount (only for continuation of a quiz)
   useEffect(() => {
-    const storedCorrect = Number(localStorage.getItem("correctCount") || 0);
-    const storedAnswered = Number(localStorage.getItem("answeredCount") || 0);
-    setCorrectCount(storedCorrect);
-    setAnsweredCount(storedAnswered);
-  }, []);
+    if (!question.firstQuestion) {
+      const storedCorrect = Number(localStorage.getItem("correctCount") || 0);
+      const storedAnswered = Number(localStorage.getItem("answeredCount") || 0);
+      setCorrectCount(storedCorrect);
+      setAnsweredCount(storedAnswered);
+    }
+  }, [question.firstQuestion]);
+
+  // Function to reset counts for a new quiz
+  const resetCountsForNewQuiz = () => {
+    setCorrectCount(0);
+    setAnsweredCount(0);
+    localStorage.setItem("correctCount", "0");
+    localStorage.setItem("answeredCount", "0");
+  };
 
   const handleNextQuestion = () => {
-    let newAnswered = 0;
-    let newCorrect = 0;
-    if (question.firstQuestion) {
-      localStorage.removeItem("answeredCount");
-      localStorage.removeItem("correctCount");
-    } else {
-      //Calculate new counts
-      newAnswered = answeredCount + 1;
-      newCorrect = positiveOutcome ? correctCount + 1 : correctCount;
-    }
+    const newAnswered = answeredCount + 1;
+    const newCorrect = positiveOutcome ? correctCount + 1 : correctCount;
 
-    // Update state
     setAnsweredCount(newAnswered);
     setCorrectCount(newCorrect);
-    // Update localStorage
+
+    // Update localStorage with new counts
     localStorage.setItem("answeredCount", newAnswered.toString());
     localStorage.setItem("correctCount", newCorrect.toString());
 
-    // Navigate
+    // Navigate to next question
     if (question.nextQuestionId) {
       router.push(`/exercises/${question.nextQuestionId}`);
     }
-    console.log(answeredCount, correctCount);
+
+    
+    console.log(
+      "Answered Count:",
+      answeredCount,
+      "Correct Count:",
+      correctCount)
   };
 
   const handleEndQuiz = () => {
@@ -58,27 +66,36 @@ export default function MarkButton({ question, positiveOutcome }: Props) {
     localStorage.setItem("answeredCount", newAnswered.toString());
     localStorage.setItem("correctCount", newCorrect.toString());
 
-    // Check if passed
+    // Check if the user passed
     if (newCorrect / newAnswered >= 0.7) {
-      // call API to mark as passed
-      // include animation of some sort
+      setHighestCompletedLevel1Exercise(question.id);
       console.log("You passed");
-      setHighestCompletedLevel1Exercise(question.id);
-
     } else {
-      // call API to mark as failed
-      // animation of some sort
-      console.log("You failed");
       setHighestCompletedLevel1Exercise(question.id);
+      console.log("You failed");
     }
 
-    // Reset counts for next quiz
+    // Reset counts for next quiz (if desired)
     localStorage.removeItem("answeredCount");
     localStorage.removeItem("correctCount");
 
-    // Navigate to learn page
+    
+    console.log(
+      "Answered Count:",
+      answeredCount,
+      "Correct Count:",
+      correctCount)
+
+    // Navigate to the learn page
     router.push("/learn");
   };
+
+  useEffect(() => {
+    // If it's the first question of the quiz, reset the counts
+    if (question.firstQuestion) {
+      resetCountsForNewQuiz();
+    }
+  }, [question.firstQuestion]);
 
   return (
     <button
