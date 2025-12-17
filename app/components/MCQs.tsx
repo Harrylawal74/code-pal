@@ -2,7 +2,7 @@
 import { Question } from "../types/Questions";
 import MarkButton from "./MarkButton";
 import {use, useState } from "react";
-
+import CodeBlock from "./CodeBlock";
 
 
 /** A question object is passed to this function from the dynamic webpage [id]*/
@@ -32,7 +32,8 @@ export default function MCQs({question}: {question: Question}) {
 
             
             <h2 className="flex items-center justify-center text-white text-2xl font-bold rounded-4xl px-10 h-17 mb-15 gap-6 w-full ">{question.question}</h2>
-                
+            <div className="flex justify-center"><CodeBlock sentenceParts={question.codeSnipit?.sentenceParts}/></div>
+            
             {/**Loops through each option and its index
              * Renders a <label> and <input> for each option
              */}

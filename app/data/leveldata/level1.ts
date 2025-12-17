@@ -31,12 +31,20 @@ const level1: Level = {
               nextQuestionId: "1-1-1-2",
               firstQuestion: true,
               type: "MCQ",
-              question: "What is code?",
+              question: "What does the following line of code do?",
+              codeSnipit: {
+                sentenceParts: [
+                  { id: 1, text: "1| " },
+                  { id: 2, text: "age = 16" },
+                  { id: 3, text: "\n2|" },
+                  { id: 4, text: "\n3|" },
+                ],
+              },
               options: [
-                "A set of instructions for a computer",
-                "A type of software",
-                "A programming language",
-                "Hardware",
+                "Prints the value 16",
+                "Stores the value 16 in a variable called age",
+                "Compares age with 16",
+                "Creates a loop",
               ],
               correctAnswer: "A set of instructions for a computer",
             },
@@ -45,27 +53,21 @@ const level1: Level = {
               id: "1-1-1-2",
               nextQuestionId: "1-1-1-3",
               type: "FIBCode",
-              question: "Complete the sentence:",
+              question:
+                "Complete the code so that the variable score stores the value 10.",
               options: [], // not used for FIB
               correctAnswer: "", // not used for FIB
               fibData: {
                 sentenceParts: [
-                  { id: 1, text: "#line 1|", isBlank: false },
-                  { id: 2, text: "for i in range", isBlank: false },
-                  { id: 3, text: "", isBlank: true },
-                  { id: 4, text: "\n#line 2|", isBlank: false },
-                  { id: 5, text: '    print("Hello world!")', isBlank: false },
-                  { id: 6, text: "\n#line 3|", isBlank: false },
-                  { id: 7, text: "", isBlank: true },
+                  { id: 1, text: "1|", isBlank: false },
+                  { id: 2, text: "", isBlank: true },
+                  { id: 3, text: "= 10", isBlank: false },
                 ],
                 options: [
-                  { id: 1, text: "(0, 4)" },
-                  { id: 2, text: "#end of code" },
+                  { id: 1, text: "value" },
+                  { id: 2, text: "score" },
                 ],
-                correctBlanks: [
-                  { id: 3, correctOptionId: 1 },
-                  { id: 7, correctOptionId: 2 },
-                ],
+                correctBlanks: [{ id: 2, correctOptionId: 2 }],
               },
             },
             {
@@ -170,12 +172,12 @@ const level1: Level = {
               correctAnswer: "", // not used for FIB
               fibData: {
                 sentenceParts: [
-                  { id: 1, text: "#line 1|", isBlank: false },
+                  { id: 1, text: "1|", isBlank: false },
                   { id: 2, text: "for i in range", isBlank: false },
                   { id: 3, text: "", isBlank: true },
-                  { id: 4, text: "\n#line 2|", isBlank: false },
+                  { id: 4, text: "\n2|", isBlank: false },
                   { id: 5, text: '    print("Hello world!")', isBlank: false },
-                  { id: 6, text: "\n#line 3|", isBlank: false },
+                  { id: 6, text: "\n3|", isBlank: false },
                   { id: 7, text: "", isBlank: true },
                 ],
                 options: [
