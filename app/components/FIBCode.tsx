@@ -151,7 +151,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
     }
 
     // Regex to match strings first, then words/numbers
-    const regex = /(\".*?\"|'.*?'|\b\w+\b|\s+|[^\s\w])/g;
+    const regex = /(\d+(\.\d+)?\||\".*?\"|'.*?'|\b\w+\b|\s+|[^\s\w])/g;
     const tokens = text.match(regex) || [];
 
     return tokens.map((token, idx) => {
@@ -173,6 +173,12 @@ const FIBCode: React.FC<FIBCodeProps> = ({
       } else if (PYTHON_BUILTINS.includes(token)) {
         return (
           <span key={idx} className="text-blue-400">
+            {token}
+          </span>
+        );
+      } else if (/^\d+(\.\d+)?\|$/.test(token)) {
+        return (
+          <span key={idx} className="text-gray-200">
             {token}
           </span>
         );
@@ -237,10 +243,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
           </div>
         ))}
       </div>
-      <MarkButton
-        question={question}
-        positiveOutcome={markQuiz()}
-      ></MarkButton>
+      <MarkButton question={question} positiveOutcome={markQuiz()}></MarkButton>
     </div>
   );
 };
