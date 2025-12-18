@@ -97,7 +97,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ sentenceParts = [] }) => {
   };
 
   return (
-    <div className="self-start p-4 bg-gray-700 text-white rounded-lg font-mono max-w-250 ">
+    <div className="self-start p-4 bg-gray-700 text-white rounded-lg font-mono w-full mb-5 min-h-50 h-full overflow-auto no-scrollbar">
       {/* Sentence area */}
       <pre className="whitespace-pre-wrap">
         {sentenceParts.map((part, i) => (
