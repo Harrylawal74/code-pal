@@ -58,10 +58,14 @@ export async function setHighestCompletedLevel1Exercise(questionID: string) {
   const supabase = createServerComponentClient({ cookies });
 
   const questionIdParts = questionID.split("-");
-  const sectionNumber = Number(questionIdParts[1]);
+  const sectionNumber = Number(questionIdParts[1]) - 1;
   const exerciseNumber = Number(questionIdParts[2]);
 
-  const sections = ["", "syntax_basics", "if_statements", "introduction_to_programming"]
+  const sections = [
+    "syntax_basics",
+    "if_statements",
+    "introduction_to_programming",
+  ] as const;
 
   const {
     data: { user },
@@ -69,15 +73,27 @@ export async function setHighestCompletedLevel1Exercise(questionID: string) {
 
   if (!user) return null;
 
-  const { error } = await supabase
-    .from("level1exerciseprogress")
-    .upsert(
-      { user_id: user.id, [sections[sectionNumber]]: exerciseNumber },
-      { onConflict: "user_id" }
-    );
+  const exerciseProgress = await getLevel1ExerciseProgress();
+  if (!exerciseProgress) {
+    console.error("Exercise progress not available");
+    return null;
+  }
 
-  if (error) {
-    console.error(error);
-    throw new Error("Failed to save latest exercise");
+  const currentProgress = exerciseProgress[sections[sectionNumber]];
+
+  if (currentProgress < exerciseNumber) {
+    const { error } = await supabase
+      .from("level1exerciseprogress")
+      .upsert(
+        { user_id: user.id, [sections[sectionNumber]]: exerciseNumber },
+        { onConflict: "user_id" }
+      );
+
+    if (error) {
+      console.error(error);
+      throw new Error("Failed to save latest exercise");
+    }
+  } else {
+    return null;
   }
 }
