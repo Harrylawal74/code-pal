@@ -48,7 +48,6 @@ export default function MarkButton({ question, positiveOutcome }: Props) {
       router.push(`/exercises/${question.nextQuestionId}`);
     }
 
-    
     console.log(
       "Answered Count:",
       answeredCount,

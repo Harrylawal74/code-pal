@@ -1,6 +1,7 @@
 "use server";
 import { cookies } from "next/headers";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import level1 from "@/app/data/leveldata/level1";
 
 export async function getLevel1Status() {
   const supabase = createServerComponentClient({ cookies });
@@ -23,6 +24,65 @@ export async function getLevel1Status() {
   }
 
   return data as { foundations: number; control_flow: number };
+}
+
+export async function setLevel1Status() {
+  const supabase = createServerComponentClient({ cookies });
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) return null;
+
+  const exerciseProgress = await getLevel1ExerciseProgress();
+
+  let isStarted = false;
+  let isCompleted = false;
+
+  for (const key in exerciseProgress) {
+    const value = exerciseProgress[key as keyof typeof exerciseProgress];
+    isStarted = value > 0 ? true : isStarted;
+    isCompleted = isCompleted === true && value === 12 ? true : false;
+  }
+
+  if (isCompleted === true) {
+    const { error } = await supabase
+      .from("level1data")
+      .upsert({ user_id: user.id, foundations: 3 }, { onConflict: "user_id" });
+
+    if (error) {
+      console.error(error);
+      throw new Error("Failed to save foundations level status as completed");
+    } else {
+      return null;
+    }
+  } else if (isStarted === true) {
+    const { error } = await supabase
+      .from("level1data")
+      .upsert({ user_id: user.id, foundations: 2 }, { onConflict: "user_id" });
+
+    if (error) {
+      console.error(error);
+      throw new Error("Failed to save foundations level status as in progress");
+    } else {
+      return null;
+    }
+  }else{
+        const { error } = await supabase
+      .from("level1data")
+      .upsert(
+        { user_id: user.id, foundations: 1 },
+        { onConflict: "user_id" }
+      );
+
+    if (error) {
+      console.error(error);
+      throw new Error("Failed to save foundations level status as not started");
+    } else {
+      return null;
+    }
+  }
 }
 
 export async function getLevel1ExerciseProgress() {
