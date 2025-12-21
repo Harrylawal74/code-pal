@@ -20,7 +20,7 @@ const level1: Level = {
   sections: [
     {
       section: 1,
-      title: "Syntax Basics",
+      title: "Introduction to Programming",
       exercises: [
         {
           exercise: 1,
@@ -554,7 +554,7 @@ const level1: Level = {
 
     {
       section: 3,
-      title: "Introduction to Programming",
+      title: "Syntax Basics",
       exercises: [
         {
           exercise: 1,

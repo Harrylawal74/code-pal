@@ -1,7 +1,6 @@
 "use server";
 import { cookies } from "next/headers";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import level1 from "@/app/data/leveldata/level1";
 
 export async function getLevel1Status() {
   const supabase = createServerComponentClient({ cookies });
@@ -38,12 +37,13 @@ export async function setLevel1Status() {
   const exerciseProgress = await getLevel1ExerciseProgress();
 
   let isStarted = false;
-  let isCompleted = false;
+  let isCompleted = true;
 
   for (const key in exerciseProgress) {
     const value = exerciseProgress[key as keyof typeof exerciseProgress];
     isStarted = value > 0 ? true : isStarted;
     isCompleted = isCompleted === true && value === 12 ? true : false;
+    console.log(isCompleted);
   }
 
   if (isCompleted === true) {
@@ -68,13 +68,10 @@ export async function setLevel1Status() {
     } else {
       return null;
     }
-  }else{
-        const { error } = await supabase
+  } else {
+    const { error } = await supabase
       .from("level1data")
-      .upsert(
-        { user_id: user.id, foundations: 1 },
-        { onConflict: "user_id" }
-      );
+      .upsert({ user_id: user.id, foundations: 1 }, { onConflict: "user_id" });
 
     if (error) {
       console.error(error);
@@ -96,7 +93,7 @@ export async function getLevel1ExerciseProgress() {
 
   const { data, error } = await supabase
     .from("level1exerciseprogress")
-    .select("syntax_basics, if_statements, introduction_to_programming")
+    .select("introduction_to_programming, if_statements, syntax_basics")
     .eq("user_id", user.id)
     .single();
 
@@ -106,9 +103,9 @@ export async function getLevel1ExerciseProgress() {
   }
 
   return data as {
-    syntax_basics: number;
-    if_statements: number;
     introduction_to_programming: number;
+    if_statements: number;
+    syntax_basics: number;
   };
 }
 
@@ -122,9 +119,9 @@ export async function setHighestCompletedLevel1Exercise(questionID: string) {
   const exerciseNumber = Number(questionIdParts[2]);
 
   const sections = [
-    "syntax_basics",
-    "if_statements",
     "introduction_to_programming",
+    "if_statements",
+    "syntax_basics",
   ] as const;
 
   const {
