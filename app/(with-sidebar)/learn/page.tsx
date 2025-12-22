@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { Level } from "../../types/Questions";
 import { LevelTabs } from "../../components/LevelTabs";
-import { getLevelStatus } from "@/lib/supabase/ServerFunctions/DatabaseLevelData";
+import { getLevel1Status, setLevel1Status } from "@/lib/supabase/ServerFunctions/DatabaseLevel1Data";
 
 
 
@@ -27,7 +27,8 @@ import { getLevelStatus } from "@/lib/supabase/ServerFunctions/DatabaseLevelData
   */
 export default async function Learn() {
 
-  const statuses = await getLevelStatus();
+  const statuses = await getLevel1Status();
+  setLevel1Status();
 
   return (
    <div className="flex h-[calc(100vh-96px)] w-full bg-gray-700 rounded-3xl m-5 no-scrollbar overflow-auto">

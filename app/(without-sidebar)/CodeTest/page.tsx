@@ -1,5 +1,7 @@
 import { cookies } from "next/headers"
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
+import CodeBlock from "@/app/components/CodeBlock"
+import level1 from "@/app/data/leveldata/level1"
 
 export default async function TestPage() {
   const supabase = createServerComponentClient({ cookies })
