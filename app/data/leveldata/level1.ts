@@ -26,70 +26,60 @@ const level1: Level = {
           exercise: 1,
           questions: [
             {
-              /* Level 1 Section 1 Exercise 1 Question 1*/
+              /* Level 1 Section 1 Exercise 1 Question 1 */
               id: "1-1-1-1",
               nextQuestionId: "1-1-1-2",
               firstQuestion: true,
-              type: "MCQ",
-              question: "What does the following line of code do?",
-              codeSnipit: {
+              type: "FIB",
+              question: "What is a Program?",
+              options: [], // not used for FIB
+              correctAnswer: "", // not used for FIB
+              fibData: {
                 sentenceParts: [
-                  { id: 1, text: "1| " },
-                  { id: 2, text: "age = 16" },
-                  { id: 3, text: "\n2|" },
-                  { id: 4, text: "\n3|" },
-                  { id: 5, text: "\n3|" },
-                  { id: 6, text: "\n3|" },
-                  { id: 7, text: "\n3|" },
-                  { id: 8, text: "\n3|" },
-                  { id: 9, text: "\n3|" },
-                  { id: 10, text: "\n3|" },
-                  { id: 11, text: "\n3|" },
-                  { id: 12, text: "\n3|" },
-                  { id: 13, text: "\n3|" },
-                  { id: 14, text: "\n3|" },
-                  { id: 15, text: "\n3|" },
-                  { id: 16, text: "\n3|" },
-                  { id: 17, text: "\n3|" },
-                  { id: 18, text: "\n3|" },
-                  { id: 19, text: "\n3|" },
-                  { id: 20, text: "\n3|" },
-                  { id: 21, text: "\n3|" },
-                  { id: 22, text: "\n3|" },
-                  { id: 23, text: "\n3|" },
-                  { id: 24, text: "\n3|" },
-                  { id: 25, text: "\n3|" },
-                  { id: 26, text: "\n3|" },
+                  {
+                    id: 1,
+                    text: "A computer program is a set of",
+                    isBlank: false,
+                  },
+                  { id: 2, text: "", isBlank: true },
+                  {
+                    id: 3,
+                    text: "that tell a computer what to do.",
+                    isBlank: false,
+                  },
                 ],
+                options: [
+                  { id: 1, text: "instructions" },
+                  { id: 2, text: "computers" },
+                  { id: 3, text: "files" },
+                  { id: 4, text: "screens" },
+                ],
+                correctBlanks: [{ id: 2, correctOptionId: 1 }],
               },
-              options: [
-                "Prints the value 16",
-                "Stores the value 16 in a variable called age",
-                "Compares age with 16",
-                "Creates a loop",
-              ],
-              correctAnswer: "A set of instructions for a computer",
             },
             {
               /* Level 1 Section 1 Exercise 1 Question 2 */
               id: "1-1-1-2",
               nextQuestionId: "1-1-1-3",
-              type: "FIBCode",
-              question:
-                "Complete the code so that the variable score stores the value 10.",
+              type: "FIB",
+              question: "A program follows instructions in the order they are",
               options: [], // not used for FIB
               correctAnswer: "", // not used for FIB
               fibData: {
                 sentenceParts: [
-                  { id: 1, text: "1|", isBlank: false },
+                  {
+                    id: 1,
+                    text: "A program follows instructions in the order they are",
+                    isBlank: false,
+                  },
                   { id: 2, text: "", isBlank: true },
-                  { id: 3, text: "= 10", isBlank: false },
                 ],
                 options: [
-                  { id: 1, text: "value" },
-                  { id: 2, text: "score" },
+                  { id: 1, text: "printed" },
+                  { id: 2, text: "saved" },
+                  { id: 3, text: "written" },
                 ],
-                correctBlanks: [{ id: 2, correctOptionId: 2 }],
+                correctBlanks: [{ id: 2, correctOptionId: 3 }],
               },
             },
             {
@@ -123,14 +113,44 @@ const level1: Level = {
               id: "1-1-1-4",
               nextQuestionId: "1-1-1-5",
               type: "MCQ",
-              question: "What is a loop?",
+              question: "What does this code do?",
+              codeSnipit: {
+                sentenceParts: [
+                  { id: 1, text: " 1| " },
+                  { id: 2, text: "age = 16" },
+                  { id: 3, text: "\n 2| " },
+                  { id: 4, text: "\n 3| " },
+                  { id: 5, text: "\n 4| " },
+                  { id: 6, text: "\n 5| " },
+                  { id: 7, text: "\n 6| " },
+                  { id: 8, text: "\n 7| " },
+                  { id: 9, text: "\n 8| " },
+                  { id: 10, text: "\n 9| " },
+                  { id: 11, text: "\n10| " },
+                  { id: 12, text: "\n11| " },
+                  { id: 13, text: "\n12| " },
+                  { id: 14, text: "\n13| " },
+                  { id: 15, text: "\n14| " },
+                  { id: 16, text: "\n15| " },
+                  { id: 17, text: "\n16| " },
+                  { id: 18, text: "\n17| " },
+                  { id: 19, text: "\n18| " },
+                  { id: 20, text: "\n19| " },
+                  { id: 21, text: "\n20| " },
+                  { id: 22, text: "\n21| " },
+                  { id: 23, text: "\n22| " },
+                  { id: 24, text: "\n23| " },
+                  { id: 25, text: "\n24| " },
+                  { id: 26, text: "\n25| " },
+                ],
+              },
               options: [
                 "A way to repeat code",
-                "A type of variable",
+                "Stores the integer 16 inside the variable age",
                 "A programming language",
                 "A type of software",
               ],
-              correctAnswer: "A way to repeat code",
+              correctAnswer: "Stores the integer 16 inside the variable age",
             },
             {
               /* Level 1 Section 1 Exercise 1 Question 5 */
@@ -189,17 +209,17 @@ const level1: Level = {
               id: "1-1-1-7",
               nextQuestionId: "1-1-1-8",
               type: "FIBCode",
-              question: "Complete the sentence:",
+              question: "Complete the sentence to that the algorithm outputs the string 'Hello world!' 5 times:",
               options: [], // not used for FIB
               correctAnswer: "", // not used for FIB
               fibData: {
                 sentenceParts: [
-                  { id: 1, text: "1|", isBlank: false },
+                  { id: 1, text: " 1| ", isBlank: false },
                   { id: 2, text: "for i in range", isBlank: false },
                   { id: 3, text: "", isBlank: true },
-                  { id: 4, text: "\n2|", isBlank: false },
+                  { id: 4, text: "\n 2| ", isBlank: false },
                   { id: 5, text: '    print("Hello world!")', isBlank: false },
-                  { id: 6, text: "\n3|", isBlank: false },
+                  { id: 6, text: "\n 3| ", isBlank: false },
                   { id: 7, text: "", isBlank: true },
                 ],
                 options: [

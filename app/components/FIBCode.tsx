@@ -196,8 +196,8 @@ const FIBCode: React.FC<FIBCodeProps> = ({
 
   return (
     <div className="self-start py-10 px-8 bg-gray-900 text-white text-4xl rounded-lg font-mono w-full min-h-100 max-w-250 w-3/10">
-      <h2 className="text-4xl font-semibold mb-4 text-white">
-        Fill in the blanks:
+      <h2 className="text-4xl font-semibold mb-8 text-white">
+        {question.question}
       </h2>
       {/* Sentence area */}
       <pre className="whitespace-pre-wrap">
@@ -231,7 +231,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
 
       {/* Options area */}
       <div
-        className="flex justify-center flex-wrap gap-2 mt-7 p-4 border border-dashed border-gray-600 rounded min-h-[50px]"
+        className="flex justify-center flex-wrap gap-2 mt-7 p-4 border border-dashed border-gray-600 rounded min-h-[100px]"
         onDrop={onDropToOptions}
         onDragOver={onDragOver}
       >
@@ -240,7 +240,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
             key={opt.id}
             draggable
             onDragStart={(e) => onDragStart(e, opt, "options", idx)}
-            className="px-2 py-1 bg-black rounded-lg cursor-pointer hover:bg-purple-900"
+            className="flex items-center justify-center px-2 py-1 bg-black rounded-lg cursor-pointer hover:bg-purple-900"
           >
             {renderInlineCode(opt.text)}
           </div>
