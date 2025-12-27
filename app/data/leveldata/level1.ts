@@ -26,181 +26,167 @@ const level1: Level = {
           exercise: 1,
           questions: [
             {
-              /* Level 1 Section 1 Exercise 1 Question 1 */
+              /* Level 1 Section 1 Exercise 1 Question 1*/
               id: "1-1-1-1",
               nextQuestionId: "1-1-1-2",
+              type: "MCQ",
               firstQuestion: true,
-              type: "FIB",
-              question: "What is a Program?",
-              options: [], // not used for FIB
-              correctAnswer: "", // not used for FIB
-              fibData: {
+              question: "What is the purpose of the hash symbol?",
+              codeSnipit: {
                 sentenceParts: [
+                  { id: 1, text: " 1| " },
                   {
-                    id: 1,
-                    text: "A computer program is a set of",
-                    isBlank: false,
+                    id: 2,
+                    text: "#The hash symbol (#) is used to start a comment",
                   },
-                  { id: 2, text: "", isBlank: true },
+                  { id: 3, text: "\n 2| " },
                   {
-                    id: 3,
-                    text: "that tell a computer what to do.",
-                    isBlank: false,
+                    id: 4,
+                    text: "#Comments are used to explain what parts of the program do ",
                   },
+                  { id: 5, text: "\n 3| " },
+                  { id: 6, text: "\n 4| " },
+                  { id: 7, text: "\n 5| " },
                 ],
-                options: [
-                  { id: 1, text: "instructions" },
-                  { id: 2, text: "computers" },
-                  { id: 3, text: "files" },
-                  { id: 4, text: "screens" },
-                ],
-                correctBlanks: [{ id: 2, correctOptionId: 1 }],
               },
+              options: [
+                "To run algorithms",
+                "Defining variables",
+                "To write comments",
+                "Finding integers",
+              ],
+              correctAnswer: "To write comments",
             },
             {
-              /* Level 1 Section 1 Exercise 1 Question 2 */
+              /* Level 1 Section 1 Exercise 1 Question 2*/
               id: "1-1-1-2",
               nextQuestionId: "1-1-1-3",
-              type: "FIB",
-              question: "A program follows instructions in the order they are",
-              options: [], // not used for FIB
-              correctAnswer: "", // not used for FIB
-              fibData: {
+              type: "MCQ",
+              question: "What is the output of this algorithm?",
+              codeSnipit: {
                 sentenceParts: [
+                  { id: 1, text: " 1| " },
                   {
-                    id: 1,
-                    text: "A program follows instructions in the order they are",
-                    isBlank: false,
+                    id: 2,
+                    text: '#Output "Hello World"',
                   },
-                  { id: 2, text: "", isBlank: true },
+                  { id: 3, text: "\n 2| " },
+                  {
+                    id: 4,
+                    text: 'print("Hello World")',
+                  },
+                  { id: 5, text: "\n 3| " },
+                  { id: 6, text: "\n 4| " },
+                  { id: 7, text: "\n 5| " },
                 ],
-                options: [
-                  { id: 1, text: "printed" },
-                  { id: 2, text: "saved" },
-                  { id: 3, text: "written" },
-                ],
-                correctBlanks: [{ id: 2, correctOptionId: 3 }],
               },
+              options: [
+                '"Output "Hello World"',
+                '"Hello World"',
+                '"World Hello"',
+                '"print("Hello World)"',
+              ],
+              correctAnswer: '"Hello World"',
             },
             {
-              /* Level 1 Section 1 Exercise 1 Question 3 */
+              /* Level 1 Section 1 Exercise 1 Question 3*/
               id: "1-1-1-3",
               nextQuestionId: "1-1-1-4",
-              type: "FIB",
-              question: "Complete the sentence:",
-              options: [], // not used for FIB
-              correctAnswer: "", // not used for FIB
-              fibData: {
+              type: "MCQ",
+              question: "What data type is the output of this program?",
+              codeSnipit: {
                 sentenceParts: [
-                  { id: 1, text: "Python is a", isBlank: false },
-                  { id: 2, text: "", isBlank: true },
-                  { id: 3, text: "that is used to make", isBlank: false },
-                  { id: 4, text: "", isBlank: true },
-                  { id: 5, text: ".", isBlank: false },
-                ],
-                options: [
-                  { id: 1, text: "programming language" },
-                  { id: 2, text: "algorithms" },
-                ],
-                correctBlanks: [
-                  { id: 2, correctOptionId: 1 },
-                  { id: 4, correctOptionId: 2 },
+                  { id: 1, text: " 1| " },
+                  {
+                    id: 2,
+                    text: '#Output the string "Hello World"',
+                  },
+                  { id: 3, text: "\n 2| " },
+                  {
+                    id: 4,
+                    text: 'print("Hello World")',
+                  },
+                  { id: 5, text: "\n 3| " },
+                  { id: 6, text: "\n 4| " },
+                  { id: 7, text: "\n 5| " },
                 ],
               },
+              options: [
+                '"Boolean"',
+                '"Hello World"',
+                '"String"',
+                '"print("Hello World)"',
+              ],
+              correctAnswer: '"Hello World"',
             },
             {
               /* Level 1 Section 1 Exercise 1 Question 4*/
               id: "1-1-1-4",
               nextQuestionId: "1-1-1-5",
               type: "MCQ",
-              question: "What does this code do?",
-              codeSnipit: {
-                sentenceParts: [
-                  { id: 1, text: " 1| " },
-                  { id: 2, text: "age = 16" },
-                  { id: 3, text: "\n 2| " },
-                  { id: 4, text: "\n 3| " },
-                  { id: 5, text: "\n 4| " },
-                  { id: 6, text: "\n 5| " },
-                  { id: 7, text: "\n 6| " },
-                  { id: 8, text: "\n 7| " },
-                  { id: 9, text: "\n 8| " },
-                  { id: 10, text: "\n 9| " },
-                  { id: 11, text: "\n10| " },
-                  { id: 12, text: "\n11| " },
-                  { id: 13, text: "\n12| " },
-                  { id: 14, text: "\n13| " },
-                  { id: 15, text: "\n14| " },
-                  { id: 16, text: "\n15| " },
-                  { id: 17, text: "\n16| " },
-                  { id: 18, text: "\n17| " },
-                  { id: 19, text: "\n18| " },
-                  { id: 20, text: "\n19| " },
-                  { id: 21, text: "\n20| " },
-                  { id: 22, text: "\n21| " },
-                  { id: 23, text: "\n22| " },
-                  { id: 24, text: "\n23| " },
-                  { id: 25, text: "\n24| " },
-                  { id: 26, text: "\n25| " },
-                ],
-              },
-              options: [
-                "A way to repeat code",
-                "Stores the integer 16 inside the variable age",
-                "A programming language",
-                "A type of software",
-              ],
-              correctAnswer: "Stores the integer 16 inside the variable age",
+              question: 'Which data type is "Hello"?',
+              options: ["Boolean", "String", "Float", "Integer"],
+              correctAnswer: "String",
             },
             {
               /* Level 1 Section 1 Exercise 1 Question 5 */
               id: "1-1-1-5",
               nextQuestionId: "1-1-1-6",
-              type: "FIB",
-              question: "Complete the sentence:",
-              options: [], // not used for FIB
-              correctAnswer: "", // not used for FIB
-              fibData: {
+              type: "MCQ",
+              question: "What symbol MUST strings be enclosed in?",
+              codeSnipit: {
                 sentenceParts: [
-                  { id: 1, text: "Python is a", isBlank: false },
-                  { id: 2, text: "", isBlank: true },
-                  { id: 3, text: "that is used to make", isBlank: false },
-                  { id: 4, text: "", isBlank: true },
-                  { id: 5, text: ".", isBlank: false },
-                ],
-                options: [
-                  { id: 1, text: "programming language" },
-                  { id: 2, text: "algorithms" },
-                ],
-                correctBlanks: [
-                  { id: 2, correctOptionId: 1 },
-                  { id: 4, correctOptionId: 2 },
+                  { id: 1, text: " 1| " },
+                  {
+                    id: 2,
+                    text: '#Output the string "Hello World"',
+                  },
+                  { id: 3, text: "\n 2| " },
+                  {
+                    id: 4,
+                    text: 'print("Hello World")',
+                  },
+                  { id: 5, text: "\n 3| " },
+                  { id: 6, text: "\n 4| " },
+                  { id: 7, text: "\n 5| " },
                 ],
               },
+              options: ["Hash #", "Percentage %", 'Quotation " "', "Dollar $"],
+              correctAnswer: 'Quotation " "',
             },
             {
               /* Level 1 Section 1 Exercise 1 Question 6 */
               id: "1-1-1-6",
               nextQuestionId: "1-1-1-7",
-              type: "FIB",
-              question: "Complete the sentence:",
-              options: [], // not used for FIB typing
+              type: "FIBCode",
+              question:
+                'Complete the sentence so that the algorithm outputs the string "Hello World":',
+              options: [], // not used for FIB
               correctAnswer: "", // not used for FIB
               fibData: {
                 sentenceParts: [
-                  { id: 1, text: "Python is a", isBlank: false },
-                  { id: 2, text: "", isBlank: true },
-                  { id: 3, text: "that is used to make", isBlank: false },
-                  { id: 4, text: "", isBlank: true },
-                  { id: 5, text: ".", isBlank: false },
+                  { id: 1, text: " 1| ", isBlank: false },
+                  {
+                    id: 2,
+                    text: '#Output the string "Hello World"',
+                    isBlank: false,
+                  },
+                  { id: 3, text: "\n 2| ", isBlank: false },
+                  {id: 4, text: 'print("Hello World', isBlank: false},
+                  { id: 5, text: "", isBlank: true },
+                  { id: 6, text: ") ", isBlank: false },
+                  { id: 7, text: "\n 3| ", isBlank: false },
+                  { id: 8, text: "\n 4| ", isBlank: false },
+                  { id: 9, text: "\n 5| ", isBlank: false },
                 ],
                 options: [
-                  { id: 1, text: "programming language" },
-                  { id: 2, text: "algorithms" },
-                ], //options mean right answers in the FIBTyping component
+                  { id: 1, text: '"' },
+                  { id: 2, text: 'print asdasd' },
+                  { id: 3, text: "'" },
+                ],
                 correctBlanks: [
-                  { id: 2, correctOptionId: 1 },
-                  { id: 4, correctOptionId: 2 },
+                  { id: 3, correctOptionId: 1 },
+                  { id: 7, correctOptionId: 2 },
                 ],
               },
             },
@@ -209,7 +195,8 @@ const level1: Level = {
               id: "1-1-1-7",
               nextQuestionId: "1-1-1-8",
               type: "FIBCode",
-              question: "Complete the sentence to that the algorithm outputs the string 'Hello world!' 5 times:",
+              question:
+                "Complete the sentence to that the algorithm outputs the string 'Hello world!' 5 times:",
               options: [], // not used for FIB
               correctAnswer: "", // not used for FIB
               fibData: {

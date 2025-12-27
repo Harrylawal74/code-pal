@@ -97,11 +97,11 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ sentenceParts = [] }) => {
   };
 
   return (
-    <div className="self-start p-4 bg-gray-700 text-white rounded-lg font-mono w-full mb-5 min-h-50 h-full overflow-auto no-scrollbar">
+    <div className="self-start p-4 bg-gray-700 text-white rounded-lg font-mono w-full mb-5 min-h-50 h-full overflow-auto no-y-scrollbar text-nowrap">
       {/* Sentence area */}
       <pre className="whitespace-pre-wrap">
         {sentenceParts.map((part, i) => (
-          <span key={part.id}>{renderInlineCode(part.text)}</span>
+          <span key={part.id} className="text-nowrap">{renderInlineCode(part.text)}</span>
         ))}
       </pre>
     </div>

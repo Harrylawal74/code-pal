@@ -207,7 +207,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
               key={part.id}
               onDrop={(e) => onDropToBlank(e, i)}
               onDragOver={onDragOver}
-              className="inline-block min-w-[100px] py-0.5 mx-0.5 border-b-2 border-white cursor-pointer text-center align-middle"
+              className="inline-block py-0.5 mx-1 border-b-2 border-white cursor-pointer text-center align-middle"
             >
               {part.filled ? (
                 <span
@@ -215,7 +215,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
                   onDragStart={(e) =>
                     onDragStart(e, part.filled!, "sentence", i)
                   }
-                  className="bg-gray-800 px-1 rounded"
+                  className="bg-gray-800 px-2 rounded "
                 >
                   {renderInlineCode(part.filled.text)}
                 </span>
@@ -240,7 +240,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
             key={opt.id}
             draggable
             onDragStart={(e) => onDragStart(e, opt, "options", idx)}
-            className="flex items-center justify-center px-2 py-1 bg-black rounded-lg cursor-pointer hover:bg-purple-900"
+            className="flex items-center justify-center px-2 py-1 bg-black rounded-lg cursor-pointer hover:bg-purple-900 gap-2"
           >
             {renderInlineCode(opt.text)}
           </div>

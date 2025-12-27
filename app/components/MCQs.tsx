@@ -72,7 +72,7 @@ export default function MCQs({ question }: { question: Question }) {
         </div>
 
         <div className="flex justify-center overflow-auto gap-15 w-full px-4 h-full">
-          <div className="mx-5 text-2xl bg-gradient-to-b from-[#121723] to-[#131623] px-10 py-15 rounded-4xl gap-3 max-w-700 w-full h-full max-h-[1000px] flex flex-col items-center border-2 border-[#2d2c47]">
+          <div className="mx-5 text-2xl bg-gradient-to-b from-[#121723] to-[#131623] px-10 py-15 rounded-4xl gap-3 max-w-170 w-full h-full max-h-[1000px] flex flex-col items-center border-2 border-[#2d2c47]">
             <CodeBlock sentenceParts={question.codeSnipit?.sentenceParts} />
           </div>
 
