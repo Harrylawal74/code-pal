@@ -196,7 +196,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
 
   return (
     <div className="self-start py-10 px-8 bg-gray-900 text-white text-4xl rounded-lg font-mono w-full min-h-100 max-w-250 w-3/10">
-      <h2 className="text-4xl font-semibold mb-8 text-white">
+      <h2 className="text-4xl mb-8 text-white" style={{ fontFamily: "Nunito, sans-serif"}}>
         {question.question}
       </h2>
       {/* Sentence area */}
@@ -207,7 +207,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
               key={part.id}
               onDrop={(e) => onDropToBlank(e, i)}
               onDragOver={onDragOver}
-              className="inline-block mx-1 border-b-2 border-white cursor-pointer text-center align-middle"
+              className="inline-block mx-1 bg-gray-700 rounded-xl border-white cursor-pointer text-center align-middle"
             >
               {part.filled ? (
                 <span
@@ -215,7 +215,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
                   onDragStart={(e) =>
                     onDragStart(e, part.filled!, "sentence", i)
                   }
-                  className="bg-gray-800 px-2 rounded"
+                  className="bg-gray-700 px-2 rounded"
                 >
                   {renderInlineCode(part.filled.text)}
                 </span>

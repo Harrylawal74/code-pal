@@ -248,27 +248,31 @@ const level1: Level = {
               id: "1-1-1-9",
               nextQuestionId: "1-1-1-10",
               type: "FIBCode",
-              question: "Complete the sentence:",
+              question:
+                "Complete the sentence so that the algorithm outputs the string 'Hello World' :",
               options: [], // not used for FIB
               correctAnswer: "", // not used for FIB
               fibData: {
                 sentenceParts: [
-                  { id: 1, text: "#line 1|", isBlank: false },
-                  { id: 2, text: "for i in range", isBlank: false },
-                  { id: 3, text: "", isBlank: true },
-                  { id: 4, text: "\n#line 2|", isBlank: false },
-                  { id: 5, text: '    print("Hello world!")', isBlank: false },
-                  { id: 6, text: "\n#line 3|", isBlank: false },
-                  { id: 7, text: "", isBlank: true },
+                  { id: 1, text: " 1| ", isBlank: false },
+                  {
+                    id: 2,
+                    text: "#Output the string 'Hello World'",
+                    isBlank: false,
+                  },
+                  { id: 3, text: "\n 2| ", isBlank: false },
+                  { id: 4, text: "print('Hello World", isBlank: false },
+                  { id: 5, text: "", isBlank: true },
+                  { id: 6, text: ") ", isBlank: false },
+                  { id: 7, text: "\n 3| ", isBlank: false },
+                  { id: 8, text: "\n 4| ", isBlank: false },
                 ],
                 options: [
-                  { id: 1, text: "(0, 4)" },
-                  { id: 2, text: "#end of code" },
+                  { id: 1, text: '"' },
+                  { id: 2, text: "'" },
+                  { id: 3, text: "string" },
                 ],
-                correctBlanks: [
-                  { id: 3, correctOptionId: 1 },
-                  { id: 7, correctOptionId: 2 },
-                ],
+                correctBlanks: [{ id: 5, correctOptionId: 2 }],
               },
             },
             {
