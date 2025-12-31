@@ -26,7 +26,7 @@ export default function MCQs({ question }: { question: Question }) {
   if (!question.codeSnipit) {
     return (
       <div className="mx-5 text-2xl bg-gradient-to-b from-[#121723] to-[#131623] px-10 py-15 rounded-4xl gap-3 max-w-350 w-full max-h-[1000px] flex flex-col items-center border-2 border-[#2d2c47]">
-        <h2 className="flex items-center justify-center text-white text-3xl font-bold rounded-4xl px-10 h-17 mb-5 gap-6 w-full ">
+        <h2 className="flex items-center justify-center text-white text-3xl font-bold rounded-4xl px-10 h-17 mb-5 gap-6 w-full">
           {question.question}
         </h2>
 

@@ -44,10 +44,6 @@ const PYTHON_BUILTINS = [
   "dict",
 ];
 
-// Regex patterns
-const STRING_PATTERN = /^(['"]).*?\1$/;
-const NUMBER_PATTERN = /^[0-9]+(\.[0-9]+)?$/;
-
 const FIBCode: React.FC<FIBCodeProps> = ({
   question,
   sentenceParts,
@@ -150,14 +146,19 @@ const FIBCode: React.FC<FIBCodeProps> = ({
       return <span className="text-gray-500">{text}</span>;
     }
 
+    // Regex patterns
+    const STRING_PATTERN = /^".*"$|^'.*'$/;
+    const NUMBER_PATTERN = /^[0-9]+(\.[0-9]+)?$/;
+
     // Regex to match strings first, then words/numbers
-    const regex = /(\d+(\.\d+)?\||\".*?\"|'.*?'|\b\w+\b|\s+|[^\s\w])/g;
+    const regex =
+      /(\s*(?:[1-9]\d{0,2}|1000)\s*\||\".*?\"|'.*?'|\b\w+\b|\s+|[^\s\w])/g;
     const tokens = text.match(regex) || [];
 
     return tokens.map((token, idx) => {
       if (!token.trim()) return <span key={idx}>{token}</span>;
 
-      if (/^".*"$|^'.*'$/.test(token)) {
+      if (STRING_PATTERN.test(token)) {
         // Strings including quotes
         return (
           <span key={idx} className="text-green-400">
@@ -166,7 +167,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
         );
       } else if (PYTHON_KEYWORDS.includes(token)) {
         return (
-          <span key={idx} className="text-purple-400 font-semibold">
+          <span key={idx} className="text-purple-400">
             {token}
           </span>
         );
@@ -182,7 +183,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
             {token}
           </span>
         );
-      } else if (/^[0-9]+(\.[0-9]+)?$/.test(token)) {
+      } else if (NUMBER_PATTERN.test(token)) {
         return (
           <span key={idx} className="text-orange-400">
             {token}
@@ -195,10 +196,8 @@ const FIBCode: React.FC<FIBCodeProps> = ({
   };
 
   return (
-    <div className="self-start py-10 px-8 bg-gray-900 text-white text-4xl rounded-lg font-mono w-full min-h-100 max-w-250 w-3/10">
-      <h2 className="text-4xl mb-8 text-white" style={{ fontFamily: "Nunito, sans-serif"}}>
-        {question.question}
-      </h2>
+    <div className="self-start py-10 px-8 bg-gray-900 text-white text-4xl rounded-4xl w-full min-h-100 max-w-250 w-3/10">
+      <h2 className="text-4xl mb-8 text-white">{question.question}</h2>
       {/* Sentence area */}
       <pre className="whitespace-pre-wrap">
         {sentence.map((part, i) =>
@@ -215,7 +214,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
                   onDragStart={(e) =>
                     onDragStart(e, part.filled!, "sentence", i)
                   }
-                  className="bg-gray-700 px-2 rounded"
+                  className="bg-gray-700 px-2 rounded-xl"
                 >
                   {renderInlineCode(part.filled.text)}
                 </span>
@@ -246,8 +245,12 @@ const FIBCode: React.FC<FIBCodeProps> = ({
           </div>
         ))}
       </div>
-      <div className=""><MarkButton question={question} positiveOutcome={markQuiz()}></MarkButton></div>
-      
+      <div className="">
+        <MarkButton
+          question={question}
+          positiveOutcome={markQuiz()}
+        ></MarkButton>
+      </div>
     </div>
   );
 };

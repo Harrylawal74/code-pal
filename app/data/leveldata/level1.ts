@@ -34,19 +34,19 @@ const level1: Level = {
               question: "What is the purpose of the hash symbol?",
               codeSnipit: {
                 sentenceParts: [
-                  { id: 1, text: " 1| " },
+                  { id: 1, text: " 1 | " },
                   {
                     id: 2,
                     text: "#The hash symbol (#) is used to start a comment",
                   },
-                  { id: 3, text: "\n 2| " },
+                  { id: 3, text: "\n 2 | " },
                   {
                     id: 4,
                     text: "#Comments are used to explain what parts of the program do ",
                   },
-                  { id: 5, text: "\n 3| " },
-                  { id: 6, text: "\n 4| " },
-                  { id: 7, text: "\n 5| " },
+                  { id: 5, text: "\n 3 | " },
+                  { id: 6, text: "\n 4 | " },
+                  { id: 7, text: "\n 5 | " },
                 ],
               },
               options: [
@@ -65,19 +65,19 @@ const level1: Level = {
               question: "What is the output of this algorithm?",
               codeSnipit: {
                 sentenceParts: [
-                  { id: 1, text: " 1| " },
+                  { id: 1, text: " 1 | " },
                   {
                     id: 2,
                     text: '#Output "Hello World"',
                   },
-                  { id: 3, text: "\n 2| " },
+                  { id: 3, text: "\n 2 | " },
                   {
                     id: 4,
                     text: 'print("Hello World")',
                   },
-                  { id: 5, text: "\n 3| " },
-                  { id: 6, text: "\n 4| " },
-                  { id: 7, text: "\n 5| " },
+                  { id: 5, text: "\n 3 | " },
+                  { id: 6, text: "\n 4 | " },
+                  { id: 7, text: "\n 5 | " },
                 ],
               },
               options: [
@@ -93,22 +93,48 @@ const level1: Level = {
               id: "1-1-1-3",
               nextQuestionId: "1-1-1-4",
               type: "MCQ",
-              question: "What data type is the output of this program?",
+              question: "What symbol MUST strings be enclosed in?",
               codeSnipit: {
                 sentenceParts: [
-                  { id: 1, text: " 1| " },
+                  { id: 1, text: " 1 | " },
                   {
                     id: 2,
                     text: '#Output the string "Hello World"',
                   },
-                  { id: 3, text: "\n 2| " },
+                  { id: 3, text: "\n 2 | " },
                   {
                     id: 4,
                     text: 'print("Hello World")',
                   },
-                  { id: 5, text: "\n 3| " },
-                  { id: 6, text: "\n 4| " },
-                  { id: 7, text: "\n 5| " },
+                  { id: 5, text: "\n 3 | " },
+                  { id: 6, text: "\n 4 | " },
+                  { id: 7, text: "\n 5 | " },
+                ],
+              },
+              options: ["Hash #", "Percentage %", 'Quotation " "', "Dollar $"],
+              correctAnswer: 'Quotation " "',
+            },
+            {
+              /* Level 1 Section 1 Exercise 1 Question 4 */
+              id: "1-1-1-4",
+              nextQuestionId: "1-1-1-5",
+              type: "MCQ",
+              question: "What data type is the output of this program?",
+              codeSnipit: {
+                sentenceParts: [
+                  { id: 1, text: " 1 | " },
+                  {
+                    id: 2,
+                    text: '#Output the string "Hello World"',
+                  },
+                  { id: 3, text: "\n 2 | " },
+                  {
+                    id: 4,
+                    text: 'print("Hello World")',
+                  },
+                  { id: 5, text: "\n 3 | " },
+                  { id: 6, text: "\n 4 | " },
+                  { id: 7, text: "\n 5 | " },
                 ],
               },
               options: [
@@ -120,39 +146,13 @@ const level1: Level = {
               correctAnswer: '"Hello World"',
             },
             {
-              /* Level 1 Section 1 Exercise 1 Question 4*/
-              id: "1-1-1-4",
-              nextQuestionId: "1-1-1-5",
+              /* Level 1 Section 1 Exercise 1 Question 5*/
+              id: "1-1-1-5",
+              nextQuestionId: "1-1-1-6",
               type: "MCQ",
               question: 'Which data type is "Hello"?',
               options: ["Boolean", "String", "Float", "Integer"],
               correctAnswer: "String",
-            },
-            {
-              /* Level 1 Section 1 Exercise 1 Question 5 */
-              id: "1-1-1-5",
-              nextQuestionId: "1-1-1-6",
-              type: "MCQ",
-              question: "What symbol MUST strings be enclosed in?",
-              codeSnipit: {
-                sentenceParts: [
-                  { id: 1, text: " 1| " },
-                  {
-                    id: 2,
-                    text: '#Output the string "Hello World"',
-                  },
-                  { id: 3, text: "\n 2| " },
-                  {
-                    id: 4,
-                    text: 'print("Hello World")',
-                  },
-                  { id: 5, text: "\n 3| " },
-                  { id: 6, text: "\n 4| " },
-                  { id: 7, text: "\n 5| " },
-                ],
-              },
-              options: ["Hash #", "Percentage %", 'Quotation " "', "Dollar $"],
-              correctAnswer: 'Quotation " "',
             },
             {
               /* Level 1 Section 1 Exercise 1 Question 6 */
@@ -165,19 +165,19 @@ const level1: Level = {
               correctAnswer: "", // not used for FIB
               fibData: {
                 sentenceParts: [
-                  { id: 1, text: " 1| ", isBlank: false },
+                  { id: 1, text: " 1 | ", isBlank: false },
                   {
                     id: 2,
                     text: '#Output the string "Hello World"',
                     isBlank: false,
                   },
-                  { id: 3, text: "\n 2| ", isBlank: false },
-                  { id: 4, text: 'print("Hello World', isBlank: false },
+                  { id: 3, text: "\n 2 | ", isBlank: false },
+                  { id: 4, text: 'print("Hello World"', isBlank: false },
                   { id: 5, text: "", isBlank: true },
                   { id: 6, text: ") ", isBlank: false },
-                  { id: 7, text: "\n 3| ", isBlank: false },
-                  { id: 8, text: "\n 4| ", isBlank: false },
-                  { id: 9, text: "\n 5| ", isBlank: false },
+                  { id: 7, text: "\n 3 | ", isBlank: false },
+                  { id: 8, text: "\n 4 | ", isBlank: false },
+                  { id: 9, text: "\n 5 | ", isBlank: false },
                 ],
                 options: [
                   { id: 1, text: '"' },
@@ -195,21 +195,21 @@ const level1: Level = {
               question: "Which symbol does line 3 use for a string?",
               codeSnipit: {
                 sentenceParts: [
-                  { id: 1, text: " 1| " },
+                  { id: 1, text: " 1 | " },
                   {
                     id: 2,
                     text: "#Strings can be enclosed in single OR double quotation marks",
                   },
-                  { id: 3, text: "\n 2| " },
+                  { id: 3, text: "\n 2 | " },
                   {
                     id: 4,
                     text: "#But the type of quotation mark MUST match",
                   },
-                  { id: 5, text: "\n 3| " },
+                  { id: 5, text: "\n 3 | " },
                   { id: 6, text: 'print("Hello World")' },
-                  { id: 7, text: "\n 4| " },
+                  { id: 7, text: "\n 4 | " },
                   { id: 8, text: "print('Hello World')" },
-                  { id: 9, text: "\n 5| " },
+                  { id: 9, text: "\n 5 | " },
                 ],
               },
               options: ["Hash #", "Percentage %", 'Quotation " "', "Dollar $"],
@@ -223,21 +223,21 @@ const level1: Level = {
               question: "Which symbol does line 4 use for a string?",
               codeSnipit: {
                 sentenceParts: [
-                  { id: 1, text: " 1| " },
+                  { id: 1, text: " 1 | " },
                   {
                     id: 2,
                     text: "#Strings can be enclosed in single OR double quotation marks",
                   },
-                  { id: 3, text: "\n 2| " },
+                  { id: 3, text: "\n 2 | " },
                   {
                     id: 4,
                     text: "#But the type of quotation mark MUST match",
                   },
-                  { id: 5, text: "\n 3| " },
+                  { id: 5, text: "\n 3 | " },
                   { id: 6, text: 'print("Hello World")' },
-                  { id: 7, text: "\n 4| " },
+                  { id: 7, text: "\n 4 | " },
                   { id: 8, text: "print('Hello World')" },
-                  { id: 9, text: "\n 5| " },
+                  { id: 9, text: "\n 5 | " },
                 ],
               },
               options: ["Hash #", "Percentage %", "Dollar $", "Quotation ' '"],
@@ -254,18 +254,18 @@ const level1: Level = {
               correctAnswer: "", // not used for FIB
               fibData: {
                 sentenceParts: [
-                  { id: 1, text: " 1| ", isBlank: false },
+                  { id: 1, text: " 1 | ", isBlank: false },
                   {
                     id: 2,
                     text: "#Output the string 'Hello World'",
                     isBlank: false,
                   },
-                  { id: 3, text: "\n 2| ", isBlank: false },
+                  { id: 3, text: "\n 2 | ", isBlank: false },
                   { id: 4, text: "print('Hello World", isBlank: false },
                   { id: 5, text: "", isBlank: true },
                   { id: 6, text: ") ", isBlank: false },
-                  { id: 7, text: "\n 3| ", isBlank: false },
-                  { id: 8, text: "\n 4| ", isBlank: false },
+                  { id: 7, text: "\n 3 | ", isBlank: false },
+                  { id: 8, text: "\n 4 | ", isBlank: false },
                 ],
                 options: [
                   { id: 1, text: '"' },
@@ -284,12 +284,12 @@ const level1: Level = {
               correctAnswer: "", // not used for FIB
               fibData: {
                 sentenceParts: [
-                  { id: 1, text: "1| ", isBlank: false },
+                  { id: 1, text: "1 | ", isBlank: false },
                   { id: 2, text: "for i in range", isBlank: false },
                   { id: 3, text: "", isBlank: true },
-                  { id: 4, text: "\n2| ", isBlank: false },
+                  { id: 4, text: "\n2 | ", isBlank: false },
                   { id: 5, text: '    print("Hello world!")', isBlank: false },
-                  { id: 6, text: "\n3| ", isBlank: false },
+                  { id: 6, text: "\n3 | ", isBlank: false },
                   { id: 7, text: "", isBlank: true },
                 ],
                 options: [

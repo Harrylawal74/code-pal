@@ -35,10 +35,6 @@ const PYTHON_BUILTINS = [
   "dict",
 ];
 
-// Regex patterns
-const STRING_PATTERN = /^(['"]).*?\1$/;
-const NUMBER_PATTERN = /^[0-9]+(\.[0-9]+)?$/;
-
 const CodeBlock: React.FC<CodeBlockProps> = ({ sentenceParts = [] }) => {
   if (sentenceParts.length === 0) {
     return null;
@@ -52,14 +48,20 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ sentenceParts = [] }) => {
       return <span className="text-gray-500">{text}</span>;
     }
 
+    // Regex patterns
+    const STRING_PATTERN = /^".*"$|^'.*'$/;
+    const NUMBER_PATTERN = /^[0-9]+(\.[0-9]+)?$/;
+
     // Regex to match strings first, then words/numbers
-    const regex = /(\d+(\.\d+)?\||\".*?\"|'.*?'|\b\w+\b|\s+|[^\s\w])/g;
+    const regex =
+      /(\s*(?:[1-9]\d{0,2}|1000)\s*\||\".*?\"|'.*?'|\b\w+\b|\s+|[^\s\w])/g;
     const tokens = text.match(regex) || [];
+    const PIPE_NUMBER_PATTERN = /^\s*(?:[1-9]\d{0,2}|1000)\s*\|\s*$/;
 
     return tokens.map((token, idx) => {
       if (!token.trim()) return <span key={idx}>{token}</span>;
 
-      if (/^".*"$|^'.*'$/.test(token)) {
+      if (STRING_PATTERN.test(token)) {
         // Strings including quotes
         return (
           <span key={idx} className="text-green-400">
@@ -78,13 +80,13 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ sentenceParts = [] }) => {
             {token}
           </span>
         );
-      } else if (/^\d+(\.\d+)?\|$/.test(token)) {
+      } else if (PIPE_NUMBER_PATTERN.test(token)) {
         return (
           <span key={idx} className="text-gray-200">
             {token}
           </span>
         );
-      } else if (/^[0-9]+(\.[0-9]+)?$/.test(token)) {
+      } else if (NUMBER_PATTERN.test(token)) {
         return (
           <span key={idx} className="text-orange-400">
             {token}
@@ -101,7 +103,9 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ sentenceParts = [] }) => {
       {/* Sentence area */}
       <pre className="whitespace-pre-wrap">
         {sentenceParts.map((part, i) => (
-          <span key={part.id} className="text-nowrap">{renderInlineCode(part.text)}</span>
+          <span key={part.id} className="text-nowrap">
+            {renderInlineCode(part.text)}
+          </span>
         ))}
       </pre>
     </div>
