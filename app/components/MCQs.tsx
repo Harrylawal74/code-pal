@@ -26,7 +26,7 @@ export default function MCQs({ question }: { question: Question }) {
   if (!question.codeSnipit) {
     return (
       <div className="mx-5 text-2xl bg-gradient-to-b from-[#121723] to-[#131623] px-10 py-15 rounded-4xl gap-3 max-w-350 w-full max-h-[1000px] flex flex-col items-center border-2 border-[#2d2c47]">
-        <h2 className="flex items-center justify-center text-white text-3xl font-bold rounded-4xl px-10 h-17 mb-5 gap-6 w-full ">
+        <h2 className="flex items-center justify-center text-white text-3xl font-bold rounded-4xl px-10 h-17 mb-5 gap-6 w-full">
           {question.question}
         </h2>
 
@@ -65,18 +65,18 @@ export default function MCQs({ question }: { question: Question }) {
   } else {
     return (
       <div className="flex flex-col items-center h-full w-full">
-        <div className="px-10 w-full">
-        <h2 className="flex items-center justify-center text-white text-3xl font-bold rounded-4xl h-17 mb-5 gap-6 w-full bg-gradient-to-b from-[#121723] to-[#131623] rounded-4xl border-2 border-[#2d2c47] w-full">
+        <div className="px-10 w-full flex items-center justify-center text-nowrap">
+        <h2 className="flex items-center justify-center text-white text-3xl font-bold rounded-4xl h-17 mb-5 gap-6 w-full min-w-200 max-w-650 w-full bg-gradient-to-b from-[#121723] to-[#131623] rounded-4xl border-2 border-[#2d2c47]">
           {question.question}
         </h2>
         </div>
 
-        <div className="flex justify-center overflow-auto gap-15 w-full px-4 h-full">
-          <div className="mx-5 text-2xl bg-gradient-to-b from-[#121723] to-[#131623] px-10 py-15 rounded-4xl gap-3 max-w-700 w-full h-full max-h-[1000px] flex flex-col items-center border-2 border-[#2d2c47]">
+        <div className="flex justify-center overflow-auto gap-5 w-full px-4 h-full">
+          <div className="mx-5 text-2xl bg-gradient-to-b from-[#121723] to-[#131623] px-10 py-15 rounded-4xl gap-3 max-w-400 w-full h-full max-h-[1000px] flex flex-col items-center border-2 border-[#2d2c47]">
             <CodeBlock sentenceParts={question.codeSnipit?.sentenceParts} />
           </div>
 
-          <div className="mx-5 text-2xl bg-gradient-to-b from-[#121723] to-[#131623] px-10 py-15 rounded-4xl gap-3 max-w-700 w-full max-h-[1000px] flex flex-col items-center border-2 border-[#2d2c47]">
+          <div className="mx-5 text-2xl bg-gradient-to-b from-[#121723] to-[#131623] px-10 py-15 rounded-4xl gap-3 max-w-250 w-2/5 max-h-[1000px] flex flex-col items-center border-2 border-[#2d2c47]">
             {/**Loops through each option and its index
              * Renders a <label> and <input> for each option
              */}

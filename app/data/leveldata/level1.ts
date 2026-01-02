@@ -29,243 +29,250 @@ const level1: Level = {
               /* Level 1 Section 1 Exercise 1 Question 1*/
               id: "1-1-1-1",
               nextQuestionId: "1-1-1-2",
-              firstQuestion: true,
               type: "MCQ",
-              question: "What does the following line of code do?",
+              firstQuestion: true,
+              question: "What is the purpose of the hash symbol?",
               codeSnipit: {
                 sentenceParts: [
-                  { id: 1, text: "1| " },
-                  { id: 2, text: "age = 16" },
-                  { id: 3, text: "\n2|" },
-                  { id: 4, text: "\n3|" },
-                  { id: 5, text: "\n3|" },
-                  { id: 6, text: "\n3|" },
-                  { id: 7, text: "\n3|" },
-                  { id: 8, text: "\n3|" },
-                  { id: 9, text: "\n3|" },
-                  { id: 10, text: "\n3|" },
-                  { id: 11, text: "\n3|" },
-                  { id: 12, text: "\n3|" },
-                  { id: 13, text: "\n3|" },
-                  { id: 14, text: "\n3|" },
-                  { id: 15, text: "\n3|" },
-                  { id: 16, text: "\n3|" },
-                  { id: 17, text: "\n3|" },
-                  { id: 18, text: "\n3|" },
-                  { id: 19, text: "\n3|" },
-                  { id: 20, text: "\n3|" },
-                  { id: 21, text: "\n3|" },
-                  { id: 22, text: "\n3|" },
-                  { id: 23, text: "\n3|" },
-                  { id: 24, text: "\n3|" },
-                  { id: 25, text: "\n3|" },
-                  { id: 26, text: "\n3|" },
+                  { id: 1, text: " 1 | " },
+                  {
+                    id: 2,
+                    text: "#The hash symbol (#) is used to start a comment",
+                  },
+                  { id: 3, text: "\n 2 | " },
+                  {
+                    id: 4,
+                    text: "#Comments are used to explain what parts of the program do ",
+                  },
+                  { id: 5, text: "\n 3 | " },
+                  { id: 6, text: "\n 4 | " },
+                  { id: 7, text: "\n 5 | " },
                 ],
               },
               options: [
-                "Prints the value 16",
-                "Stores the value 16 in a variable called age",
-                "Compares age with 16",
-                "Creates a loop",
+                "To run algorithms",
+                "Defining variables",
+                "To write comments",
+                "Finding integers",
               ],
-              correctAnswer: "A set of instructions for a computer",
+              correctAnswer: "To write comments",
             },
             {
-              /* Level 1 Section 1 Exercise 1 Question 2 */
+              /* Level 1 Section 1 Exercise 1 Question 2*/
               id: "1-1-1-2",
               nextQuestionId: "1-1-1-3",
-              type: "FIBCode",
-              question:
-                "Complete the code so that the variable score stores the value 10.",
-              options: [], // not used for FIB
-              correctAnswer: "", // not used for FIB
-              fibData: {
+              type: "MCQ",
+              question: "What is the output of this algorithm?",
+              codeSnipit: {
                 sentenceParts: [
-                  { id: 1, text: "1|", isBlank: false },
-                  { id: 2, text: "", isBlank: true },
-                  { id: 3, text: "= 10", isBlank: false },
+                  { id: 1, text: " 1 | " },
+                  {
+                    id: 2,
+                    text: '#Output "Hello World"',
+                  },
+                  { id: 3, text: "\n 2 | " },
+                  {
+                    id: 4,
+                    text: 'print("Hello World")',
+                  },
+                  { id: 5, text: "\n 3 | " },
+                  { id: 6, text: "\n 4 | " },
+                  { id: 7, text: "\n 5 | " },
                 ],
-                options: [
-                  { id: 1, text: "value" },
-                  { id: 2, text: "score" },
-                ],
-                correctBlanks: [{ id: 2, correctOptionId: 2 }],
               },
+              options: [
+                '"Output Hello World"',
+                '"Hello World"',
+                '"World Hello"',
+                '"print("Hello World)"',
+              ],
+              correctAnswer: '"Hello World"',
             },
             {
-              /* Level 1 Section 1 Exercise 1 Question 3 */
+              /* Level 1 Section 1 Exercise 1 Question 3*/
               id: "1-1-1-3",
               nextQuestionId: "1-1-1-4",
-              type: "FIB",
-              question: "Complete the sentence:",
-              options: [], // not used for FIB
-              correctAnswer: "", // not used for FIB
-              fibData: {
+              type: "MCQ",
+              question: "What symbol MUST strings be enclosed in?",
+              codeSnipit: {
                 sentenceParts: [
-                  { id: 1, text: "Python is a", isBlank: false },
-                  { id: 2, text: "", isBlank: true },
-                  { id: 3, text: "that is used to make", isBlank: false },
-                  { id: 4, text: "", isBlank: true },
-                  { id: 5, text: ".", isBlank: false },
-                ],
-                options: [
-                  { id: 1, text: "programming language" },
-                  { id: 2, text: "algorithms" },
-                ],
-                correctBlanks: [
-                  { id: 2, correctOptionId: 1 },
-                  { id: 4, correctOptionId: 2 },
+                  { id: 1, text: " 1 | " },
+                  {
+                    id: 2,
+                    text: '#Output the string "Hello World"',
+                  },
+                  { id: 3, text: "\n 2 | " },
+                  {
+                    id: 4,
+                    text: 'print("Hello World")',
+                  },
+                  { id: 5, text: "\n 3 | " },
+                  { id: 6, text: "\n 4 | " },
+                  { id: 7, text: "\n 5 | " },
                 ],
               },
+              options: ["Hash #", "Percentage %", 'Quotation " "', "Dollar $"],
+              correctAnswer: 'Quotation " "',
             },
             {
-              /* Level 1 Section 1 Exercise 1 Question 4*/
+              /* Level 1 Section 1 Exercise 1 Question 4 */
               id: "1-1-1-4",
               nextQuestionId: "1-1-1-5",
               type: "MCQ",
-              question: "What is a loop?",
-              options: [
-                "A way to repeat code",
-                "A type of variable",
-                "A programming language",
-                "A type of software",
-              ],
-              correctAnswer: "A way to repeat code",
-            },
-            {
-              /* Level 1 Section 1 Exercise 1 Question 5 */
-              id: "1-1-1-5",
-              nextQuestionId: "1-1-1-6",
-              type: "FIB",
-              question: "Complete the sentence:",
-              options: [], // not used for FIB
-              correctAnswer: "", // not used for FIB
-              fibData: {
+              question: "What data type is the output of this program?",
+              codeSnipit: {
                 sentenceParts: [
-                  { id: 1, text: "Python is a", isBlank: false },
-                  { id: 2, text: "", isBlank: true },
-                  { id: 3, text: "that is used to make", isBlank: false },
-                  { id: 4, text: "", isBlank: true },
-                  { id: 5, text: ".", isBlank: false },
-                ],
-                options: [
-                  { id: 1, text: "programming language" },
-                  { id: 2, text: "algorithms" },
-                ],
-                correctBlanks: [
-                  { id: 2, correctOptionId: 1 },
-                  { id: 4, correctOptionId: 2 },
+                  { id: 1, text: " 1 | " },
+                  {
+                    id: 2,
+                    text: '#Output the string "Hello World"',
+                  },
+                  { id: 3, text: "\n 2 | " },
+                  {
+                    id: 4,
+                    text: 'print("Hello World")',
+                  },
+                  { id: 5, text: "\n 3 | " },
+                  { id: 6, text: "\n 4 | " },
+                  { id: 7, text: "\n 5 | " },
                 ],
               },
+              options: [
+                "Boolean",
+                '"Hello World"',
+                "String",
+                'print("Hello World")',
+              ],
+              correctAnswer: '"Hello World"',
+            },
+            {
+              /* Level 1 Section 1 Exercise 1 Question 5*/
+              id: "1-1-1-5",
+              nextQuestionId: "1-1-1-6",
+              type: "MCQ",
+              question: 'Which data type is "Hello"?',
+              options: ["Boolean", "String", "Float", "Integer"],
+              correctAnswer: "String",
             },
             {
               /* Level 1 Section 1 Exercise 1 Question 6 */
               id: "1-1-1-6",
               nextQuestionId: "1-1-1-7",
-              type: "FIB",
-              question: "Complete the sentence:",
-              options: [], // not used for FIB typing
+              type: "FIBCode",
+              question:
+                'Complete the sentence so that the algorithm outputs the string "Hello World":',
+              options: [], // not used for FIB
               correctAnswer: "", // not used for FIB
               fibData: {
                 sentenceParts: [
-                  { id: 1, text: "Python is a", isBlank: false },
-                  { id: 2, text: "", isBlank: true },
-                  { id: 3, text: "that is used to make", isBlank: false },
-                  { id: 4, text: "", isBlank: true },
-                  { id: 5, text: ".", isBlank: false },
+                  { id: 1, text: " 1 | ", isBlank: false },
+                  {
+                    id: 2,
+                    text: '#Output the string "Hello World"',
+                    isBlank: false,
+                  },
+                  { id: 3, text: "\n 2 | ", isBlank: false },
+                  { id: 4, text: 'print("Hello World"', isBlank: false },
+                  { id: 5, text: "", isBlank: true },
+                  { id: 6, text: ") ", isBlank: false },
+                  { id: 7, text: "\n 3 | ", isBlank: false },
+                  { id: 8, text: "\n 4 | ", isBlank: false },
+                  { id: 9, text: "\n 5 | ", isBlank: false },
                 ],
                 options: [
-                  { id: 1, text: "programming language" },
-                  { id: 2, text: "algorithms" },
-                ], //options mean right answers in the FIBTyping component
-                correctBlanks: [
-                  { id: 2, correctOptionId: 1 },
-                  { id: 4, correctOptionId: 2 },
+                  { id: 1, text: '"' },
+                  { id: 2, text: "'" },
+                  { id: 3, text: "string" },
                 ],
+                correctBlanks: [{ id: 5, correctOptionId: 1 }],
               },
             },
             {
               /* Level 1 Section 1 Exercise 1 Question 7 */
               id: "1-1-1-7",
               nextQuestionId: "1-1-1-8",
-              type: "FIBCode",
-              question: "Complete the sentence:",
-              options: [], // not used for FIB
-              correctAnswer: "", // not used for FIB
-              fibData: {
+              type: "MCQ",
+              question: "Which symbol does line 3 use for a string?",
+              codeSnipit: {
                 sentenceParts: [
-                  { id: 1, text: "1|", isBlank: false },
-                  { id: 2, text: "for i in range", isBlank: false },
-                  { id: 3, text: "", isBlank: true },
-                  { id: 4, text: "\n2|", isBlank: false },
-                  { id: 5, text: '    print("Hello world!")', isBlank: false },
-                  { id: 6, text: "\n3|", isBlank: false },
-                  { id: 7, text: "", isBlank: true },
-                ],
-                options: [
-                  { id: 1, text: "(0, 4)" },
-                  { id: 2, text: "#end of code" },
-                ],
-                correctBlanks: [
-                  { id: 3, correctOptionId: 1 },
-                  { id: 7, correctOptionId: 2 },
+                  { id: 1, text: " 1 | " },
+                  {
+                    id: 2,
+                    text: "#Strings can be enclosed in single OR double quotation marks",
+                  },
+                  { id: 3, text: "\n 2 | " },
+                  {
+                    id: 4,
+                    text: "#But the type of quotation mark MUST match",
+                  },
+                  { id: 5, text: "\n 3 | " },
+                  { id: 6, text: 'print("Hello World")' },
+                  { id: 7, text: "\n 4 | " },
+                  { id: 8, text: "print('Hello World')" },
+                  { id: 9, text: "\n 5 | " },
                 ],
               },
+              options: ["Hash #", "Percentage %", 'Quotation " "', "Dollar $"],
+              correctAnswer: 'Quotation " "',
             },
             {
               /* Level 1 Section 1 Exercise 1 Question 8 */
               id: "1-1-1-8",
               nextQuestionId: "1-1-1-9",
-              type: "FIBCode",
-              question: "Complete the sentence:",
-              options: [], // not used for FIB
-              correctAnswer: "", // not used for FIB
-              fibData: {
+              type: "MCQ",
+              question: "Which symbol does line 4 use for a string?",
+              codeSnipit: {
                 sentenceParts: [
-                  { id: 1, text: "#line 1|", isBlank: false },
-                  { id: 2, text: "for i in range", isBlank: false },
-                  { id: 3, text: "", isBlank: true },
-                  { id: 4, text: "\n#line 2|", isBlank: false },
-                  { id: 5, text: '    print("Hello world!")', isBlank: false },
-                  { id: 6, text: "\n#line 3|", isBlank: false },
-                  { id: 7, text: "", isBlank: true },
-                ],
-                options: [
-                  { id: 1, text: "(0, 4)" },
-                  { id: 2, text: "#end of code" },
-                ],
-                correctBlanks: [
-                  { id: 3, correctOptionId: 1 },
-                  { id: 7, correctOptionId: 2 },
+                  { id: 1, text: " 1 | " },
+                  {
+                    id: 2,
+                    text: "#Strings can be enclosed in single OR double quotation marks",
+                  },
+                  { id: 3, text: "\n 2 | " },
+                  {
+                    id: 4,
+                    text: "#But the type of quotation mark MUST match",
+                  },
+                  { id: 5, text: "\n 3 | " },
+                  { id: 6, text: 'print("Hello World")' },
+                  { id: 7, text: "\n 4 | " },
+                  { id: 8, text: "print('Hello World')" },
+                  { id: 9, text: "\n 5 | " },
                 ],
               },
+              options: ["Hash #", "Percentage %", "Dollar $", "Quotation ' '"],
+              correctAnswer: "Quotation ' '",
             },
             {
               /* Level 1 Section 1 Exercise 1 Question 9 */
               id: "1-1-1-9",
               nextQuestionId: "1-1-1-10",
               type: "FIBCode",
-              question: "Complete the sentence:",
+              question:
+                "Complete the sentence so that the algorithm outputs the string 'Hello World' :",
               options: [], // not used for FIB
               correctAnswer: "", // not used for FIB
               fibData: {
                 sentenceParts: [
-                  { id: 1, text: "#line 1|", isBlank: false },
-                  { id: 2, text: "for i in range", isBlank: false },
-                  { id: 3, text: "", isBlank: true },
-                  { id: 4, text: "\n#line 2|", isBlank: false },
-                  { id: 5, text: '    print("Hello world!")', isBlank: false },
-                  { id: 6, text: "\n#line 3|", isBlank: false },
-                  { id: 7, text: "", isBlank: true },
+                  { id: 1, text: " 1 | ", isBlank: false },
+                  {
+                    id: 2,
+                    text: "#Output the string 'Hello World'",
+                    isBlank: false,
+                  },
+                  { id: 3, text: "\n 2 | ", isBlank: false },
+                  { id: 4, text: "print('Hello World", isBlank: false },
+                  { id: 5, text: "", isBlank: true },
+                  { id: 6, text: ") ", isBlank: false },
+                  { id: 7, text: "\n 3 | ", isBlank: false },
+                  { id: 8, text: "\n 4 | ", isBlank: false },
                 ],
                 options: [
-                  { id: 1, text: "(0, 4)" },
-                  { id: 2, text: "#end of code" },
+                  { id: 1, text: '"' },
+                  { id: 2, text: "'" },
+                  { id: 3, text: "string" },
                 ],
-                correctBlanks: [
-                  { id: 3, correctOptionId: 1 },
-                  { id: 7, correctOptionId: 2 },
-                ],
+                correctBlanks: [{ id: 5, correctOptionId: 2 }],
               },
             },
             {
@@ -277,12 +284,12 @@ const level1: Level = {
               correctAnswer: "", // not used for FIB
               fibData: {
                 sentenceParts: [
-                  { id: 1, text: "1| ", isBlank: false },
+                  { id: 1, text: "1 | ", isBlank: false },
                   { id: 2, text: "for i in range", isBlank: false },
                   { id: 3, text: "", isBlank: true },
-                  { id: 4, text: "\n2| ", isBlank: false },
+                  { id: 4, text: "\n2 | ", isBlank: false },
                   { id: 5, text: '    print("Hello world!")', isBlank: false },
-                  { id: 6, text: "\n3| ", isBlank: false },
+                  { id: 6, text: "\n3 | ", isBlank: false },
                   { id: 7, text: "", isBlank: true },
                 ],
                 options: [
