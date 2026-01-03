@@ -3,8 +3,6 @@ import level1 from "@/app/data/leveldata/level1";
 import level2 from "@/app/data/leveldata/level2";
 import { Question, QuestionType } from "@/app/types/Questions";
 import { notFound } from "next/navigation";
-
-// Import the FillInTheBlanks component for FIB questions
 import FillInTheBlanks from "@/app/components/FillInTheBlanks"; // <-- Added import for FIB component
 import FIBCode from "@/app/components/FIBCode";
 
