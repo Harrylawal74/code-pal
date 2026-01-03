@@ -156,9 +156,9 @@ const FillInTheBlanks: React.FC<FillInTheBlanksProps> = ({
   };
 
   return (
-    <div className="self-start p-6 pb-15 text-white bg-gradient-to-b from-[#121723] to-[#131623] rounded-3xl">
-      <h2 className="text-xl font-semibold mb-4 text-white">
-        Fill in the blanks:
+    <div className="self-start p-6 pb-15 text-white bg-gradient-to-b from-[#121723] to-[#131623] rounded-3xl border-2 border-[#2d2c47]">
+      <h2 className="flex justify-center text-xl font-semibold mb-4 text-white">
+        Fill in the blanks
       </h2>
 
       {/* Sentence rendering */}

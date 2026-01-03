@@ -44,10 +44,6 @@ const PYTHON_BUILTINS = [
   "dict",
 ];
 
-// Regex patterns
-const STRING_PATTERN = /^(['"]).*?\1$/;
-const NUMBER_PATTERN = /^[0-9]+(\.[0-9]+)?$/;
-
 const FIBCode: React.FC<FIBCodeProps> = ({
   question,
   sentenceParts,
@@ -150,14 +146,19 @@ const FIBCode: React.FC<FIBCodeProps> = ({
       return <span className="text-gray-500">{text}</span>;
     }
 
+    // Regex patterns
+    const STRING_PATTERN = /^".*"$|^'.*'$/;
+    const NUMBER_PATTERN = /^[0-9]+(\.[0-9]+)?$/;
+
     // Regex to match strings first, then words/numbers
-    const regex = /(\".*?\"|'.*?'|\b\w+\b|\s+|[^\s\w])/g;
+    const regex =
+      /(\s*(?:[1-9]\d{0,2}|1000)\s*\||\".*?\"|'.*?'|\b\w+\b|\s+|[^\s\w])/g;
     const tokens = text.match(regex) || [];
 
     return tokens.map((token, idx) => {
       if (!token.trim()) return <span key={idx}>{token}</span>;
 
-      if (/^".*"$|^'.*'$/.test(token)) {
+      if (STRING_PATTERN.test(token)) {
         // Strings including quotes
         return (
           <span key={idx} className="text-green-400">
@@ -166,7 +167,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
         );
       } else if (PYTHON_KEYWORDS.includes(token)) {
         return (
-          <span key={idx} className="text-purple-400 font-semibold">
+          <span key={idx} className="text-purple-400">
             {token}
           </span>
         );
@@ -176,7 +177,13 @@ const FIBCode: React.FC<FIBCodeProps> = ({
             {token}
           </span>
         );
-      } else if (/^[0-9]+(\.[0-9]+)?$/.test(token)) {
+      } else if (/^\d+(\.\d+)?\|$/.test(token)) {
+        return (
+          <span key={idx} className="text-gray-200">
+            {token}
+          </span>
+        );
+      } else if (NUMBER_PATTERN.test(token)) {
         return (
           <span key={idx} className="text-orange-400">
             {token}
@@ -189,7 +196,8 @@ const FIBCode: React.FC<FIBCodeProps> = ({
   };
 
   return (
-    <div className="self-start p-4 bg-gray-900 text-white rounded-lg font-mono max-w-250">
+    <div className="self-start py-10 px-8 bg-gray-900 text-white text-4xl rounded-4xl w-full min-h-100 max-w-250 w-3/10">
+      <h2 className="text-4xl mb-8 text-white">{question.question}</h2>
       {/* Sentence area */}
       <pre className="whitespace-pre-wrap">
         {sentence.map((part, i) =>
@@ -198,7 +206,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
               key={part.id}
               onDrop={(e) => onDropToBlank(e, i)}
               onDragOver={onDragOver}
-              className="inline-block min-w-[60px] py-0.5 mx-0.5 border-b-2 border-white cursor-pointer text-center align-middle"
+              className="inline-block mx-1 bg-gray-700 rounded-xl border-white cursor-pointer text-center align-middle"
             >
               {part.filled ? (
                 <span
@@ -206,7 +214,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
                   onDragStart={(e) =>
                     onDragStart(e, part.filled!, "sentence", i)
                   }
-                  className="bg-gray-800 px-1 rounded"
+                  className="bg-gray-700 px-2 rounded-xl"
                 >
                   {renderInlineCode(part.filled.text)}
                 </span>
@@ -222,7 +230,7 @@ const FIBCode: React.FC<FIBCodeProps> = ({
 
       {/* Options area */}
       <div
-        className="flex flex-wrap gap-2 mt-4 p-2 border border-dashed border-gray-600 rounded min-h-[50px]"
+        className="flex justify-center flex-wrap gap-2 mt-7 p-4 border border-dashed border-gray-600 rounded min-h-[100px]"
         onDrop={onDropToOptions}
         onDragOver={onDragOver}
       >
@@ -231,16 +239,18 @@ const FIBCode: React.FC<FIBCodeProps> = ({
             key={opt.id}
             draggable
             onDragStart={(e) => onDragStart(e, opt, "options", idx)}
-            className="px-2 py-1 bg-black rounded-lg cursor-pointer hover:bg-purple-900"
+            className="flex items-center justify-center px-2 py-1 bg-black rounded-lg cursor-pointer hover:bg-purple-900 gap-2"
           >
             {renderInlineCode(opt.text)}
           </div>
         ))}
       </div>
-      <MarkButton
-        question={question}
-        positiveOutcome={markQuiz()}
-      ></MarkButton>
+      <div className="">
+        <MarkButton
+          question={question}
+          positiveOutcome={markQuiz()}
+        ></MarkButton>
+      </div>
     </div>
   );
 };

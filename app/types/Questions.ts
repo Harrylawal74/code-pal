@@ -1,6 +1,6 @@
 /**List of types predefined for the levels, sections, exercises, and questions*/
 
-export type QuestionType = "MCQ" | "RQ" | "FIB" | "FIBCode"; // Added Fill In the Blank
+export type QuestionType = "MCQ" | "FIB" | "FIBCode"; // Added Fill In the Blank
 
 export type FIBBlank = {
   id: number; // unique ID for the blank position
@@ -13,12 +13,17 @@ export type FIBQuestionData = {
   correctBlanks: FIBBlank[];
 };
 
+export type CodeBlockData = {
+  sentenceParts: { id: number; text: string }[];
+};
+
 export type Question = {
   id: string;
   nextQuestionId?: string; // ID of the next question, optional seeing as there is a final quesiton
   firstQuestion?: boolean;
   type: QuestionType;
   question: string;
+  codeSnipit?: CodeBlockData;
   options: string[]; // still used for MCQ
   correctAnswer: string; // still used for MCQ
   fibData?: FIBQuestionData; // used only if type === "FIB" or "FIBCode" or "FIBTyping"

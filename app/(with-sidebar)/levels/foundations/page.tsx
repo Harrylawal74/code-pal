@@ -2,7 +2,7 @@ import Link from "next/link";
 import ExerciseBox from "../../../components/ExerciseBox";
 import level1 from "../../../data/leveldata/level1";
 import React from "react";
-import { getLevel1ExerciseProgress } from "@/lib/supabase/ServerFunctions/DatabaseLevelData";
+import { getLevel1ExerciseProgress } from "@/lib/supabase/ServerFunctions/DatabaseLevel1Data";
 
 type Props = {
   title: string;
@@ -29,6 +29,7 @@ function ExerciseSectionTabTemplate({ title, bgcolor }: Props) {
  */
 
 export default async function FoundationsPage() {
+  
   async function isExerciseCompleted(
     sectionIndex: number,
     exerciseIndex: number
