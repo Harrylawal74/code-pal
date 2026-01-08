@@ -43,16 +43,17 @@ export default function MarkButton({ question, positiveOutcome }: Props) {
     localStorage.setItem("answeredCount", newAnswered.toString());
     localStorage.setItem("correctCount", newCorrect.toString());
 
-    // Navigate to next question
-    if (question.nextQuestionId) {
-      router.push(`/exercises/${question.nextQuestionId}`);
-    }
-
     console.log(
       "Answered Count:",
       answeredCount,
       "Correct Count:",
-      correctCount)
+      correctCount
+    );
+
+    // Navigate to next question
+    if (question.nextQuestionId) {
+      router.push(`/exercises/${question.nextQuestionId}`);
+    }
   };
 
   const handleEndQuiz = () => {
@@ -78,12 +79,12 @@ export default function MarkButton({ question, positiveOutcome }: Props) {
     localStorage.removeItem("answeredCount");
     localStorage.removeItem("correctCount");
 
-    
     console.log(
       "Answered Count:",
       answeredCount,
       "Correct Count:",
-      correctCount)
+      correctCount
+    );
 
     // Navigate to the learn page
     router.push("/learn");
