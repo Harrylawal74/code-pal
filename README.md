@@ -1,4 +1,4 @@
-# Learn2Code 🚀
+# SecretApp 🚀
 
 An interactive learning app designed to help students **learn how to code from scratch**, build real projects, and develop problem‑solving skills that transfer to real‑world software development.
 
